@@ -1,91 +1,17 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
   <component name="ChangeListManager">
     <list default="true" id="9d0e5cb5-584b-42c6-a7ca-d46671c69a1f" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/nep-pib-mogi/.editorconfig" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/nep-pib-mogi/.env.example" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/nep-pib-mogi/.gitattributes" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/nep-pib-mogi/.gitignore" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/nep-pib-mogi/.styleci.yml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/nep-pib-mogi/README.md" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/nep-pib-mogi/app/Console/Kernel.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/nep-pib-mogi/app/Exceptions/Handler.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/nep-pib-mogi/app/Http/Controllers/Controller.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/nep-pib-mogi/app/Http/Kernel.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/nep-pib-mogi/app/Http/Middleware/Authenticate.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/nep-pib-mogi/app/Http/Middleware/EncryptCookies.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/nep-pib-mogi/app/Http/Middleware/PreventRequestsDuringMaintenance.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/nep-pib-mogi/app/Http/Middleware/RedirectIfAuthenticated.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/nep-pib-mogi/app/Http/Middleware/TrimStrings.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/nep-pib-mogi/app/Http/Middleware/TrustHosts.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/nep-pib-mogi/app/Http/Middleware/TrustProxies.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/nep-pib-mogi/app/Http/Middleware/VerifyCsrfToken.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/nep-pib-mogi/app/Models/User.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/nep-pib-mogi/app/Providers/AppServiceProvider.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/nep-pib-mogi/app/Providers/AuthServiceProvider.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/nep-pib-mogi/app/Providers/BroadcastServiceProvider.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/nep-pib-mogi/app/Providers/EventServiceProvider.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/nep-pib-mogi/app/Providers/RouteServiceProvider.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/nep-pib-mogi/artisan" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/nep-pib-mogi/bootstrap/app.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/nep-pib-mogi/bootstrap/cache/.gitignore" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/nep-pib-mogi/composer.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/nep-pib-mogi/config/app.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/nep-pib-mogi/config/auth.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/nep-pib-mogi/config/broadcasting.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/nep-pib-mogi/config/cache.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/nep-pib-mogi/config/cors.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/nep-pib-mogi/config/database.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/nep-pib-mogi/config/filesystems.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/nep-pib-mogi/config/hashing.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/nep-pib-mogi/config/logging.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/nep-pib-mogi/config/mail.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/nep-pib-mogi/config/queue.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/nep-pib-mogi/config/sanctum.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/nep-pib-mogi/config/services.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/nep-pib-mogi/config/session.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/nep-pib-mogi/config/view.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/nep-pib-mogi/database/.gitignore" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/nep-pib-mogi/database/factories/UserFactory.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/nep-pib-mogi/database/migrations/2014_10_12_000000_create_users_table.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/nep-pib-mogi/database/migrations/2014_10_12_100000_create_password_resets_table.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/nep-pib-mogi/database/migrations/2019_08_19_000000_create_failed_jobs_table.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/nep-pib-mogi/database/migrations/2019_12_14_000001_create_personal_access_tokens_table.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/nep-pib-mogi/database/seeders/DatabaseSeeder.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/nep-pib-mogi/lang/en.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/nep-pib-mogi/lang/en/auth.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/nep-pib-mogi/lang/en/pagination.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/nep-pib-mogi/lang/en/passwords.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/nep-pib-mogi/lang/en/validation.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/nep-pib-mogi/package.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/nep-pib-mogi/phpunit.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/nep-pib-mogi/public/.htaccess" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/nep-pib-mogi/public/favicon.ico" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/nep-pib-mogi/public/index.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/nep-pib-mogi/public/robots.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/nep-pib-mogi/resources/css/app.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/nep-pib-mogi/resources/js/app.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/nep-pib-mogi/resources/js/bootstrap.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/nep-pib-mogi/resources/views/welcome.blade.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/nep-pib-mogi/routes/api.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/nep-pib-mogi/routes/channels.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/nep-pib-mogi/routes/console.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/nep-pib-mogi/routes/web.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/nep-pib-mogi/storage/app/.gitignore" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/nep-pib-mogi/storage/app/public/.gitignore" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/nep-pib-mogi/storage/framework/.gitignore" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/nep-pib-mogi/storage/framework/cache/.gitignore" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/nep-pib-mogi/storage/framework/cache/data/.gitignore" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/nep-pib-mogi/storage/framework/sessions/.gitignore" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/nep-pib-mogi/storage/framework/testing/.gitignore" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/nep-pib-mogi/storage/framework/views/.gitignore" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/nep-pib-mogi/storage/logs/.gitignore" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/nep-pib-mogi/tests/CreatesApplication.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/nep-pib-mogi/tests/Feature/ExampleTest.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/nep-pib-mogi/tests/TestCase.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/nep-pib-mogi/tests/Unit/ExampleTest.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/nep-pib-mogi/webpack.mix.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/LICENSE" beforeDir="false" />
+      <change afterPath="$PROJECT_DIR$/nep-pib-mogi/package-lock.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/nep-pib-mogi/public/js/app.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/nep-pib-mogi/public/mix-manifest.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/nep-pib-mogi/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/nep-pib-mogi/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/nep-pib-mogi/public/css/app.css" beforeDir="false" afterPath="$PROJECT_DIR$/nep-pib-mogi/public/css/app.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/nep-pib-mogi/resources/js/Layouts/AppLayout.vue" beforeDir="false" afterPath="$PROJECT_DIR$/nep-pib-mogi/resources/js/Layouts/AppLayout.vue" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -116,6 +42,10 @@
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="node.js.detected.package.eslint" value="true" />
+    <property name="node.js.detected.package.tslint" value="true" />
+    <property name="node.js.selected.package.eslint" value="(autodetect)" />
+    <property name="node.js.selected.package.tslint" value="(autodetect)" />
     <property name="nodejs_package_manager_path" value="npm" />
     <property name="vue.rearranger.settings.migration" value="true" />
   </component>
@@ -127,7 +57,7 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1645225914516</updated>
-      <workItem from="1645225915866" duration="675000" />
+      <workItem from="1645225915866" duration="1844000" />
     </task>
     <servers />
   </component>
