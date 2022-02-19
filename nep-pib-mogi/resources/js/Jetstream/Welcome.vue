@@ -12,7 +12,7 @@
             <div class="mt-6 text-gray-500">
                 Nosso propósito é transmitir a mensagem do reino de forma clara e aplicável na vida de todos os que
                 quiserem aprender. Nossos cursos são desenhados para evidênciar a mensagem de Deus afim de ser
-                aplicada na vida cotidiana, mostrando de forma didática, dinâmica e eficaz o poder de transformaçõ do ensino
+                aplicada na vida cotidiana, mostrando de forma didática, dinâmica e eficaz o poder de transformação do ensino
                 bíblico na vida de todos.
             </div>
         </div>
