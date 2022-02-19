@@ -5,6 +5,9 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="9d0e5cb5-584b-42c6-a7ca-d46671c69a1f" name="Changes" comment="1 - setup application">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/nep-pib-mogi/config/jetstream.php" beforeDir="false" afterPath="$PROJECT_DIR$/nep-pib-mogi/config/jetstream.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/nep-pib-mogi/public/js/app.js" beforeDir="false" afterPath="$PROJECT_DIR$/nep-pib-mogi/public/js/app.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/nep-pib-mogi/resources/js/Jetstream/Welcome.vue" beforeDir="false" afterPath="$PROJECT_DIR$/nep-pib-mogi/resources/js/Jetstream/Welcome.vue" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -188,7 +191,7 @@
       <updated>1645225914516</updated>
       <workItem from="1645225915866" duration="1940000" />
       <workItem from="1645243057828" duration="4199000" />
-      <workItem from="1645277666298" duration="4635000" />
+      <workItem from="1645277666298" duration="7033000" />
     </task>
     <task id="LOCAL-00001" summary="1 - setup application">
       <created>1645278488031</created>
@@ -204,7 +207,14 @@
       <option name="project" value="LOCAL" />
       <updated>1645283956687</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="1 - setup application">
+      <created>1645284034434</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1645284034434</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
