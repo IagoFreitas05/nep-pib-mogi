@@ -27,3 +27,13 @@ Route::get('/', function () {
 Route::middleware(['auth:sanctum', 'verified'])->get('/dashboard', function () {
     return Inertia::render('Dashboard');
 })->name('dashboard');
+
+Route::middleware(['auth:sanctum', 'verified'])->get('/courses', function(){
+    return Inertia::render('Courses');
+})->name("courses");
+
+Route::middleware(['auth:sanctum', 'verified'])->get('/newCourse', function(){
+    return Inertia::render('NewCourse');
+})->name("newCourse");
+
+
