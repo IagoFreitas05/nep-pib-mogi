@@ -6,14 +6,14 @@
             </div>
 
             <div class="mt-8 text-2xl">
-                Welcome to your Jetstream application!
+                Bem vindo ao Núcleo de ensino PIB Mogi
             </div>
 
             <div class="mt-6 text-gray-500">
-                Laravel Jetstream provides a beautiful, robust starting point for your next Laravel application. Laravel is designed
-                to help you build your application using a development environment that is simple, powerful, and enjoyable. We believe
-                you should love expressing your creativity through programming, so we have spent time carefully crafting the Laravel
-                ecosystem to be a breath of fresh air. We hope you love it.
+                Nosso propósito é transmitir a mensagem do reino de forma clara e aplicável na vida de todos os que
+                quiserem aprender. Nossos cursos são desenhados para evidênciar a mensagem de Deus afim de ser
+                aplicada na vida cotidiana, mostrando de forma didática, dinâmica e eficaz o poder de transformaçõ do ensino
+                bíblico na vida de todos.
             </div>
         </div>
 

@@ -4,18 +4,15 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="9d0e5cb5-584b-42c6-a7ca-d46671c69a1f" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/php.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/nep-pib-mogi/resources/js/Pages/Courses.vue" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/nep-pib-mogi/resources/js/Pages/NewCourse.vue" afterDir="false" />
+    <list default="true" id="9d0e5cb5-584b-42c6-a7ca-d46671c69a1f" name="Changes" comment="1 - setup application">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/nep-pib-mogi/app/Models/User.php" beforeDir="false" afterPath="$PROJECT_DIR$/nep-pib-mogi/app/Models/User.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/nep-pib-mogi/database/migrations/2014_10_12_000000_create_users_table.php" beforeDir="false" afterPath="$PROJECT_DIR$/nep-pib-mogi/database/migrations/2014_10_12_000000_create_users_table.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/nep-pib-mogi/public/css/app.css" beforeDir="false" afterPath="$PROJECT_DIR$/nep-pib-mogi/public/css/app.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/nep-pib-mogi/public/js/app.js" beforeDir="false" afterPath="$PROJECT_DIR$/nep-pib-mogi/public/js/app.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/nep-pib-mogi/resources/js/Layouts/AppLayout.vue" beforeDir="false" afterPath="$PROJECT_DIR$/nep-pib-mogi/resources/js/Layouts/AppLayout.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/nep-pib-mogi/routes/web.php" beforeDir="false" afterPath="$PROJECT_DIR$/nep-pib-mogi/routes/web.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/nep-pib-mogi/resources/img/WhatsApp Image 2022-02-19 at 09.09.39(1).jpeg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/nep-pib-mogi/resources/img/WhatsApp Image 2022-02-19 at 09.09.39.jpeg" beforeDir="false" afterPath="$PROJECT_DIR$/nep-pib-mogi/resources/img/logo2.jpeg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/nep-pib-mogi/resources/js/Jetstream/ApplicationLogo.vue" beforeDir="false" afterPath="$PROJECT_DIR$/nep-pib-mogi/resources/js/Jetstream/ApplicationLogo.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/nep-pib-mogi/resources/js/Jetstream/ApplicationMark.vue" beforeDir="false" afterPath="$PROJECT_DIR$/nep-pib-mogi/resources/js/Jetstream/ApplicationMark.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/nep-pib-mogi/resources/js/Jetstream/Welcome.vue" beforeDir="false" afterPath="$PROJECT_DIR$/nep-pib-mogi/resources/js/Jetstream/Welcome.vue" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -198,8 +195,16 @@
       <updated>1645225914516</updated>
       <workItem from="1645225915866" duration="1940000" />
       <workItem from="1645243057828" duration="4199000" />
-      <workItem from="1645277666298" duration="555000" />
+      <workItem from="1645277666298" duration="4483000" />
     </task>
+    <task id="LOCAL-00001" summary="1 - setup application">
+      <created>1645278488031</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1645278488031</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -218,6 +223,8 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
+    <MESSAGE value="1 - setup application" />
+    <option name="LAST_COMMIT_MESSAGE" value="1 - setup application" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
