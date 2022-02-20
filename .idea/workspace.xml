@@ -6,7 +6,9 @@
   <component name="ChangeListManager">
     <list default="true" id="9d0e5cb5-584b-42c6-a7ca-d46671c69a1f" name="Changes" comment="1 - class course model">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/nep-pib-mogi/app/Actions/Courses/CreateNewCourse.php" beforeDir="false" afterPath="$PROJECT_DIR$/nep-pib-mogi/app/Actions/Courses/CreateNewCourse.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/nep-pib-mogi/app/Models/ClassCourse.php" beforeDir="false" afterPath="$PROJECT_DIR$/nep-pib-mogi/app/Models/ClassCourse.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/nep-pib-mogi/database/migrations/2022_02_20_181819_class_course.php" beforeDir="false" afterPath="$PROJECT_DIR$/nep-pib-mogi/database/migrations/2022_02_20_181819_class_course.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/nep-pib-mogi/resources/js/Pages/NewCourse.vue" beforeDir="false" afterPath="$PROJECT_DIR$/nep-pib-mogi/resources/js/Pages/NewCourse.vue" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -192,7 +194,7 @@
       <workItem from="1645277666298" duration="8245000" />
       <workItem from="1645299102376" duration="235000" />
       <workItem from="1645310212921" duration="104000" />
-      <workItem from="1645378868442" duration="3036000" />
+      <workItem from="1645378868442" duration="3970000" />
     </task>
     <task id="LOCAL-00001" summary="1 - setup application">
       <created>1645278488031</created>
@@ -250,7 +252,14 @@
       <option name="project" value="LOCAL" />
       <updated>1645381809452</updated>
     </task>
-    <option name="localTasksCounter" value="9" />
+    <task id="LOCAL-00009" summary="1 - class course model">
+      <created>1645382113839</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1645382113839</updated>
+    </task>
+    <option name="localTasksCounter" value="10" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">

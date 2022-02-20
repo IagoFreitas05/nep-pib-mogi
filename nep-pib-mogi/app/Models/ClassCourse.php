@@ -12,6 +12,7 @@ class ClassCourse extends Model
     protected $fillable = [
         'name',
         'description',
+        'class_link',
         'course_id'
     ];
 }
