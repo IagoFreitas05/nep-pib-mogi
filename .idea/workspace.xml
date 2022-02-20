@@ -5,8 +5,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="9d0e5cb5-584b-42c6-a7ca-d46671c69a1f" name="Changes" comment="1 - class course model">
-      <change afterPath="$PROJECT_DIR$/nep-pib-mogi/app/Actions/Courses/CreateNewCourse.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/nep-pib-mogi/app/Actions/Courses/CreateNewCourse.php" beforeDir="false" afterPath="$PROJECT_DIR$/nep-pib-mogi/app/Actions/Courses/CreateNewCourse.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -192,7 +192,7 @@
       <workItem from="1645277666298" duration="8245000" />
       <workItem from="1645299102376" duration="235000" />
       <workItem from="1645310212921" duration="104000" />
-      <workItem from="1645378868442" duration="2719000" />
+      <workItem from="1645378868442" duration="3036000" />
     </task>
     <task id="LOCAL-00001" summary="1 - setup application">
       <created>1645278488031</created>
@@ -243,7 +243,14 @@
       <option name="project" value="LOCAL" />
       <updated>1645381243967</updated>
     </task>
-    <option name="localTasksCounter" value="8" />
+    <task id="LOCAL-00008" summary="1 - class course model">
+      <created>1645381809452</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1645381809452</updated>
+    </task>
+    <option name="localTasksCounter" value="9" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">

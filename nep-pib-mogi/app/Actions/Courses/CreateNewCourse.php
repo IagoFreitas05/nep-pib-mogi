@@ -14,7 +14,9 @@ class CreateNewCourse
         ])->validate();
 
         return Course::create([
-
+            'name' => $input['name'],
+            'duration' => $input['duration'],
+            'description' => $input['description']
         ]);
     }
 }
