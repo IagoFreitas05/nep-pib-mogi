@@ -3,7 +3,7 @@
 use Illuminate\Foundation\Application;
 use Illuminate\Support\Facades\Route;
 use Inertia\Inertia;
-
+use App\Models\Course;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -15,10 +15,8 @@ use Inertia\Inertia;
 |
 */
 
-
-
 Route::middleware(['auth:sanctum', 'verified'])->get('/courses', function(){
-    return Inertia::render('Courses');
+    return Inertia::render('Courses',['courses'=> Course::all()]);
 })->name("courses");
 
 Route::middleware(['auth:sanctum', 'verified'])->get('/newCourse', function(){

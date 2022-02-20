@@ -8,8 +8,15 @@
 
 <div class="py-12">
     <div class="max-w-7xl mx-auto sm:px-6 lg:px-8">
-        <div class="bg-white overflow-hidden shadow-xl sm:rounded-lg">
-            cursos do nep aqui
+        <div class="grid grid-cols-3 gap-2" v-for="course in courses" >
+            <div class="bg-white overflow-hidden col-span-2 shadow-xl hover:text-white hover:bg-cyan-600 hover:ease-in duration-200 sm:rounded mt-2 p-4  ">
+                <p class=" text-2xl mb-2 mt-2">{{course.name}}</p>
+                <p class="text-justify text-sm  ">{{course.description}}</p>
+                <p><small>{{course.duration}}</small></p>
+            </div>
+            <div class="place-items-center bg-gray-300 rounded mt-2 shadow-xl p-4 grid">
+                <img src="./../../img/logo1.png" alt="">
+            </div>
         </div>
     </div>
 </div>
@@ -26,5 +33,6 @@ export default defineComponent({
         AppLayout,
         Welcome,
     },
+    props: ['courses']
 })
 </script>
