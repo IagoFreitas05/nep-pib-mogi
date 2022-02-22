@@ -4,8 +4,10 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="9d0e5cb5-584b-42c6-a7ca-d46671c69a1f" name="Changes" comment="1 - exibion of courses">
+    <list default="true" id="9d0e5cb5-584b-42c6-a7ca-d46671c69a1f" name="Changes" comment="setup">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Providers/RouteServiceProvider.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Providers/RouteServiceProvider.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/composer.lock" beforeDir="false" afterPath="$PROJECT_DIR$/composer.lock" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -195,6 +197,7 @@
       <workItem from="1645393488197" duration="557000" />
       <workItem from="1645397173335" duration="1205000" />
       <workItem from="1645485905135" duration="1411000" />
+      <workItem from="1645489674789" duration="1635000" />
     </task>
     <task id="LOCAL-00001" summary="1 - setup application">
       <created>1645278488031</created>
@@ -280,7 +283,28 @@
       <option name="project" value="LOCAL" />
       <updated>1645394036063</updated>
     </task>
-    <option name="localTasksCounter" value="13" />
+    <task id="LOCAL-00013" summary="setup">
+      <created>1645489705295</created>
+      <option name="number" value="00013" />
+      <option name="presentableId" value="LOCAL-00013" />
+      <option name="project" value="LOCAL" />
+      <updated>1645489705295</updated>
+    </task>
+    <task id="LOCAL-00014" summary="setup">
+      <created>1645489904018</created>
+      <option name="number" value="00014" />
+      <option name="presentableId" value="LOCAL-00014" />
+      <option name="project" value="LOCAL" />
+      <updated>1645489904018</updated>
+    </task>
+    <task id="LOCAL-00015" summary="setup">
+      <created>1645489960842</created>
+      <option name="number" value="00015" />
+      <option name="presentableId" value="LOCAL-00015" />
+      <option name="project" value="LOCAL" />
+      <updated>1645489960842</updated>
+    </task>
+    <option name="localTasksCounter" value="16" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -304,7 +328,8 @@
     <MESSAGE value="1 - class course model" />
     <MESSAGE value="1 - Course Controller" />
     <MESSAGE value="1 - exibion of courses" />
-    <option name="LAST_COMMIT_MESSAGE" value="1 - exibion of courses" />
+    <MESSAGE value="setup" />
+    <option name="LAST_COMMIT_MESSAGE" value="setup" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
