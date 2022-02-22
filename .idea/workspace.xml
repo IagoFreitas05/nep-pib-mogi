@@ -4,15 +4,8 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="9d0e5cb5-584b-42c6-a7ca-d46671c69a1f" name="Changes" comment="1 - Course Controller">
+    <list default="true" id="9d0e5cb5-584b-42c6-a7ca-d46671c69a1f" name="Changes" comment="1 - exibion of courses">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/nep-pib-mogi/app/Http/Controllers/CourseController.php" beforeDir="false" afterPath="$PROJECT_DIR$/nep-pib-mogi/app/Http/Controllers/CourseController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/nep-pib-mogi/app/Providers/AppServiceProvider.php" beforeDir="false" afterPath="$PROJECT_DIR$/nep-pib-mogi/app/Providers/AppServiceProvider.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/nep-pib-mogi/public/css/app.css" beforeDir="false" afterPath="$PROJECT_DIR$/nep-pib-mogi/public/css/app.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/nep-pib-mogi/public/js/app.js" beforeDir="false" afterPath="$PROJECT_DIR$/nep-pib-mogi/public/js/app.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/nep-pib-mogi/resources/js/Pages/Courses.vue" beforeDir="false" afterPath="$PROJECT_DIR$/nep-pib-mogi/resources/js/Pages/Courses.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/nep-pib-mogi/resources/js/Pages/NewCourse.vue" beforeDir="false" afterPath="$PROJECT_DIR$/nep-pib-mogi/resources/js/Pages/NewCourse.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/nep-pib-mogi/routes/Course.php" beforeDir="false" afterPath="$PROJECT_DIR$/nep-pib-mogi/routes/Course.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -199,6 +192,9 @@
       <workItem from="1645299102376" duration="235000" />
       <workItem from="1645310212921" duration="104000" />
       <workItem from="1645378868442" duration="10065000" />
+      <workItem from="1645393488197" duration="557000" />
+      <workItem from="1645397173335" duration="1205000" />
+      <workItem from="1645485905135" duration="1411000" />
     </task>
     <task id="LOCAL-00001" summary="1 - setup application">
       <created>1645278488031</created>
@@ -277,7 +273,14 @@
       <option name="project" value="LOCAL" />
       <updated>1645385862963</updated>
     </task>
-    <option name="localTasksCounter" value="12" />
+    <task id="LOCAL-00012" summary="1 - exibion of courses">
+      <created>1645394036063</created>
+      <option name="number" value="00012" />
+      <option name="presentableId" value="LOCAL-00012" />
+      <option name="project" value="LOCAL" />
+      <updated>1645394036063</updated>
+    </task>
+    <option name="localTasksCounter" value="13" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -300,7 +303,8 @@
     <MESSAGE value="1 - course model" />
     <MESSAGE value="1 - class course model" />
     <MESSAGE value="1 - Course Controller" />
-    <option name="LAST_COMMIT_MESSAGE" value="1 - Course Controller" />
+    <MESSAGE value="1 - exibion of courses" />
+    <option name="LAST_COMMIT_MESSAGE" value="1 - exibion of courses" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
