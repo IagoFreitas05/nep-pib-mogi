@@ -6,15 +6,15 @@
             </h2>
         </template>
 
-        <div class="w-full sm:max-w-xl  mx-auto p-2 mt-2 px-6 py-4 bg-white shadow-md overflow-hidden sm:rounded-lg   ">
+        <div class="w-full mt-4 sm:max-w-xl  mx-auto p-2 mt-2 px-6 py-4 bg-white shadow-md overflow-hidden sm:rounded-lg   ">
             <form @submit.prevent="submit">
                 <div>
-                    <jet-label for="name" value="Name" />
+                    <jet-label for="name" value="Nome do curso" />
                     <jet-input id="name" type="text" class="mt-1 block w-full" v-model="form.name" required autofocus autocomplete="name" />
                 </div>
 
                 <div class="mt-4">
-                    <jet-label for="duration" value="duração" />
+                    <jet-label for="duration" value="Duração do curso" />
                     <jet-input id="duration" type="text" class="mt-1 block w-full" v-model="form.duration" required />
                 </div>
 
