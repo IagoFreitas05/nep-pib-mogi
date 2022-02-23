@@ -13,6 +13,7 @@
                 <p class=" text-2xl mb-2 mt-2">{{course.name}}</p>
                 <p class="text-justify text-sm  ">{{course.description}}</p>
                 <p><small>{{course.duration}}</small></p>
+                <button v-if="$page.props.user.user_type === 'admin' ">adicionar aula</button>
             </div>
             <div class="place-items-center bg-gray-300 rounded mt-2 shadow-xl p-4 grid">
                 <img src="./../../img/logo1.png" alt="">
