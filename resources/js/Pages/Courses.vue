@@ -18,7 +18,6 @@
             <div class=" place-items-center bg-gray-300 rounded mt-2  p-4 grid">
                 <img src="./../../img/logo1.png" alt="" class="pr-1">
             </div>
-            <button class="bg-purple-500 rounded mb-1 ml-1 text-white p-2" v-if="$page.props.user.user_type === 'admin' ">adicionar aula</button>
             <button class="bg-purple-500 rounded mb-1 ml-1 text-white p-2" v-if="$page.props.user.user_type === 'admin' ">editar curso</button>
         </div>
     </div>

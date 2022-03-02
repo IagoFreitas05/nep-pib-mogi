@@ -28,3 +28,8 @@ Route::middleware(['auth:sanctum', 'verified'])
     ->name("newCourse");
 
 
+Route::middleware(['auth:sanctum', 'verified'])->get('/editCourse', function(){
+    return Inertia::render('editCourse');
+})->name("editCourse");
+
+
