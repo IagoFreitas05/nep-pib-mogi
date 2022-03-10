@@ -18,7 +18,11 @@
             <div class=" place-items-center bg-gray-300 rounded mt-2  p-4 grid">
                 <img src="./../../img/logo1.png" alt="" class="pr-1">
             </div>
-            <button class="bg-purple-500 rounded mb-1 ml-1 text-white p-2" v-if="$page.props.user.user_type === 'admin' ">editar curso</button>
+            <a class="bg-purple-500
+            rounded mb-1 block ml-1
+            text-white p-2" :href="route('editCourse', course.id)" v-if="$page.props.user.user_type === 'admin' ">
+                editar curso
+           </a>
         </div>
     </div>
 </div>
@@ -29,11 +33,13 @@
 import { defineComponent } from 'vue'
 import AppLayout from '@/Layouts/AppLayout.vue'
 import Welcome from '@/Jetstream/Welcome.vue'
+import JetNavLink from '@/Jetstream/NavLink.vue'
 
 export default defineComponent({
     components: {
         AppLayout,
         Welcome,
+        JetNavLink,
     },
     props: ['courses']
 })
