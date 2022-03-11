@@ -18,4 +18,13 @@ class CourseController extends Controller
 
         return redirect('courses');
     }
+
+    public function Update(Request $request){
+        $course = Course::find($request->input('id'));
+        $course->name = $request->input('name');
+        $course->description = $request->input('description');
+        $course->duration = $request->input('duration');
+        $course->save();
+        return inertia::render('editCourse');
+    }
 }

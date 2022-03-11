@@ -15,19 +15,23 @@ use App\Models\Course;
 |
 */
 
-Route::middleware(['auth:sanctum', 'verified'])->get('/courses', function(){
-    return Inertia::render('Courses',['courses'=> Course::all()]);
-})->name("courses");
 
-Route::middleware(['auth:sanctum', 'verified'])->get('/newCourse', function(){
-    return Inertia::render('NewCourse');
-})->name("newCourse");
 
 Route::middleware(['auth:sanctum', 'verified'])
     ->post('/newCourse', "App\Http\Controllers\CourseController@Create")
     ->name("newCourse");
 
+Route::middleware(['auth:sanctum', 'verified'])
+    ->put('/editCourse/{id}', "App\Http\Controllers\CourseController@Update")
+    ->name("editCourse");
 
+/*navigation */
+Route::middleware(['auth:sanctum', 'verified'])->get('/courses', function(){
+    return Inertia::render('Courses',['courses'=> Course::all()]);
+})->name("courses");
+Route::middleware(['auth:sanctum', 'verified'])->get('/newCourse', function(){
+    return Inertia::render('NewCourse');
+})->name("newCourse");
 Route::middleware(['auth:sanctum', 'verified'])->get('/editCourse/{id}', function($id){
     return Inertia::render('EditCourse',['course'=> Course::find($id)]);
 })->name("editCourse");

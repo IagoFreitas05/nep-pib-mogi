@@ -45,6 +45,7 @@ import JetInput from "@/Jetstream/Input";
 import JetCheckbox from "@/Jetstream/Checkbox";
 import JetLabel from "@/Jetstream/Label";
 import JetValidationErrors from "@/Jetstream/ValidationErrors";
+import swal from 'sweetalert';
 
 export default defineComponent({
     components: {
@@ -67,13 +68,15 @@ export default defineComponent({
                 name: this.course.name,
                 duration: this.course.duration,
                 description: this.course.description,
+                id: this.course.id
             })
         }
     },
     methods: {
         submit() {
-            this.form.post(this.route('editCourse',this.course.id), {
-                onFinish: () => alert("alterado com sucesso!")
+            this.form.put(this.route('editCourse', this.course.id), {
+                onFinish: () => swal("Está feito","alterado com sucesso, as informações foram atualizadas " +
+                    "em breve!","success")
             })
         }
     }
