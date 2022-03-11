@@ -2,16 +2,33 @@
     <app-layout title="Editar Curso">
         <template #header>
             <h2 class="font-semibold text-xl text-gray-800 leading-tight">
-                Editar curso NEP
+                Editar - {{course.name}}
             </h2>
         </template>
 
-        <div class="py-12">
-            <div class="max-w-7xl mx-auto sm:px-6 lg:px-8">
-                <div class="p-2 grid grid-cols-3 gap-4 mt-4 bg-white shadow-xl" v-for="course in courses" >
-                    edição do curso
+        <div class="w-full mt-4 sm:max-w-xl  mx-auto p-2 mt-2 px-6 py-4 bg-white shadow-md overflow-hidden sm:rounded-lg   ">
+            <form @submit.prevent="submit">
+                <div>
+                    <jet-label for="name" value="Nome do curso" />
+                    <jet-input id="name" type="text" class="mt-1 block w-full" v-model="form.name" required autofocus autocomplete="name" />
                 </div>
-            </div>
+
+                <div class="mt-4">
+                    <jet-label for="duration" value="Duração do curso" />
+                    <jet-input id="duration" type="text" class="mt-1 block w-full" v-model="form.duration" required />
+                </div>
+
+                <div class="mt-4">
+                    <jet-label for="description" value="Descrição" />
+                    <jet-input id="description" type="text" class="mt-1 block w-full" v-model="form.description" required />
+                </div>
+                <div class="flex items-center justify-end mt-4">
+
+                    <jet-button class="ml-4" :class="{ 'opacity-25': form.processing }" :disabled="form.processing">
+                        alterar dados do curso
+                    </jet-button>
+                </div>
+            </form>
         </div>
     </app-layout>
 </template>
@@ -20,11 +37,45 @@
 import { defineComponent } from 'vue'
 import AppLayout from '@/Layouts/AppLayout.vue'
 import Welcome from '@/Jetstream/Welcome.vue'
+import {Head, Link} from "@inertiajs/inertia-vue3";
+import JetAuthenticationCard from "@/Jetstream/AuthenticationCard";
+import JetAuthenticationCardLogo from "@/Jetstream/AuthenticationCardLogo";
+import JetButton from "@/Jetstream/Button";
+import JetInput from "@/Jetstream/Input";
+import JetCheckbox from "@/Jetstream/Checkbox";
+import JetLabel from "@/Jetstream/Label";
+import JetValidationErrors from "@/Jetstream/ValidationErrors";
 
 export default defineComponent({
     components: {
-        AppLayout,
         Welcome,
+        Head,
+        JetAuthenticationCard,
+        JetAuthenticationCardLogo,
+        JetButton,
+        JetInput,
+        JetCheckbox,
+        JetLabel,
+        JetValidationErrors,
+        Link,
+        AppLayout
     },
+    props:['course'],
+    data() {
+        return {
+            form: this.$inertia.form({
+                name: this.course.name,
+                duration: this.course.duration,
+                description: this.course.description,
+            })
+        }
+    },
+    methods: {
+        submit() {
+            this.form.post(this.route('editCourse',this.course.id), {
+                onFinish: () => alert("alterado com sucesso!")
+            })
+        }
+    }
 })
 </script>
