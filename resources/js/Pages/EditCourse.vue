@@ -37,17 +37,26 @@
             <form @submit.prevent="submitClass">
                 <div>
                     <jet-label for="className" value="Nome da aula"/>
-                    <jet-input id="className" type="text" class="mt-1 block w-full" v-model="form.className" required
+                    <jet-input id="className" type="text" class="mt-1 block w-full" v-model="classForm.className"
+                               required
+                               autofocus autocomplete="className"/>
+                </div>
+
+                <div>
+                    <jet-label for="classDescription" value="Nome da aula"/>
+                    <jet-input id="classDescription" type="text" class="mt-1 block w-full"
+                               v-model="classForm.classDescription" required
                                autofocus autocomplete="className"/>
                 </div>
 
                 <div class="mt-4">
                     <jet-label for="urlClass" value="URL da Aula"/>
-                    <jet-input id="urlClass" type="text" class="mt-1 block w-full" v-model="form.urlClass" required/>
+                    <jet-input id="urlClass" type="text" class="mt-1 block w-full" v-model="classForm.classLink"
+                               required/>
                 </div>
                 <div class="flex items-center justify-end mt-4">
-                    <jet-button class="ml-4" :class="{ 'opacity-25': form.processing }" :disabled="form.processing">
-                       adicionar nova aula
+                    <jet-button class="ml-4" :class="{ 'opacity-25': classForm.processing }" :disabled="classForm.processing">
+                        adicionar nova aula
                     </jet-button>
                 </div>
             </form>
@@ -93,6 +102,11 @@ export default defineComponent({
                 duration: this.course.duration,
                 description: this.course.description,
                 id: this.course.id
+            }),
+            classForm: this.$inertia.form({
+                className: this.className,
+                classDescription: this.classDescription,
+                classLink: this.classLink
             })
         }
     },
@@ -101,6 +115,11 @@ export default defineComponent({
             this.form.put(this.route('editCourse', this.course.id), {
                 onFinish: () => swal("Está feito", "alterado com sucesso, as informações foram atualizadas " +
                     "em breve!", "success")
+            })
+        },
+        submitClass() {
+            this.classForm.post(this.route('newClass'), {
+                onFinish: () => swal("Isso ai!", "Aula: " + this.classForm.className + "adicionada com sucesso !", "success")
             })
         }
     }
