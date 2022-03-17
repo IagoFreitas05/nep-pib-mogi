@@ -106,7 +106,8 @@ export default defineComponent({
             classForm: this.$inertia.form({
                 className: this.className,
                 classDescription: this.classDescription,
-                classLink: this.classLink
+                classLink: this.classLink,
+                course_id: this.course.id
             })
         }
     },
