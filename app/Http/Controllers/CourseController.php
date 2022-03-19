@@ -25,6 +25,6 @@ class CourseController extends Controller
         $course->description = $request->input('description');
         $course->duration = $request->input('duration');
         $course->save();
-        return inertia::render('editCourse');
+        return inertia::render('EditCourse');
     }
 }

@@ -8,14 +8,15 @@ use Inertia\Inertia;
 
 class ClassController extends Controller
 {
-    public function post(Request $request){
+    public function create(Request $request){
         ClassCourse::create([
             'name' => $request->input('name'),
             'description'=> $request->input('description'),
             'class_link'=> $request->input('classLink'),
-            'course_id'=> $request->input('course_id')
+            'course_id'=> $request->input('course_id'),
+            'class_order' => $request->input('order')
         ]);
-        return inertia::render('editCourse');
-
+        return inertia::render('EditCourse');
     }
+
 }

@@ -13,6 +13,7 @@ class ClassCourse extends Model
         'name',
         'description',
         'class_link',
-        'course_id'
+        'course_id',
+        'class_order'
     ];
 }
