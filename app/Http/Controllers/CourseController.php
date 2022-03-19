@@ -15,7 +15,6 @@ class CourseController extends Controller
             'description' => $request->input('description'),
             'duration' => $request->input('duration')
         ]);
-
         return redirect('courses');
     }
 

@@ -1,5 +1,6 @@
 <template>
-    <Head title="Forgot Password"/>
+
+    <Head title="Recuparação de senha"/>
 
     <jet-authentication-card>
         <template #logo>
@@ -17,7 +18,6 @@
         </div>
 
         <jet-validation-errors class="mb-4"/>
-
         <form @submit.prevent="submit">
             <div>
                 <jet-label for="email" value="Email"/>

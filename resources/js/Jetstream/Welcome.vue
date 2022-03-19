@@ -6,7 +6,7 @@
             </div>
 
             <div class="mt-8 text-2xl">
-                Bem vindo ao Núcleo de ensino PIB Mogi
+                Bem-vindo ao Núcleo de ensino PIB Mogi
             </div>
 
             <div class="mt-6 text-gray-500">

@@ -23047,6 +23047,7 @@ __webpack_require__.r(__webpack_exports__);
     };
   },
   methods: {
+    confirmExclusion: function confirmExclusion(id) {},
     submit: function submit() {
       this.form.put(this.route('editCourse', this.course.id), {
         onFinish: function onFinish() {
@@ -24869,7 +24870,7 @@ var _hoisted_2 = {
 
 var _hoisted_3 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", {
   "class": "mt-8 text-2xl"
-}, " Bem vindo ao Núcleo de ensino PIB Mogi ", -1
+}, " Bem-vindo ao Núcleo de ensino PIB Mogi ", -1
 /* HOISTED */
 );
 
@@ -26105,7 +26106,7 @@ function render(_ctx, _cache, $props, $setup, $data, $options) {
   var _component_jet_authentication_card = (0,vue__WEBPACK_IMPORTED_MODULE_0__.resolveComponent)("jet-authentication-card");
 
   return (0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)(vue__WEBPACK_IMPORTED_MODULE_0__.Fragment, null, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)(_component_Head, {
-    title: "Forgot Password"
+    title: "Recuparação de senha"
   }), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)(_component_jet_authentication_card, null, {
     logo: (0,vue__WEBPACK_IMPORTED_MODULE_0__.withCtx)(function () {
       return [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)(_component_jet_application_mark)];
@@ -27051,10 +27052,10 @@ var _hoisted_1 = {
   "class": "font-semibold text-xl text-gray-800 leading-tight"
 };
 var _hoisted_2 = {
-  "class": "grid grid-cols-2 gap-4"
+  "class": "grid grid-cols-2"
 };
 var _hoisted_3 = {
-  "class": "w-full mx-auto mt-4 sm:max-w-xl p-2 mt-2 px-6 py-4 bg-white shadow-md overflow-hidden sm:rounded-lg"
+  "class": "w-full mx-auto mt-4 overflow-y-auto sm:max-w-xl p-1 mt-2 px-6 py-4 bg-white shadow-md overflow-hidden sm:rounded-lg"
 };
 var _hoisted_4 = {
   "class": "mt-4"
@@ -27069,7 +27070,7 @@ var _hoisted_6 = {
 var _hoisted_7 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createTextVNode)(" alterar dados do curso ");
 
 var _hoisted_8 = {
-  "class": "w-full mt-4 sm:max-w-xl mx-auto p-2 mt-2 px-6 py-4 bg-white shadow-md overflow-hidden sm:rounded-lg"
+  "class": "w-full mt-4 sm:max-w-xl mx-auto p-1 mt-2 px-6 py-4 bg-white shadow-md overflow-hidden sm:rounded-lg"
 };
 var _hoisted_9 = {
   "class": "mt-4"
@@ -27087,7 +27088,7 @@ var _hoisted_12 = {
 var _hoisted_13 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createTextVNode)(" adicionar nova aula ");
 
 var _hoisted_14 = {
-  "class": "w-full mt-4 sm:max-w-xl p-2 mt-2 px-6 py-4 bg-white shadow-md overflow-hidden sm:rounded-lg"
+  "class": "w-full mt-4 sm:max-w-xl overflow-y-auto p-2 mt-2 px-6 py-4 bg-white shadow-md overflow-hidden sm:rounded-lg"
 };
 
 var _hoisted_15 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("p", {
@@ -27102,16 +27103,12 @@ var _hoisted_16 = {
 var _hoisted_17 = {
   "class": "col-span-2"
 };
-
-var _hoisted_18 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", {
+var _hoisted_18 = {
   "class": ""
-}, [/*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("button", {
-  "class": "bg-purple-500 rounded block text-white pl-1 pr-1"
-}, "apagar ")], -1
-/* HOISTED */
-);
+};
+var _hoisted_19 = ["onClick"];
 
-var _hoisted_19 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", {
+var _hoisted_20 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", {
   "class": ""
 }, [/*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("button", {
   "class": "bg-sky-500 rounded block text-white pl-1 pr-1"
@@ -27256,7 +27253,7 @@ function render(_ctx, _cache, $props, $setup, $data, $options) {
         value: "Qual número dessa aula?"
       }), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)(_component_jet_input, {
         id: "order",
-        type: "text",
+        type: "number",
         "class": "mt-1 block w-full",
         modelValue: _ctx.classForm.order,
         "onUpdate:modelValue": _cache[7] || (_cache[7] = function ($event) {
@@ -27286,7 +27283,14 @@ function render(_ctx, _cache, $props, $setup, $data, $options) {
         /* TEXT */
         ), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_17, (0,vue__WEBPACK_IMPORTED_MODULE_0__.toDisplayString)(classe.name), 1
         /* TEXT */
-        ), _hoisted_18, _hoisted_19]);
+        ), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_18, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("button", {
+          onClick: function onClick($event) {
+            return _ctx.confirmExclusion(classe.id);
+          },
+          "class": "bg-purple-500 rounded block text-white pl-1 pr-1"
+        }, "apagar ", 8
+        /* PROPS */
+        , _hoisted_19)]), _hoisted_20]);
       }), 256
       /* UNKEYED_FRAGMENT */
       ))])])])];

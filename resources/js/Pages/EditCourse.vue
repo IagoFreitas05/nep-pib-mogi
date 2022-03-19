@@ -5,10 +5,11 @@
                 Editar - {{ course.name }}
             </h2>
         </template>
-        <div class="grid grid-cols-2 gap-4">
+        <div class="grid grid-cols-2 ">
             <div>
                 <div
-                    class="w-full mx-auto mt-4 sm:max-w-xl  p-2 mt-2 px-6 py-4 bg-white shadow-md overflow-hidden sm:rounded-lg   ">
+                    class="w-full mx-auto mt-4 overflow-y-auto
+                    sm:max-w-xl  p-1 mt-2 px-6 py-4 bg-white shadow-md overflow-hidden sm:rounded-lg   ">
                     <form @submit.prevent="submit">
                         <div>
                             <jet-label for="name" value="Nome do curso"/>
@@ -38,7 +39,7 @@
                 </div>
 
                 <div
-                    class="w-full mt-4 sm:max-w-xl mx-auto  p-2 mt-2 px-6 py-4 bg-white shadow-md overflow-hidden sm:rounded-lg   ">
+                    class="w-full mt-4 sm:max-w-xl mx-auto  p-1 mt-2 px-6 py-4 bg-white shadow-md overflow-hidden sm:rounded-lg   ">
                     <form @submit.prevent="submitClass">
                         <div>
                             <jet-label for="className" value="Nome da aula"/>
@@ -61,7 +62,7 @@
                         </div>
                         <div class="mt-4">
                             <jet-label for="order" value="Qual número dessa aula?"/>
-                            <jet-input id="order" type="text" class="mt-1 block w-full" v-model="classForm.order"
+                            <jet-input id="order" type="number" class="mt-1 block w-full" v-model="classForm.order"
                                        required/>
                         </div>
                         <div class="flex items-center justify-end mt-4">
@@ -72,11 +73,10 @@
                         </div>
                     </form>
                 </div>
-
             </div>
             <div>
                 <div
-                    class="w-full mt-4 sm:max-w-xl  p-2 mt-2 px-6 py-4 bg-white shadow-md overflow-hidden sm:rounded-lg">
+                    class="w-full  mt-4 sm:max-w-xl overflow-y-auto p-2 mt-2 px-6 py-4 bg-white shadow-md overflow-hidden sm:rounded-lg">
                     <p class="font-bold text-gray-600">aulas</p>
 
                     <div v-for="classe in classes"
@@ -88,7 +88,7 @@
                         <div class="col-span-2">{{ classe.name }}</div>
 
                         <div class="">
-                            <button class="bg-purple-500
+                            <button @click="confirmExclusion(classe.id)" class="bg-purple-500
             rounded  block
             text-white pl-1 pr-1 ">apagar
                             </button>
@@ -103,8 +103,6 @@
                 </div>
             </div>
         </div>
-
-
     </app-layout>
 </template>
 
@@ -155,6 +153,9 @@ export default defineComponent({
         }
     },
     methods: {
+        confirmExclusion(id){
+
+        },
         submit() {
             this.form.put(this.route('editCourse', this.course.id), {
                 onFinish: () => swal("Está feito", "alterado com sucesso, as informações foram atualizadas " +
