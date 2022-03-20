@@ -149,12 +149,33 @@ export default defineComponent({
                 classLink: '',
                 course_id: this.course.id,
                 order:''
+            }),
+            deleteForm:this.$inertia.form({
+                id: ''
             })
         }
     },
     methods: {
         confirmExclusion(id){
-
+            swal({
+                title: "você tem certeza que deseja excluir essa aula?",
+                text: "uma vez deletado, você não poderá recupar!",
+                icon: "warning",
+                buttons: true,
+                dangerMode: true,
+            })
+                .then((willDelete) => {
+                    if (willDelete) {
+                        this.deleteForm.id = id;
+                        this.deleteForm.delete(this.route('deleteClass',id),{
+                            onFinish:() => swal("Sua aula foi deletada!", {
+                                icon: "success",
+                            })
+                        });
+                    } else {
+                        swal("Sua aula não foi deletada!");
+                    }
+                });
         },
         submit() {
             this.form.put(this.route('editCourse', this.course.id), {

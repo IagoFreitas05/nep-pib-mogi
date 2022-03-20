@@ -22947,7 +22947,26 @@ __webpack_require__.r(__webpack_exports__);
     Welcome: _Jetstream_Welcome_vue__WEBPACK_IMPORTED_MODULE_2__["default"],
     JetNavLink: _Jetstream_NavLink_vue__WEBPACK_IMPORTED_MODULE_3__["default"]
   },
-  props: ['courses']
+  props: ['courses'],
+  methods: {
+    confirmSubscription: function confirmSubscription(id) {
+      swal({
+        title: "Você tem certeza?",
+        text: "gostaria de realizar a sua inscrição nesse curso?!",
+        icon: "warning",
+        buttons: true,
+        dangerMode: true
+      }).then(function (willDelete) {
+        if (willDelete) {
+          swal("Inscrição realizada!", {
+            icon: "success"
+          });
+        } else {
+          swal("Inscrição cancelada!");
+        }
+      });
+    }
+  }
 }));
 
 /***/ }),
@@ -23043,11 +23062,38 @@ __webpack_require__.r(__webpack_exports__);
         classLink: '',
         course_id: this.course.id,
         order: ''
+      }),
+      deleteForm: this.$inertia.form({
+        id: ''
       })
     };
   },
   methods: {
-    confirmExclusion: function confirmExclusion(id) {},
+    confirmExclusion: function confirmExclusion(id) {
+      var _this = this;
+
+      sweetalert__WEBPACK_IMPORTED_MODULE_11___default()({
+        title: "você tem certeza que deseja excluir essa aula?",
+        text: "uma vez deletado, você não poderá recupar!",
+        icon: "warning",
+        buttons: true,
+        dangerMode: true
+      }).then(function (willDelete) {
+        if (willDelete) {
+          _this.deleteForm.id = id;
+
+          _this.deleteForm["delete"](_this.route('deleteClass', id), {
+            onFinish: function onFinish() {
+              return sweetalert__WEBPACK_IMPORTED_MODULE_11___default()("Sua aula foi deletada!", {
+                icon: "success"
+              });
+            }
+          });
+        } else {
+          sweetalert__WEBPACK_IMPORTED_MODULE_11___default()("Sua aula não foi deletada!");
+        }
+      });
+    },
     submit: function submit() {
       this.form.put(this.route('editCourse', this.course.id), {
         onFinish: function onFinish() {
@@ -26925,7 +26971,7 @@ var _hoisted_3 = {
   "class": "max-w-7xl mx-auto sm:px-6 lg:px-8"
 };
 var _hoisted_4 = {
-  "class": "p-2 grid grid-cols-3 gap-4 mt-4 bg-white shadow-xl"
+  "class": "p-2 grid grid-cols-4 mt-4 bg-white shadow-xl"
 };
 var _hoisted_5 = {
   "class": "bg-white overflow-hidden col-span-2 hover:text-white hover:bg-cyan-600 hover:ease-in duration-200 sm:rounded mt-2 p-4"
@@ -26936,8 +26982,18 @@ var _hoisted_6 = {
 var _hoisted_7 = {
   "class": "text-justify text-sm"
 };
+var _hoisted_8 = {
+  key: 0,
+  "class": "grid place-items-center"
+};
+var _hoisted_9 = ["onClick"];
+var _hoisted_10 = {
+  key: 1,
+  "class": "grid place-items-center"
+};
+var _hoisted_11 = ["href"];
 
-var _hoisted_8 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", {
+var _hoisted_12 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", {
   "class": "place-items-center bg-gray-300 rounded mt-2 p-4 grid"
 }, [/*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("img", {
   src: _img_logo1_png__WEBPACK_IMPORTED_MODULE_1__["default"],
@@ -26947,7 +27003,6 @@ var _hoisted_8 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementV
 /* HOISTED */
 );
 
-var _hoisted_9 = ["href"];
 function render(_ctx, _cache, $props, $setup, $data, $options) {
   var _component_app_layout = (0,vue__WEBPACK_IMPORTED_MODULE_0__.resolveComponent)("app-layout");
 
@@ -26965,13 +27020,19 @@ function render(_ctx, _cache, $props, $setup, $data, $options) {
         /* TEXT */
         ), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("p", null, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("small", null, (0,vue__WEBPACK_IMPORTED_MODULE_0__.toDisplayString)(course.duration), 1
         /* TEXT */
-        )])]), _hoisted_8, _ctx.$page.props.user.user_type === 'admin' ? ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("a", {
-          key: 0,
+        )])]), _ctx.$page.props.user.user_type === 'user' ? ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("div", _hoisted_8, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("button", {
+          "class": "bg-purple-500 rounded mb-1 block ml-1 text-white p-2",
+          onClick: function onClick($event) {
+            return _ctx.confirmSubscription(course.id);
+          }
+        }, " realizar inscrição ", 8
+        /* PROPS */
+        , _hoisted_9)])) : (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("v-if", true), _ctx.$page.props.user.user_type === 'admin' ? ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("div", _hoisted_10, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("a", {
           "class": "bg-purple-500 rounded mb-1 block ml-1 text-white p-2",
           href: _ctx.route('editCourse', course.id)
         }, " editar curso ", 8
         /* PROPS */
-        , _hoisted_9)) : (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("v-if", true)]);
+        , _hoisted_11)])) : (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("v-if", true), _hoisted_12]);
       }), 256
       /* UNKEYED_FRAGMENT */
       ))])])];
