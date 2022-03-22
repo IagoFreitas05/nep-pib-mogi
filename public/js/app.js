@@ -23097,7 +23097,7 @@ __webpack_require__.r(__webpack_exports__);
     submit: function submit() {
       this.form.put(this.route('editCourse', this.course.id), {
         onFinish: function onFinish() {
-          return sweetalert__WEBPACK_IMPORTED_MODULE_11___default()("Está feito", "alterado com sucesso, as informações foram atualizadas " + "em breve!", "success");
+          return sweetalert__WEBPACK_IMPORTED_MODULE_11___default()("Está feito", "alterado com sucesso, as informações foram atualizadas ", "success");
         }
       });
     },

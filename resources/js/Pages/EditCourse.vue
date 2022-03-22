@@ -179,8 +179,7 @@ export default defineComponent({
         },
         submit() {
             this.form.put(this.route('editCourse', this.course.id), {
-                onFinish: () => swal("Está feito", "alterado com sucesso, as informações foram atualizadas " +
-                    "em breve!", "success")
+                onFinish: () => swal("Está feito", "alterado com sucesso, as informações foram atualizadas " , "success")
             })
         },
         submitClass() {

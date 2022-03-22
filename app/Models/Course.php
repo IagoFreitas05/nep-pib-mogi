@@ -15,4 +15,13 @@ class Course extends Model
         'description',
         'profile_photo_path'
     ];
+
+    public function subscription(){
+       return
+           $this->hasMany(Subscription::class);
+    }
+
+    public function classCourse(){
+      return  $this->hasMany(ClassCourse::class);
+    }
 }

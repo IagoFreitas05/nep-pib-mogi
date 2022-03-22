@@ -36,7 +36,7 @@ Route::middleware(['auth:sanctum', 'verified'])->get('/newCourse', function () {
 Route::middleware(['auth:sanctum', 'verified'])->get('/editCourse/{id}', function ($id) {
     return Inertia::render('EditCourse', [
         'course' => Course::find($id),
-        'classes' => ClassCourse::where('course_id', intval($id))->orderBy('class_order')->get()
+        'classes' =>Course::find($id)->classCourse()->orderBy('class_order')->get()
     ]);
 })->name("editCourse");
 

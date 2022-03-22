@@ -18,11 +18,9 @@ class ClassController extends Controller
             'course_id' => $request->input('course_id'),
             'class_order' => $request->input('order')
         ]);
-
         return Inertia::render('EditCourse', [
             'course' => Course::find($ClassCourse->course_id),
-            'classes' => ClassCourse::where('course_id', intval($ClassCourse->course_id)
-            )->orderBy('class_order')->get()
+            'classes' => Course::find($ClassCourse->course_id)->classCourse()->orderBy('class_order')->get()
         ]);
     }
 
@@ -34,24 +32,20 @@ class ClassController extends Controller
         $ClassCourse->class_link = $request->input('class_link');
         $ClassCourse->class_order = $request->input('order');
         $ClassCourse->save();
-
         return Inertia::render('EditCourse', [
             'course' => Course::find($ClassCourse->course_id),
-            'classes' => ClassCourse::where('course_id', intval($ClassCourse->course_id)
-            )->orderBy('class_order')->get()
+            'classes' => Course::find($ClassCourse->course_id)->classCourse()->orderBy('class_order')->get()
         ]);
     }
 
     public function delete($id)
     {
         $ClassCourse = ClassCourse::find($id);
-        $idCourse = $ClassCourse->course_id;
+        $idCourse = ClassCourse::find($id)->course->id;
         $ClassCourse->delete();
-
         return Inertia::render('EditCourse', [
             'course' => Course::find($idCourse),
-            'classes' => ClassCourse::where('course_id', intval($idCourse)
-            )->orderBy('class_order')->get()
+            'classes' => Course::find($idCourse)->classCourse()->orderBy('class_order')->get()
         ]);
     }
 }
