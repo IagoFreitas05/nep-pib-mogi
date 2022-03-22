@@ -43,12 +43,20 @@ import {defineComponent} from 'vue'
 import AppLayout from '@/Layouts/AppLayout.vue'
 import Welcome from '@/Jetstream/Welcome.vue'
 import JetNavLink from '@/Jetstream/NavLink.vue'
+import swal from "sweetalert";
 
 export default defineComponent({
     components: {
         AppLayout,
         Welcome,
         JetNavLink,
+    },
+    data(){
+        return {
+            subscriptionForm: this.$inertia.form({
+              course_id : ''
+            })
+        }
     },
     props: ['courses'],
     methods: {
@@ -61,10 +69,9 @@ export default defineComponent({
                 dangerMode: true,
             })
                 .then((willDelete) => {
+                    this.subscriptionForm.course_id = id
                     if (willDelete) {
-                        swal("Inscrição realizada!", {
-                            icon: "success",
-                        });
+                        this.subscriptionForm.post(this.route('subscription'));
                     } else {
                         swal("Inscrição cancelada!");
                     }

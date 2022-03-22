@@ -1,10 +1,8 @@
 <?php
 
-use Illuminate\Foundation\Application;
+use App\Models\Course;
 use Illuminate\Support\Facades\Route;
 use Inertia\Inertia;
-use App\Models\Course;
-use App\Models\ClassCourse;
 
 /*
 |--------------------------------------------------------------------------

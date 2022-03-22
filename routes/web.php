@@ -1,5 +1,6 @@
 <?php
 
+use App\Models\User;
 use Illuminate\Foundation\Application;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
@@ -26,7 +27,10 @@ Route::get('/', function () {
 });
 
 Route::middleware(['auth:sanctum', 'verified'])->get('/dashboard', function () {
-    return Inertia::render('Dashboard');
+    return Inertia::render('Dashboard',[
+        'subscription' => User::find(Auth::user()->id)->subscription()->with('course')
+
+    ]);
 })->name('dashboard');
 
 Route::middleware(['auth:sanctum', 'verified'])->get('/loggedUser', function () {
