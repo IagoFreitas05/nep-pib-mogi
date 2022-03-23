@@ -94,8 +94,7 @@ export default defineComponent({
                 email: '',
                 password: '',
                 password_confirmation: '',
-                terms: false,
-                _token: this.$page.props.csrf_token,
+                terms: false
             })
         }
     },

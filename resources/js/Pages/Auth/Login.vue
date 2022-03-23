@@ -80,8 +80,7 @@
                 form: this.$inertia.form({
                     email: '',
                     password: '',
-                    remember: false,
-                    _token: this.$page.props.csrf_token,
+                    remember: false
                 })
             }
         },
