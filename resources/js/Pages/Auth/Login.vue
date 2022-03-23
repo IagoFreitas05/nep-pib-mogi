@@ -13,6 +13,7 @@
         </div>
 
         <form @submit.prevent="submit">
+
             <div>
                 <jet-label for="email" value="Email" />
                 <jet-input id="email" type="email" class="mt-1 block w-full" v-model="form.email" required autofocus />
@@ -79,7 +80,8 @@
                 form: this.$inertia.form({
                     email: '',
                     password: '',
-                    remember: false
+                    remember: false,
+                    _token: this.$page.props.csrf_token,
                 })
             }
         },
