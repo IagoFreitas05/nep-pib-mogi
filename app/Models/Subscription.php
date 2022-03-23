@@ -11,7 +11,8 @@ class Subscription extends Model
     protected $fillable = [
         'course_id',
         'user_id',
-        'status'
+        'status',
+        'name'
     ];
 
     public function user(){

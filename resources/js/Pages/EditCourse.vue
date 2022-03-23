@@ -76,7 +76,7 @@
             </div>
             <div>
                 <div
-                    class="w-full  mt-4 sm:max-w-xl overflow-y-auto p-2 mt-2 px-6 py-4 bg-white shadow-md overflow-hidden sm:rounded-lg">
+                    class="w-full  mt-4 sm:max-w-xl overflow-y-auto p-2 mt-2 px-6 py-4 bg-white shadow-md overflow-scroll sm:rounded-lg">
                     <p class="font-bold text-gray-600">aulas</p>
 
                     <div v-for="classe in classes"

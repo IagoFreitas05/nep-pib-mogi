@@ -18,6 +18,7 @@ return new class extends Migration
             $table->foreignId('course_id')->constrained();
             $table->foreignId('user_id')->constrained();
             $table->boolean('status');
+            $table->string('name');
             $table->timestamps();
         });
     }
