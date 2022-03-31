@@ -1,9 +1,8 @@
 <?php
 
-use Illuminate\Foundation\Application;
+use App\Models\Course;
 use Illuminate\Support\Facades\Route;
 use Inertia\Inertia;
-use App\Models\Course;
 
 /*
 |--------------------------------------------------------------------------
@@ -29,10 +28,11 @@ Route::middleware(['auth:sanctum', 'verified'])
 Route::middleware(['auth:sanctum', 'verified'])
     ->get('/class/{id}', function ($id) {
         return Inertia::render('Classes', [
+            'course' => Course::find($id),
             'classes' => Course::find($id)
                 ->classCourse()
                 ->orderBy('class_order')
                 ->get()
         ]);
     })
-    ->name("deleteClass");
+    ->name("classes");

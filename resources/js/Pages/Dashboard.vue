@@ -18,7 +18,7 @@
                         <div class="grid place-items-center">
                             <a class="bg-purple-500
             rounded mb-1 block ml-1
-            text-white p-2" :href="route('classes', course.id)">
+            text-white p-2" :href="route('classes', course.course_id)">
                                 assistir aulas
                             </a>
                         </div>
