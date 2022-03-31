@@ -34,7 +34,7 @@ export default defineComponent({
             })
         }
     },
-    props: ['courses'],
+    props: ['classes'],
     methods: {
         confirmSubscription(id) {
             swal({

@@ -25,3 +25,14 @@ Route::middleware(['auth:sanctum', 'verified'])
     ->name("deleteClass");
 
 /*adicionar rota de edição*/
+
+Route::middleware(['auth:sanctum', 'verified'])
+    ->get('/class/{id}', function ($id) {
+        return Inertia::render('Classes', [
+            'classes' => Course::find($id)
+                ->classCourse()
+                ->orderBy('class_order')
+                ->get()
+        ]);
+    })
+    ->name("deleteClass");

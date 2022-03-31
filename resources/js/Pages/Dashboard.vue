@@ -9,17 +9,18 @@
             <div class="max-w-7xl mx-auto sm:px-6 lg:px-8">
                 <div class="bg-white overflow-hidden p-4 shadow-xl sm:rounded-lg">
                     <p class="font-bold text-gray-600">cursos em andamento</p>
-                    <div class="p-2 grid grid-cols-4 mt-3 bg-white border-2 border-gray-200" v-for="course in subscription">
+                    <div class="p-2 grid grid-cols-4 mt-3 bg-white border-2 border-gray-200"
+                         v-for="course in subscription">
                         <div
                             class="bg-white overflow-hidden col-span-2  hover:text-white hover:bg-cyan-600 hover:ease-in duration-200 sm:rounded mt-2 p-4  ">
                             <p class=" text-2xl mb-2 mt-2">{{ course.name }}</p>
                         </div>
                         <div class="grid place-items-center">
-                            <button class="bg-purple-500
+                            <a class="bg-purple-500
             rounded mb-1 block ml-1
-            text-white p-2">
-                                assistir as  aulas
-                            </button>
+            text-white p-2" :href="route('classes', course.id)">
+                                assistir aulas
+                            </a>
                         </div>
                     </div>
                 </div>
@@ -28,7 +29,7 @@
         <div class="py-12">
             <div class="max-w-7xl mx-auto sm:px-6 lg:px-8">
                 <div class="bg-white overflow-hidden shadow-xl sm:rounded-lg">
-                    <welcome />
+                    <welcome/>
                 </div>
             </div>
         </div>
@@ -36,15 +37,15 @@
 </template>
 
 <script>
-    import { defineComponent } from 'vue'
-    import AppLayout from '@/Layouts/AppLayout.vue'
-    import Welcome from '@/Jetstream/Welcome.vue'
+import {defineComponent} from 'vue'
+import AppLayout from '@/Layouts/AppLayout.vue'
+import Welcome from '@/Jetstream/Welcome.vue'
 
-    export default defineComponent({
-        components: {
-            AppLayout,
-            Welcome,
-        },
-        props:['subscription']
-    })
+export default defineComponent({
+    components: {
+        AppLayout,
+        Welcome,
+    },
+    props: ['subscription']
+})
 </script>
