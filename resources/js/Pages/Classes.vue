@@ -7,10 +7,33 @@
         </template>
 
         <div class="py-12">
-            <div class="max-w-7xl mx-auto sm:px-6 lg:px-8">
-                {{course.name}}
+            <div class="grid grid-cols-3 gap-4  max-w-7xl mx-auto sm:px-6 lg:px-8 ">
+                <div
+                    class="w-full mx-auto  p-3   bg-white shadow-md overflow-scroll sm:rounded-lg">
+                    <p class="font-bold text-gray-600"> {{ course.name }}</p>
+
+                    <div v-for="classe in classes"
+                         class="w-full mt-4 sm:max-w-xl grid grid-cols-5
+                        p-2 text-black mt-2 px-6 py-4 bg-white border-2 border-gray-200
+                        overflow-hidden sm:rounded-lg"
+                    >
+                        <div>#{{ classe.class_order }}</div>
+                        <div class="col-span-2">{{ classe.name }}</div>
+
+                        <div class="">
+                            <button @click="setCode(classe.class_link)" class="bg-purple-500
+            rounded  block
+            text-white pl-1 pr-1 ">assistir
+                            </button>
+                        </div>
+                    </div>
+                </div>
+                <div class="w-full mx-auto h-full col-span-2  bg-white shadow-md overflow-scroll sm:rounded-lg">
+                    <iframe width="100%"  style="height:80vh" :src=code title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                </div>
             </div>
         </div>
+
     </app-layout>
 </template>
 
@@ -29,6 +52,7 @@ export default defineComponent({
     },
     data() {
         return {
+            code: '',
             subscriptionForm: this.$inertia.form({
                 course_id: ''
             })
@@ -52,6 +76,9 @@ export default defineComponent({
                         swal("Inscrição cancelada!");
                     }
                 });
+        },
+        setCode(code){
+            this.code = `https://www.youtube.com/embed/${code}`;
         }
     }
 })
