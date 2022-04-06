@@ -23029,6 +23029,7 @@ __webpack_require__.r(__webpack_exports__);
     confirmSubscription: function confirmSubscription(id) {
       var _this = this;
 
+      console.log(this.subscriptions);
       sweetalert__WEBPACK_IMPORTED_MODULE_4___default()({
         title: "Você tem certeza?",
         text: "gostaria de realizar a sua inscrição nesse curso?!",
@@ -27069,25 +27070,22 @@ var _hoisted_5 = {
   "class": "font-bold text-gray-600"
 };
 var _hoisted_6 = {
-  "class": "w-full mt-4 sm:max-w-xl grid grid-cols-5 p-2 text-black mt-2 px-6 py-4 bg-white border-2 border-gray-200 overflow-y-auto sm:rounded-lg"
-};
-var _hoisted_7 = {
   "class": "col-span-2"
 };
-var _hoisted_8 = {
+var _hoisted_7 = {
   "class": ""
 };
-var _hoisted_9 = ["onClick"];
-var _hoisted_10 = {
+var _hoisted_8 = ["onClick"];
+var _hoisted_9 = {
   key: 0
 };
-var _hoisted_11 = {
+var _hoisted_10 = {
   key: 1
 };
-var _hoisted_12 = {
+var _hoisted_11 = {
   "class": "w-full mx-auto h-full col-span-2 bg-white shadow-md overflow-scroll sm:rounded-lg"
 };
-var _hoisted_13 = ["src"];
+var _hoisted_12 = ["src"];
 function render(_ctx, _cache, $props, $setup, $data, $options) {
   var _component_app_layout = (0,vue__WEBPACK_IMPORTED_MODULE_0__.resolveComponent)("app-layout");
 
@@ -27101,21 +27099,25 @@ function render(_ctx, _cache, $props, $setup, $data, $options) {
       return [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_2, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_3, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_4, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("p", _hoisted_5, (0,vue__WEBPACK_IMPORTED_MODULE_0__.toDisplayString)(_ctx.course.name), 1
       /* TEXT */
       ), ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(true), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)(vue__WEBPACK_IMPORTED_MODULE_0__.Fragment, null, (0,vue__WEBPACK_IMPORTED_MODULE_0__.renderList)(_ctx.classes, function (classe) {
-        return (0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("div", _hoisted_6, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", null, "#" + (0,vue__WEBPACK_IMPORTED_MODULE_0__.toDisplayString)(classe.class_order), 1
+        return (0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("div", {
+          "class": (0,vue__WEBPACK_IMPORTED_MODULE_0__.normalizeClass)(["w-full mt-4 sm:max-w-xl grid grid-cols-5 p-2 text-black mt-2 px-6 py-4 bg-white border overflow-y-auto sm:rounded-lg", classe.class_link === _ctx.justTheCode ? 'border-green-400' : 'border-gray-400'])
+        }, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", null, "#" + (0,vue__WEBPACK_IMPORTED_MODULE_0__.toDisplayString)(classe.class_order), 1
         /* TEXT */
-        ), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_7, (0,vue__WEBPACK_IMPORTED_MODULE_0__.toDisplayString)(classe.name), 1
+        ), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_6, (0,vue__WEBPACK_IMPORTED_MODULE_0__.toDisplayString)(classe.name), 1
         /* TEXT */
-        ), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_8, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("button", {
+        ), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_7, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("button", {
           onClick: function onClick($event) {
             return _ctx.setCode(classe.class_link);
           },
           "class": (0,vue__WEBPACK_IMPORTED_MODULE_0__.normalizeClass)([classe.class_link === _ctx.justTheCode ? 'bg-green-500' : 'bg-purple-500', "rounded block text-white pl-1 pr-1"])
-        }, [classe.class_link === _ctx.justTheCode ? ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("span", _hoisted_10, "reproduzindo")) : ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("span", _hoisted_11, "assistir"))], 10
+        }, [classe.class_link === _ctx.justTheCode ? ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("span", _hoisted_9, "reproduzindo")) : ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("span", _hoisted_10, "assistir"))], 10
         /* CLASS, PROPS */
-        , _hoisted_9)])]);
+        , _hoisted_8)])], 2
+        /* CLASS */
+        );
       }), 256
       /* UNKEYED_FRAGMENT */
-      ))]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_12, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("iframe", {
+      ))]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_11, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("iframe", {
         width: "100%",
         style: {
           "height": "80vh"
@@ -27127,7 +27129,7 @@ function render(_ctx, _cache, $props, $setup, $data, $options) {
         allowfullscreen: ""
       }, null, 8
       /* PROPS */
-      , _hoisted_13)])])])];
+      , _hoisted_12)])])])];
     }),
     _: 1
     /* STABLE */
@@ -27178,17 +27180,20 @@ var _hoisted_7 = {
   "class": "text-justify text-sm"
 };
 var _hoisted_8 = {
+  "class": "grid place-items-center"
+};
+var _hoisted_9 = {
+  key: 0,
+  "class": "bg-green-500 rounded mb-1 block ml-1 text-white p-2"
+};
+var _hoisted_10 = ["onClick"];
+var _hoisted_11 = {
   key: 0,
   "class": "grid place-items-center"
 };
-var _hoisted_9 = ["onClick"];
-var _hoisted_10 = {
-  key: 1,
-  "class": "grid place-items-center"
-};
-var _hoisted_11 = ["href"];
+var _hoisted_12 = ["href"];
 
-var _hoisted_12 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", {
+var _hoisted_13 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", {
   "class": "place-items-center bg-gray-300 rounded mt-2 p-4 grid"
 }, [/*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("img", {
   src: _img_logo1_png__WEBPACK_IMPORTED_MODULE_1__["default"],
@@ -27215,19 +27220,22 @@ function render(_ctx, _cache, $props, $setup, $data, $options) {
         /* TEXT */
         ), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("p", null, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("small", null, (0,vue__WEBPACK_IMPORTED_MODULE_0__.toDisplayString)(course.duration), 1
         /* TEXT */
-        )])]), _ctx.$page.props.user.user_type === 'user' ? ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("div", _hoisted_8, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)(" pesquisar o course_id do curso dentro do objeto de subscriptions,\n                        caso econtre, é porque de fato existe uma inscrição com esse course id\n                        <button class=\"bg-green-500\n            rounded mb-1 block ml-1\n            text-white p-2\">\n                            já inscrito!\n                        </button> "), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("button", {
+        )])]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_8, [_ctx.subscriptions.find(function (el) {
+          return el.course_id === course.id;
+        }) ? ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("button", _hoisted_9, " já inscrito! ")) : _ctx.$page.props.user.user_type === 'user' ? ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("button", {
+          key: 1,
           "class": "bg-purple-500 rounded mb-1 block ml-1 text-white p-2",
           onClick: function onClick($event) {
             return _ctx.confirmSubscription(course.id);
           }
         }, " realizar inscrição ", 8
         /* PROPS */
-        , _hoisted_9)])) : (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("v-if", true), _ctx.$page.props.user.user_type === 'admin' ? ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("div", _hoisted_10, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("a", {
+        , _hoisted_10)) : (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("v-if", true)]), _ctx.$page.props.user.user_type === 'admin' ? ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("div", _hoisted_11, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("a", {
           "class": "bg-purple-500 rounded mb-1 block ml-1 text-white p-2",
           href: _ctx.route('editCourse', course.id)
         }, " editar curso ", 8
         /* PROPS */
-        , _hoisted_11)])) : (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("v-if", true), _hoisted_12]);
+        , _hoisted_12)])) : (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("v-if", true), _hoisted_13]);
       }), 256
       /* UNKEYED_FRAGMENT */
       ))])])];

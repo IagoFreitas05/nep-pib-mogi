@@ -14,8 +14,8 @@
 
                     <div v-for="classe in classes"
                          class="w-full mt-4 sm:max-w-xl grid grid-cols-5
-                        p-2 text-black mt-2 px-6 py-4 bg-white border-2 border-gray-200
-                        overflow-y-auto sm:rounded-lg"
+                        p-2 text-black mt-2 px-6 py-4 bg-white border
+                        overflow-y-auto sm:rounded-lg" v-bind:class="classe.class_link === justTheCode?'border-green-400':'border-gray-400'"
                     >
                         <div>#{{ classe.class_order }}</div>
                         <div class="col-span-2">{{ classe.name }}</div>

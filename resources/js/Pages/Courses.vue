@@ -15,17 +15,14 @@
                         <p class="text-justify text-sm  ">{{ course.description }}</p>
                         <p><small>{{ course.duration }}</small></p>
                     </div>
-                    <div class="grid place-items-center" v-if="$page.props.user.user_type === 'user'">
-
-                        <!-- pesquisar o course_id do curso dentro do objeto de subscriptions,
-                        caso econtre, é porque de fato existe uma inscrição com esse course id
-                        <button class="bg-green-500
+                    <div class="grid place-items-center" >
+                        <button v-if="subscriptions.find(el => el.course_id === course.id)" class="bg-green-500
             rounded mb-1 block ml-1
             text-white p-2">
                             já inscrito!
-                        </button> -->
+                        </button>
 
-                        <button class="bg-purple-500
+                        <button v-else-if="$page.props.user.user_type === 'user'" class="bg-purple-500
             rounded mb-1 block ml-1
             text-white p-2" @click="confirmSubscription(course.id)">
                             realizar inscrição
@@ -60,16 +57,17 @@ export default defineComponent({
         Welcome,
         JetNavLink,
     },
-    data(){
+    data() {
         return {
             subscriptionForm: this.$inertia.form({
-              course_id : ''
+                course_id: ''
             })
         }
     },
-    props: ['courses','subscriptions'],
+    props: ['courses', 'subscriptions'],
     methods: {
         confirmSubscription(id) {
+            console.log(this.subscriptions)
             swal({
                 title: "Você tem certeza?",
                 text: "gostaria de realizar a sua inscrição nesse curso?!",
