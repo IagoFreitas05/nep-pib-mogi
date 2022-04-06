@@ -2,7 +2,7 @@
     <app-layout title="Cursos">
         <template #header>
             <h2 class="font-semibold text-xl text-gray-800 leading-tight">
-                area de aprendizagem
+                área de aprendizagem
             </h2>
         </template>
 
@@ -15,15 +15,15 @@
                     <div v-for="classe in classes"
                          class="w-full mt-4 sm:max-w-xl grid grid-cols-5
                         p-2 text-black mt-2 px-6 py-4 bg-white border-2 border-gray-200
-                        overflow-hidden sm:rounded-lg"
+                        overflow-y-auto sm:rounded-lg"
                     >
                         <div>#{{ classe.class_order }}</div>
                         <div class="col-span-2">{{ classe.name }}</div>
 
                         <div class="">
-                            <button @click="setCode(classe.class_link)" class="bg-purple-500
+                            <button @click="setCode(classe.class_link)" v-bind:class="classe.class_link === justTheCode?'bg-green-500':'bg-purple-500'" class="
             rounded  block
-            text-white pl-1 pr-1 ">assistir
+            text-white pl-1 pr-1 "><span v-if="classe.class_link === justTheCode">reproduzindo</span> <span v-else>assistir</span>
                             </button>
                         </div>
                     </div>
@@ -53,6 +53,7 @@ export default defineComponent({
     data() {
         return {
             code: '',
+            justTheCode:'',
             subscriptionForm: this.$inertia.form({
                 course_id: ''
             })
@@ -78,6 +79,7 @@ export default defineComponent({
                 });
         },
         setCode(code){
+            this.justTheCode = code;
             this.code = `https://www.youtube.com/embed/${code}`;
         }
     }

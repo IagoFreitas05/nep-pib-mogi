@@ -9,17 +9,18 @@
             <div class="max-w-7xl mx-auto sm:px-6 lg:px-8">
                 <div class="bg-white overflow-hidden p-4 shadow-xl sm:rounded-lg">
                     <p class="font-bold text-gray-600">cursos em andamento</p>
-                    <div class="p-2 grid grid-cols-4 mt-3 bg-white border-2 border-gray-200"
+                    <div class="p-2 grid grid-cols-3 mt-3 bg-white border-2 border-gray-200 sm:rounded-lg"
                          v-for="course in subscription">
                         <div
-                            class="bg-white overflow-hidden col-span-2  hover:text-white hover:bg-cyan-600 hover:ease-in duration-200 sm:rounded mt-2 p-4  ">
-                            <p class=" text-2xl mb-2 mt-2">{{ course.name }}</p>
+                            class="bg-white overflow-hidden col-span-2  hover:text-white hover:bg-cyan-600
+                            hover:ease-in duration-200 sm:rounded mt-2 p-4  ">
+                            <p class=" text-lg mb-1 mt-1">{{ course.name }}</p>
                         </div>
                         <div class="grid place-items-center">
                             <a class="bg-purple-500
             rounded mb-1 block ml-1
             text-white p-2" :href="route('classes', course.course_id)">
-                                assistir aulas
+                                ver conteúdo
                             </a>
                         </div>
                     </div>

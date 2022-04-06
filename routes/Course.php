@@ -1,6 +1,8 @@
 <?php
 
 use App\Models\Course;
+use App\Models\User;
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
 use Inertia\Inertia;
 
@@ -26,7 +28,11 @@ Route::middleware(['auth:sanctum', 'verified'])
 
 /*navigation */
 Route::middleware(['auth:sanctum', 'verified'])->get('/courses', function () {
-    return Inertia::render('Courses', ['courses' => Course::all()]);
+    return Inertia::render('Courses', [
+        'courses' => Course::all(),
+        'subscriptions' => User::find(Auth::user()->id)->subscription
+    ]);
+
 })->name("courses");
 Route::middleware(['auth:sanctum', 'verified'])->get('/newCourse', function () {
     return Inertia::render('NewCourse');

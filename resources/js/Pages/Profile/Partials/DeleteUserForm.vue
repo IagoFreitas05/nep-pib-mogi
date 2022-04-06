@@ -1,32 +1,32 @@
 <template>
     <jet-action-section>
         <template #title>
-            Delete Account
+            Deletar minha conta
         </template>
 
         <template #description>
-            Permanently delete your account.
+            Exclui sua conta de forma permanente
         </template>
 
         <template #content>
             <div class="max-w-xl text-sm text-gray-600">
-                Once your account is deleted, all of its resources and data will be permanently deleted. Before deleting your account, please download any data or information that you wish to retain.
+                Uma vez que sua conta for apagada, o conteúdo não poderá ser recuperado.
             </div>
 
             <div class="mt-5">
                 <jet-danger-button @click="confirmUserDeletion">
-                    Delete Account
+                    Apagar conta
                 </jet-danger-button>
             </div>
 
             <!-- Delete Account Confirmation Modal -->
             <jet-dialog-modal :show="confirmingUserDeletion" @close="closeModal">
                 <template #title>
-                    Delete Account
+                    Apagar minhac onta
                 </template>
 
                 <template #content>
-                    Are you sure you want to delete your account? Once your account is deleted, all of its resources and data will be permanently deleted. Please enter your password to confirm you would like to permanently delete your account.
+                   Por favor, digite a sua senha.
 
                     <div class="mt-4">
                         <jet-input type="password" class="mt-1 block w-3/4" placeholder="Password"
@@ -40,11 +40,11 @@
 
                 <template #footer>
                     <jet-secondary-button @click="closeModal">
-                        Cancel
+                        Cancelar ação
                     </jet-secondary-button>
 
                     <jet-danger-button class="ml-3" @click="deleteUser" :class="{ 'opacity-25': form.processing }" :disabled="form.processing">
-                        Delete Account
+                        Apagar minha conta
                     </jet-danger-button>
                 </template>
             </jet-dialog-modal>

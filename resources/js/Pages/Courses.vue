@@ -16,6 +16,15 @@
                         <p><small>{{ course.duration }}</small></p>
                     </div>
                     <div class="grid place-items-center" v-if="$page.props.user.user_type === 'user'">
+
+                        <!-- pesquisar o course_id do curso dentro do objeto de subscriptions,
+                        caso econtre, é porque de fato existe uma inscrição com esse course id
+                        <button class="bg-green-500
+            rounded mb-1 block ml-1
+            text-white p-2">
+                            já inscrito!
+                        </button> -->
+
                         <button class="bg-purple-500
             rounded mb-1 block ml-1
             text-white p-2" @click="confirmSubscription(course.id)">
@@ -58,7 +67,7 @@ export default defineComponent({
             })
         }
     },
-    props: ['courses'],
+    props: ['courses','subscriptions'],
     methods: {
         confirmSubscription(id) {
             swal({
