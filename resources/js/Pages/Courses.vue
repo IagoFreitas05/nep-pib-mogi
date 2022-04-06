@@ -8,9 +8,9 @@
 
         <div class="py-12">
             <div class="max-w-7xl mx-auto sm:px-6 lg:px-8">
-                <div class="p-2 grid grid-cols-4 mt-4 bg-white shadow-xl" v-for="course in courses">
+                <div class="p-2 grid grid-cols-4 mt-4 rounded-lg  bg-white shadow-xl" v-for="course in courses">
                     <div
-                        class="bg-white overflow-hidden col-span-2  hover:text-white hover:bg-cyan-600 hover:ease-in duration-200 sm:rounded mt-2 p-4  ">
+                        class="bg-white overflow-hidden rounded-lg  col-span-2  hover:text-white hover:bg-cyan-600 hover:ease-in  duration-200  mt-2 p-4  ">
                         <p class=" text-2xl mb-2 mt-2">{{ course.name }}</p>
                         <p class="text-justify text-sm  ">{{ course.description }}</p>
                         <p><small>{{ course.duration }}</small></p>
