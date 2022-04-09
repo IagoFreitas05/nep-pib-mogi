@@ -17,7 +17,7 @@ return new class extends Migration
             $table->id();
             $table->string('category');
             $table->string('description');
-            $table->string('');
+            $table->boolean('status');
             $table->timestamps();
         });
     }
