@@ -64,7 +64,7 @@ export default defineComponent({
             })
         }
     },
-    props: ['courses', 'subscriptions'],
+    props: ['courses', 'subscriptions','errors'],
     methods: {
         confirmSubscription(id) {
             console.log(this.subscriptions)

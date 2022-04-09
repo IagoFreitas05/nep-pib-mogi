@@ -10,6 +10,12 @@ use Inertia\Inertia;
 class CourseController extends Controller
 {
     public function Create(Request $request){
+
+        Request::validate([
+            'name' => ['required ',' unique:courses'],
+            'duration' => ['required']
+        ]);
+
          Course::create([
             'name' => $request->input('name'),
             'description' => $request->input('description'),

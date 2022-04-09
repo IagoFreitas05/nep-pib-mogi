@@ -11,11 +11,13 @@
                 <div>
                     <jet-label for="name" value="Nome do curso" />
                     <jet-input id="name" type="text" class="mt-1 block w-full" v-model="form.name" required autofocus autocomplete="name" />
+                    <div v-if="errors.name">{{ errors.name }}</div>
                 </div>
 
                 <div class="mt-4">
                     <jet-label for="duration" value="Duração do curso" />
                     <jet-input id="duration" type="text" class="mt-1 block w-full" v-model="form.duration" required />
+                    <div v-if="errors.duration">{{ errors.duration }}</div>
                 </div>
 
                 <div class="mt-4">
@@ -67,6 +69,7 @@ export default defineComponent({
             })
         }
     },
+    props: ['errors'],
     methods: {
         submit() {
             this.form.post(this.route('newCourse'), {
