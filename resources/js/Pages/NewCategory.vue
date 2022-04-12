@@ -59,6 +59,7 @@ export default {
         Link,
         AppLayout
     },
+    props:['errors','categories'],
     name: "NewCategory"
 }
 </script>
