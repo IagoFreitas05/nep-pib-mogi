@@ -5,7 +5,7 @@
                 Editar - {{ course.name }}
             </h2>
         </template>
-        <div class="grid grid-cols-2 ">
+        <div class="sm:grid sm:grid-cols-2 ">
             <div>
                 <div
                     class="w-full mx-auto mt-4 overflow-y-auto

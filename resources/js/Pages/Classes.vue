@@ -7,7 +7,7 @@
         </template>
 
         <div class="py-12">
-            <div class="grid grid-cols-3 gap-4  max-w-7xl mx-auto sm:px-6 lg:px-8 ">
+            <div class="sm:grid sm:grid-cols-3 sm:gap-4  max-w-7xl mx-auto sm:px-6 lg:px-8 ">
                 <div
                     class="w-full mx-auto  p-3   bg-white shadow-md overflow-scroll sm:rounded-lg">
                     <p class="font-bold text-gray-600"> {{ course.name }}</p>
