@@ -19,19 +19,20 @@
 
                             <!-- Navigation Links -->
                             <div class="hidden space-x-8 sm:-my-px sm:ml-10 sm:flex">
-                                <jet-nav-link :href="route('dashboard')" :active="route().current('dashboard')">
-                                    área do aluno
-                                </jet-nav-link>
-                            </div>
-                            <div class="hidden space-x-8 sm:-my-px sm:ml-10 sm:flex">
                                 <jet-nav-link :href="route('courses')" :active="route().current('courses')">
-                                    catálogo de cursos
+                                    Catálogo de cursos
                                 </jet-nav-link>
                             </div>
                             <div v-if="$page.props.user.user_type === 'admin' "
                                  class="hidden space-x-8 sm:-my-px sm:ml-10 sm:flex">
                                 <jet-nav-link :href="route('newCourse')" :active="route().current('newCourse')">
-                                    criar novo curso
+                                    Criar novo curso
+                                </jet-nav-link>
+                            </div>
+                            <div v-if="$page.props.user.user_type === 'admin' "
+                                 class="hidden space-x-8 sm:-my-px sm:ml-10 sm:flex">
+                                <jet-nav-link :href="route('NewCategory')" :active="route().current('NewCategory')">
+                                    Criar nova categoria
                                 </jet-nav-link>
                             </div>
                         </div>
@@ -186,20 +187,20 @@
                             Dashboard
                         </jet-responsive-nav-link>
 
-                        <jet-responsive-nav-link :href="route('dashboard')" :active="route().current('dashboard')">
-                            área do aluno
-                        </jet-responsive-nav-link>
-
-
                         <jet-responsive-nav-link :href="route('courses')" :active="route().current('courses')">
-                            catálogo de cursos
+                            Catálogo de cursos
                         </jet-responsive-nav-link>
-
 
                         <jet-responsive-nav-link v-if="$page.props.user.user_type === 'admin' "
                                                  :href="route('newCourse')"
                                                  :active="route().current('newCourse')">
-                            criar novo curso
+                            Criar novo curso
+                        </jet-responsive-nav-link>
+
+                        <jet-responsive-nav-link v-if="$page.props.user.user_type === 'admin' "
+                                                 :href="route('NewCategory')"
+                                                 :active="route().current('NewCategory')">
+                            Criar nova categoria
                         </jet-responsive-nav-link>
 
                     </div>

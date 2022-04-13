@@ -28,7 +28,7 @@
             </div>
 
             <div class="w-full mt-4 sm:max-w-xl  mx-auto p-2 mt-2 px-6 py-4 bg-white shadow-md overflow-hidden sm:rounded-lg">
-                listas de categorias
+                <p class="font-bold text-gray-600">aulas</p>
             </div>
         </div>
 
