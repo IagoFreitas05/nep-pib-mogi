@@ -34,6 +34,7 @@ Route::middleware(['auth:sanctum', 'verified'])->get('/courses', function () {
     ]);
 
 })->name("courses");
+
 Route::middleware(['auth:sanctum', 'verified'])->get('/newCourse', function () {
     return Inertia::render('NewCourse');
 })->name("newCourse");
