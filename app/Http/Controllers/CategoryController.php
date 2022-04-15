@@ -11,7 +11,7 @@ class CategoryController extends Controller
     public function create(Request $request)
     {
         $Validated = $request->validate([
-            'name' => ['required','unique:categories'],
+            'name' => ['required', 'unique:categories'],
             'description' => ['required'],
             'status' => ['required']
         ]);
@@ -22,6 +22,6 @@ class CategoryController extends Controller
             'status' => $request->input('status')
         ]);
 
-        return  inertia::render('NewCategory');
+        return inertia::render('NewCategory');
     }
 }
