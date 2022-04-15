@@ -22,6 +22,6 @@ class CategoryController extends Controller
             'status' => $request->input('status')
         ]);
 
-        return  inertia::render('NewCategory'); //make controller returns the data
+        return  inertia::render('NewCategory');
     }
 }
