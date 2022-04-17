@@ -7,7 +7,7 @@
         </template>
         <div class="sm:grid sm:grid-cols-2 xs:grid-cols-1">
             <div class="w-full mt-4 sm:max-w-xl  mx-auto p-2 mt-2 px-6 py-4 bg-white shadow-md overflow-hidden sm:rounded-lg   ">
-                <form @submit.prevent="">
+                <form @submit.prevent="newCategory">
                     <div>
                         <jet-label for="name" value="Nome da categoria" />
                         <jet-input id="name" type="text" class="mt-1 block w-full" v-model="form.category" required autofocus autocomplete="name" />
@@ -70,6 +70,13 @@ export default defineComponent( {
             })
         }
     },
+    methods:{
+        newCategory(){
+            this.form.post(this.route('NewCategory'), {
+                onFinish: () => this.form.reset('name', 'description','duration'),
+            })
+        }
+    }
 })
 </script>
 
