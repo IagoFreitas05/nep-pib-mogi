@@ -93,11 +93,11 @@
             text-white pl-1 pr-1 ">apagar
                             </button>
                         </div>
-                            <div class="">
-                                <button class="bg-sky-500
+                        <div class="">
+                            <button class="bg-sky-500
             rounded  block
             text-white pl-1 pr-1">editar
-                                </button>
+                            </button>
                         </div>
                     </div>
                 </div>
@@ -148,15 +148,15 @@ export default defineComponent({
                 description: '',
                 classLink: '',
                 course_id: this.course.id,
-                order:''
+                order: ''
             }),
-            deleteForm:this.$inertia.form({
+            deleteForm: this.$inertia.form({
                 id: ''
             })
         }
     },
     methods: {
-        confirmExclusion(id){
+        confirmExclusion(id) {
             swal({
                 title: "você tem certeza que deseja excluir essa aula?",
                 text: "uma vez deletado, você não poderá recupar!",
@@ -167,8 +167,8 @@ export default defineComponent({
                 .then((willDelete) => {
                     if (willDelete) {
                         this.deleteForm.id = id;
-                        this.deleteForm.delete(this.route('deleteClass',id),{
-                            onFinish:() => swal("Sua aula foi deletada!", {
+                        this.deleteForm.delete(this.route('deleteClass', id), {
+                            onFinish: () => swal("Sua aula foi deletada!", {
                                 icon: "success",
                             })
                         });
@@ -179,7 +179,7 @@ export default defineComponent({
         },
         submit() {
             this.form.put(this.route('editCourse', this.course.id), {
-                onFinish: () => swal("Está feito", "alterado com sucesso, as informações foram atualizadas " , "success")
+                onFinish: () => swal("Está feito", "alterado com sucesso, as informações foram atualizadas ", "success")
             })
         },
         submitClass() {

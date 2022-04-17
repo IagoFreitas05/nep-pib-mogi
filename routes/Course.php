@@ -38,10 +38,10 @@ Route::middleware(['auth:sanctum', 'verified'])->get('/courses', function () {
 Route::middleware(['auth:sanctum', 'verified'])->get('/newCourse', function () {
     return Inertia::render('NewCourse');
 })->name("newCourse");
+
 Route::middleware(['auth:sanctum', 'verified'])->get('/editCourse/{id}', function ($id) {
     return Inertia::render('EditCourse', [
         'course' => Course::find($id),
-        'classes' =>Course::find($id)->classCourse()->orderBy('class_order')->get()
     ]);
 })->name("editCourse");
 

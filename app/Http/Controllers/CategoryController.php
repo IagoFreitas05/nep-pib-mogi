@@ -25,13 +25,14 @@ class CategoryController extends Controller
         return inertia::render('NewCategory');
     }
 
-    public function Update(Request $request){
+    public function Update(Request $request)
+    {
         $category = Category::find($request->input('id'));
         $category->name = $request->input('name');
         $category->description = $request->input('description');
         $category->status = $request->input('status');
 
         $category->save();
-        return inertia::render('NewCategory');
+        return inertia::render('NewCategory', ['categories' => Category::all()]);
     }
 }

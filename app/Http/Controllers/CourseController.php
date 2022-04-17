@@ -9,14 +9,15 @@ use Inertia\Inertia;
 
 class CourseController extends Controller
 {
-    public function Create(Request $request){
+    public function Create(Request $request)
+    {
 
         Request::validate([
-            'name' => ['required ',' unique:courses'],
+            'name' => ['required ', ' unique:courses'],
             'duration' => ['required']
         ]);
 
-         Course::create([
+        Course::create([
             'name' => $request->input('name'),
             'description' => $request->input('description'),
             'duration' => $request->input('duration')
@@ -24,7 +25,8 @@ class CourseController extends Controller
         return redirect('courses');
     }
 
-    public function Update(Request $request){
+    public function Update(Request $request)
+    {
         $course = Course::find($request->input('id'));
         $course->name = $request->input('name');
         $course->description = $request->input('description');
