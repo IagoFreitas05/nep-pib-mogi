@@ -23276,6 +23276,17 @@ __webpack_require__.r(__webpack_exports__);
         status: 'true'
       })
     };
+  },
+  methods: {
+    newCategory: function newCategory() {
+      var _this = this;
+
+      this.form.post(this.route('NewCategory'), {
+        onFinish: function onFinish() {
+          return _this.form.reset('name', 'description', 'duration');
+        }
+      });
+    }
   }
 }));
 
@@ -27846,7 +27857,9 @@ function render(_ctx, _cache, $props, $setup, $data, $options) {
     }),
     "default": (0,vue__WEBPACK_IMPORTED_MODULE_0__.withCtx)(function () {
       return [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_2, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_3, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("form", {
-        onSubmit: _cache[2] || (_cache[2] = (0,vue__WEBPACK_IMPORTED_MODULE_0__.withModifiers)(function () {}, ["prevent"]))
+        onSubmit: _cache[2] || (_cache[2] = (0,vue__WEBPACK_IMPORTED_MODULE_0__.withModifiers)(function () {
+          return _ctx.newCategory && _ctx.newCategory.apply(_ctx, arguments);
+        }, ["prevent"]))
       }, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", null, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)(_component_jet_label, {
         "for": "name",
         value: "Nome da categoria"
