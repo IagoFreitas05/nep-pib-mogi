@@ -29,4 +29,11 @@ class CategoryController extends Controller
         $category->save();
         return inertia::render('NewCategory', ['categories' => Category::all()]);
     }
+
+    public function ToggleCategory(Request $request){
+        $category = Category::find($request->input('category_id'));
+        $category->status = $category->status == 0 ? 1 : 0;
+        $category->save();
+        return redirect('category');
+    }
 }

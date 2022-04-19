@@ -16,3 +16,7 @@ Route::middleware(['auth:sanctum', 'verified'])
     ->post('/newCategory', "App\Http\Controllers\CategoryController@Create")
     ->name("newCategory");
 
+
+Route::middleware(['auth:sanctum', 'verified'])
+    ->put('/toggleCategory/{id}', "App\Http\Controllers\CategoryController@ToggleCategory")
+    ->name("toggleCategory");
