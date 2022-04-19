@@ -31,7 +31,7 @@
                             </div>
                             <div v-if="$page.props.user.user_type === 'admin' "
                                  class="hidden space-x-8 sm:-my-px sm:ml-10 sm:flex">
-                                <jet-nav-link :href="route('NewCategory')" :active="route().current('NewCategory')">
+                                <jet-nav-link :href="route('category')" :active="route().current('category')">
                                     Criar nova categoria
                                 </jet-nav-link>
                             </div>
@@ -198,8 +198,8 @@
                         </jet-responsive-nav-link>
 
                         <jet-responsive-nav-link v-if="$page.props.user.user_type === 'admin' "
-                                                 :href="route('NewCategory')"
-                                                 :active="route().current('NewCategory')">
+                                                 :href="route('category')"
+                                                 :active="route().current('category')">
                             Criar nova categoria
                         </jet-responsive-nav-link>
 

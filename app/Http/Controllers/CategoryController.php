@@ -8,21 +8,15 @@ use Inertia\Inertia;
 
 class CategoryController extends Controller
 {
-    public function create(Request $request)
+    public function Create(Request $request)
     {
-        $Validated = $request->validate([
-            'name' => ['required', 'unique:categories'],
-            'description' => ['required'],
-            'status' => ['required']
-        ]);
-
         Category::create([
-            'name' => $request->input('name'),
+            'category' => $request->input('category'),
             'description' => $request->input('description'),
             'status' => $request->input('status')
         ]);
 
-        return inertia::render('NewCategory');
+        return redirect('category');
     }
 
     public function Update(Request $request)

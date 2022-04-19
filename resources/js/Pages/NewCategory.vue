@@ -5,8 +5,8 @@
                 Adicionar nova categoria
             </h2>
         </template>
-        <div class="sm:grid sm:grid-cols-2 xs:grid-cols-1">
-            <div class="w-full mt-4 sm:max-w-xl  mx-auto p-2 mt-2 px-6 py-4 bg-white shadow-md overflow-hidden sm:rounded-lg   ">
+        <div class="sm:grid  sm:grid-cols-2 xs:grid-cols-1">
+            <div class="w-full h-2/6 mt-4 sm:max-w-xl  mx-auto p-2 mt-2 px-6 py-4 bg-white shadow-md overflow-hidden sm:rounded-lg   ">
                 <form @submit.prevent="newCategory">
                     <div>
                         <jet-label for="name" value="Nome da categoria" />
@@ -27,8 +27,22 @@
                 </form>
             </div>
 
-            <div class="w-full mt-4 sm:max-w-xl  mx-auto p-2 mt-2 px-6 py-4 bg-white shadow-md overflow-hidden sm:rounded-lg">
+            <div class="w-full mt-4 sm:max-w-xl h-5/6 overflow-y-auto mx-auto p-2 mt-2 px-6 py-4 bg-white shadow-md overflow-hidden sm:rounded-lg">
                 <p class="font-bold text-gray-600">categorias criadas</p>
+                <div v-for="category in categories"
+                     class="w-full mt-4 sm:max-w-xl grid grid-cols-2
+                        p-2 text-black mt-2 px-6 py-4 bg-white border
+                        overflow-y-auto shadow-lg sm:rounded-lg"
+                >
+                    <div class=" w-max">{{ category.category }}</div>
+
+                    <div class=" w-max">
+                        <button @click="toggleCategory(category.id)" v-bind:class="category.status === 0?'shadow-green-500':'bg-red-500'" class="
+            rounded shadow-md block
+            text-white pl-1 py-1 pr-1 "><span v-if="category.status === 0">ativar categoria</span> <span v-else>desativar categoria</span>
+                        </button>
+                    </div>
+                </div>
             </div>
         </div>
 
@@ -66,16 +80,20 @@ export default defineComponent( {
             form: this.$inertia.form({
                 category: '',
                 description: '',
-                status: 'true',
+                status: 1,
             })
         }
     },
     methods:{
         newCategory(){
-            this.form.post(this.route('NewCategory'), {
-                onFinish: () => this.form.reset('name', 'description','duration'),
+            this.form.post(this.route('newCategory'), {
+                onFinish: () => this.form.reset('category', 'description'),
             })
+        },
+        toogleCategory(){
+
         }
+
     }
 })
 </script>
