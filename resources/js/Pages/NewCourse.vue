@@ -19,10 +19,15 @@
                     <jet-input id="duration" type="text" class="mt-1 block w-full" v-model="form.duration" required />
                     <div v-if="errors.duration">{{ errors.duration }}</div>
                 </div>
-
                 <div class="mt-4">
                     <jet-label for="description" value="Descrição" />
                     <jet-input id="description" type="text" class="mt-1 block w-full" v-model="form.description" required />
+                </div>
+                <div class="mt-4">
+                    <jet-label for="categoria do curso" value="Categoria do curso" />
+                    <select class="border-gray-300 focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50 rounded-md shadow-sm" name="category" id="" v-model="form.category">
+                        <option v-for="category in categories" :value="category.id">{{category.category}}</option>
+                    </select>
                 </div>
                 <div class="flex items-center justify-end mt-4">
 
@@ -66,10 +71,11 @@ export default defineComponent({
                 name: '',
                 duration: '',
                 description: '',
+                category:''
             })
         }
     },
-    props: ['errors'],
+    props: ['errors','categories'],
     methods: {
         submit() {
             this.form.post(this.route('newCourse'), {

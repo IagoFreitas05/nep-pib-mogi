@@ -20,7 +20,8 @@ class CourseController extends Controller
         Course::create([
             'name' => $request->input('name'),
             'description' => $request->input('description'),
-            'duration' => $request->input('duration')
+            'duration' => $request->input('duration'),
+            'category' => $request->input('category_id')
         ]);
         return redirect('courses');
     }
