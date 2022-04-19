@@ -5,6 +5,7 @@ use App\Models\User;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
 use Inertia\Inertia;
+use App\Models\Category;
 
 /*
 |--------------------------------------------------------------------------
@@ -36,7 +37,10 @@ Route::middleware(['auth:sanctum', 'verified'])->get('/courses', function () {
 })->name("courses");
 
 Route::middleware(['auth:sanctum', 'verified'])->get('/newCourse', function () {
-    return Inertia::render('NewCourse');
+    return Inertia::render('NewCourse',
+        [
+            'categories' => Category::where('status', 1)->get()
+        ]);
 })->name("newCourse");
 
 Route::middleware(['auth:sanctum', 'verified'])->get('/editCourse/{id}', function ($id) {
