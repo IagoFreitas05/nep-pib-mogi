@@ -23,6 +23,7 @@ return new class extends Migration
             $table->string('user_type')->default('user');
             $table->foreignId('current_team_id')->nullable();
             $table->string('profile_photo_path', 2048)->nullable();
+            $table->string('celphone')->nullable();
             $table->timestamps();
         });
     }

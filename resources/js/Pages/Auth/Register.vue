@@ -19,6 +19,11 @@
                 <jet-label for="email" value="Email"/>
                 <jet-input id="email" type="email" class="mt-1 block w-full" v-model="form.email" required/>
             </div>
+            <div class="mt-4">
+                <jet-label for="celphone" value="Telefone"/>
+                <jet-input id="celphone" type="text" class="mt-1 block w-full" v-model="form.celphone" required/>
+            </div>
+
 
             <div class="mt-4">
                 <jet-label for="password" value="Senha"/>
@@ -94,7 +99,8 @@ export default defineComponent({
                 email: '',
                 password: '',
                 password_confirmation: '',
-                terms: false
+                terms: false,
+                celphone: ''
             })
         }
     },

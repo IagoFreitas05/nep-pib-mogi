@@ -6,11 +6,13 @@
             </h2>
         </template>
 
-        <div class="w-full mt-4 sm:max-w-xl  mx-auto p-2 mt-2 px-6 py-4 bg-white shadow-md overflow-hidden sm:rounded-lg   ">
+        <div class="w-full mt-4 sm:max-w-xl  mx-auto p-2 mt-2 px-6 py-4
+         bg-white shadow-md overflow-hidden sm:rounded-lg   ">
             <form @submit.prevent="submit">
                 <div>
                     <jet-label for="name" value="Nome do curso" />
-                    <jet-input id="name" type="text" class="mt-1 block w-full" v-model="form.name" required autofocus autocomplete="name" />
+                    <jet-input id="name" type="text" class="mt-1 block w-full" v-model="form.name"
+                               required autofocus autocomplete="name" />
                     <div v-if="errors.name">{{ errors.name }}</div>
                 </div>
 
@@ -21,11 +23,14 @@
                 </div>
                 <div class="mt-4">
                     <jet-label for="description" value="Descrição" />
-                    <jet-input id="description" type="text" class="mt-1 block w-full" v-model="form.description" required />
+                    <jet-input id="description" type="text" class="mt-1 block w-full"
+                               v-model="form.description" required />
                 </div>
                 <div class="mt-4">
                     <jet-label for="categoria do curso" value="Categoria do curso" />
-                    <select class="border-gray-300 focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50 rounded-md shadow-sm" name="category" id="" v-model="form.category">
+                    <select class="border-gray-300 focus:border-indigo-300 focus:ring
+                    focus:ring-indigo-200
+                    focus:ring-opacity-50 rounded-md shadow-sm" name="category" id="" v-model="form.category">
                         <option v-for="category in categories" :value="category.id">{{category.category}}</option>
                     </select>
                 </div>
