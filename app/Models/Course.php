@@ -24,6 +24,10 @@ class Course extends Model
       return  $this->hasMany(ClassCourse::class);
     }
 
+    public function module(){
+        return $this->hasMany(Module::class);
+    }
+
     public function category(){
         return $this->belongsTo(Category::class);
     }
