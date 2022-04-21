@@ -6,6 +6,7 @@ use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
 use Illuminate\Database\Eloquent\Relations\HasMany;
+use Illuminate\Database\Eloquent\Relations\HasOne;
 
 class Module extends Model
 {
@@ -21,5 +22,10 @@ class Module extends Model
     public function class(): HasMany
     {
         return $this->hasMany(ClassCourse::class);
+    }
+
+    public function quiz():HasOne
+    {
+        return $this->hasOne(Quiz::class);
     }
 }
