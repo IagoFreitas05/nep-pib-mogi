@@ -20,4 +20,8 @@ class ClassCourse extends Model
     public function course(){
         return $this->belongsTo(Course::class);
     }
+
+    public function module(){
+        return $this->belongsTo(Module::class);
+    }
 }
