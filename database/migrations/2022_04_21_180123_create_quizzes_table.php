@@ -16,6 +16,9 @@ return new class extends Migration
         Schema::create('quizzes', function (Blueprint $table) {
             $table->id();
             $table->foreignId('module_id')->unsigned()->nullable();
+            $table->string('question');
+            $table->integer('order');
+            $table->string('answer');
             $table->timestamps();
         });
     }
