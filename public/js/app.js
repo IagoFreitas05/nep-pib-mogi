@@ -23385,7 +23385,7 @@ __webpack_require__.r(__webpack_exports__);
 
       this.form.post(this.route('newCourse'), {
         onFinish: function onFinish() {
-          return _this.form.reset('name', 'description', 'duration');
+          return _this.form.reset('name', 'description', 'duration', 'category');
         }
       });
     }

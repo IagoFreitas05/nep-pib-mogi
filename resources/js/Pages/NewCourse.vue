@@ -84,7 +84,7 @@ export default defineComponent({
     methods: {
         submit() {
             this.form.post(this.route('newCourse'), {
-                onFinish: () => this.form.reset('name', 'description','duration'),
+                onFinish: () => this.form.reset('name', 'description','duration','category'),
             })
         }
     }

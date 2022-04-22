@@ -11,17 +11,11 @@ class CourseController extends Controller
 {
     public function Create(Request $request)
     {
-
-        Request::validate([
-            'name' => ['required ', ' unique:courses'],
-            'duration' => ['required']
-        ]);
-
         Course::create([
             'name' => $request->input('name'),
             'description' => $request->input('description'),
             'duration' => $request->input('duration'),
-            'category' => $request->input('category_id')
+            'category_id' => $request->input('category')
         ]);
         return redirect('courses');
     }

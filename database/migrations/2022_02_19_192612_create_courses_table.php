@@ -19,7 +19,7 @@ return new class extends Migration
             $table->string('duration');
             $table->text('description');
             $table->string('profile_photo_path')->nullable();
-            $table->foreignId('category_id')->unsigned();
+            $table->foreignId('category_id')->unsigned()->nullable();
             $table->timestamps();
         });
     }

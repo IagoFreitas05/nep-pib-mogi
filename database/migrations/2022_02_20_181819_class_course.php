@@ -19,7 +19,7 @@ return new class extends Migration
             $table->string('description');
             $table->string('class_link');
             $table->foreignId('course_id')->constrained();
-            $table->foreignId('module_id')->unsigned();
+            $table->foreignId('module_id')->unsigned()->nullable();
             $table->string('class_order');
             $table->timestamps();
         });
