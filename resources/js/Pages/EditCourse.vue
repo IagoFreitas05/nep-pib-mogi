@@ -10,6 +10,7 @@
                 <div
                     class="w-full mx-auto mt-4 overflow-y-auto
                     sm:max-w-xl  p-1 mt-2 px-6 py-4 bg-white shadow-md overflow-hidden sm:rounded-lg   ">
+                    <p class="pb-2 text-xl text-gray-400 font-bold">Dados do curso</p>
                     <form @submit.prevent="submit">
                         <div>
                             <jet-label for="name" value="Nome do curso"/>
@@ -37,9 +38,10 @@
                         </div>
                     </form>
                 </div>
-
                 <div
-                    class="w-full mt-4 sm:max-w-xl mx-auto  p-1 mt-2 px-6 py-4 bg-white shadow-md overflow-hidden sm:rounded-lg   ">
+                    class="w-full mt-4 sm:max-w-xl mx-auto  p-1 mt-2 px-6 py-4 bg-white
+                    shadow-md overflow-hidden sm:rounded-lg   ">
+                    <p class="pb-2 text-xl text-gray-400 font-bold">Cadastrar nova aula</p>
                     <form @submit.prevent="submitClass">
                         <div>
                             <jet-label for="className" value="Nome da aula"/>
