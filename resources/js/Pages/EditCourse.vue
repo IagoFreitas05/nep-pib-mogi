@@ -5,6 +5,23 @@
                 Editar - {{ course.name }}
             </h2>
         </template>
+        <div class=" w-full p-2 mt-2 grid place-content-center">
+            <ul class="flex ">
+                <li class="mr-3">
+                    <a class="inline-block border border-blue-500 rounded py-1 px-3 bg-blue-500 text-white" href="#">Dados do curso</a>
+                </li>
+                <li class="mr-3">
+                    <a class="inline-block border border-white rounded hover:border-gray-200 text-blue-500 hover:bg-gray-200 py-1 px-3" href="#">Aulas</a>
+                </li>
+                <li class="mr-3">
+                    <a class="inline-block border border-white rounded hover:border-gray-200 text-blue-500 hover:bg-gray-200 py-1 px-3" href="#">Módulos</a>
+                </li>
+                <li class="mr-3">
+                    <a class="inline-block border border-white rounded hover:border-gray-200 text-blue-500 hover:bg-gray-200 py-1 px-3 " href="#">Questionários</a>
+                </li>
+            </ul>
+        </div>
+
         <div class="sm:grid sm:grid-cols-2 ">
             <div>
                 <div
