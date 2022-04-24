@@ -38,43 +38,6 @@
                         </div>
                     </form>
                 </div>
-                <div
-                    class="w-full mt-4 sm:max-w-xl mx-auto  p-1 mt-2 px-6 py-4 bg-white
-                    shadow-md overflow-hidden sm:rounded-lg   ">
-                    <p class="pb-2 text-xl text-gray-400 font-bold">Cadastrar nova aula</p>
-                    <form @submit.prevent="submitClass">
-                        <div>
-                            <jet-label for="className" value="Nome da aula"/>
-                            <jet-input id="className" type="text" class="mt-1 block w-full" v-model="classForm.name"
-                                       required
-                                       autofocus autocomplete="className"/>
-                        </div>
-
-                        <div class="mt-4">
-                            <jet-label for="classDescription" value="Descrição"/>
-                            <jet-input id="classDescription" type="text" class="mt-1 block w-full"
-                                       v-model="classForm.description" required
-                                       autofocus autocomplete="className"/>
-                        </div>
-
-                        <div class="mt-4">
-                            <jet-label for="urlClass" value="URL da Aula"/>
-                            <jet-input id="urlClass" type="text" class="mt-1 block w-full" v-model="classForm.classLink"
-                                       required/>
-                        </div>
-                        <div class="mt-4">
-                            <jet-label for="order" value="Qual número dessa aula?"/>
-                            <jet-input id="order" type="number" class="mt-1 block w-full" v-model="classForm.order"
-                                       required/>
-                        </div>
-                        <div class="flex items-center justify-end mt-4">
-                            <jet-button class="ml-4" :class="{ 'opacity-25': classForm.processing }"
-                                        :disabled="classForm.processing">
-                                adicionar nova aula
-                            </jet-button>
-                        </div>
-                    </form>
-                </div>
             </div>
             <div>
                 <div
@@ -103,6 +66,82 @@
                         </div>
                     </div>
                 </div>
+            </div>
+        </div>
+        <div class="sm:grid sm:grid-cols-2">
+            <div
+                class="w-full mt-4 sm:max-w-xl mx-auto  p-1 mt-2 px-6 py-4 bg-white
+                    shadow-md overflow-hidden sm:rounded-lg   ">
+                <p class="pb-2 text-xl text-gray-400 font-bold">Cadastrar novo módulo</p>
+                <form @submit.prevent="submitClass">
+                    <div>
+                        <jet-label for="className" value="Nome da aula"/>
+                        <jet-input id="className" type="text" class="mt-1 block w-full" v-model="classForm.name"
+                                   required
+                                   autofocus autocomplete="className"/>
+                    </div>
+
+                    <div class="mt-4">
+                        <jet-label for="classDescription" value="Descrição"/>
+                        <jet-input id="classDescription" type="text" class="mt-1 block w-full"
+                                   v-model="classForm.description" required
+                                   autofocus autocomplete="className"/>
+                    </div>
+
+                    <div class="mt-4">
+                        <jet-label for="urlClass" value="URL da Aula"/>
+                        <jet-input id="urlClass" type="text" class="mt-1 block w-full" v-model="classForm.classLink"
+                                   required/>
+                    </div>
+                    <div class="mt-4">
+                        <jet-label for="order" value="Qual número dessa aula?"/>
+                        <jet-input id="order" type="number" class="mt-1 block w-full" v-model="classForm.order"
+                                   required/>
+                    </div>
+                    <div class="flex items-center justify-end mt-4">
+                        <jet-button class="ml-4" :class="{ 'opacity-25': classForm.processing }"
+                                    :disabled="classForm.processing">
+                            adicionar nova aula
+                        </jet-button>
+                    </div>
+                </form>
+            </div>
+            <div
+                class="w-full mt-4 sm:max-w-xl mx-auto  p-1 mt-2 px-6 py-4 bg-white
+                    shadow-md overflow-hidden sm:rounded-lg   ">
+                <p class="pb-2 text-xl text-gray-400 font-bold">Cadastrar nova aula</p>
+                <form @submit.prevent="submitClass">
+                    <div>
+                        <jet-label for="className" value="Nome da aula"/>
+                        <jet-input id="className" type="text" class="mt-1 block w-full" v-model="classForm.name"
+                                   required
+                                   autofocus autocomplete="className"/>
+                    </div>
+
+                    <div class="mt-4">
+                        <jet-label for="classDescription" value="Descrição"/>
+                        <jet-input id="classDescription" type="text" class="mt-1 block w-full"
+                                   v-model="classForm.description" required
+                                   autofocus autocomplete="className"/>
+                    </div>
+
+                    <div class="mt-4">
+                        <jet-label for="urlClass" value="URL da Aula"/>
+                        <jet-input id="urlClass" type="text" class="mt-1 block w-full" v-model="classForm.classLink"
+                                   required/>
+                    </div>
+                    <div class="mt-4">
+                        <jet-label for="order" value="Qual número dessa aula?"/>
+                        <jet-input id="order" type="number" class="mt-1 block w-full" v-model="classForm.order"
+                                   required/>
+                    </div>
+                    <div class="flex items-center justify-end mt-4">
+                        <jet-button class="ml-4" :class="{ 'opacity-25': classForm.processing }"
+                                    :disabled="classForm.processing">
+                            adicionar nova aula
+                        </jet-button>
+                    </div>
+                </form>
             </div>
         </div>
     </app-layout>
