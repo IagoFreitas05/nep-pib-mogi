@@ -8,16 +8,20 @@
         <div class=" w-full p-2 mt-2 grid place-content-center">
             <ul class="flex ">
                 <li class="mr-3">
-                    <a class="inline-block border border-blue-500 rounded py-1 px-3 bg-blue-500 text-white" href="#">Dados do curso</a>
+                    <a class="inline-block border border-blue-500 rounded py-1 px-3 bg-blue-500 text-white" href="#">Dados
+                        do curso</a>
                 </li>
                 <li class="mr-3">
-                    <a class="inline-block border border-white rounded hover:border-gray-200 text-blue-500 hover:bg-gray-200 py-1 px-3" href="#">Aulas</a>
+                    <a class="inline-block border border-white rounded hover:border-gray-200 text-blue-500 hover:bg-gray-200 py-1 px-3"
+                       href="#">Aulas</a>
                 </li>
                 <li class="mr-3">
-                    <a class="inline-block border border-white rounded hover:border-gray-200 text-blue-500 hover:bg-gray-200 py-1 px-3" href="#">Módulos</a>
+                    <a class="inline-block border border-white rounded hover:border-gray-200 text-blue-500 hover:bg-gray-200 py-1 px-3"
+                       href="#">Módulos</a>
                 </li>
                 <li class="mr-3">
-                    <a class="inline-block border border-white rounded hover:border-gray-200 text-blue-500 hover:bg-gray-200 py-1 px-3 " href="#">Questionários</a>
+                    <a class="inline-block border border-white rounded hover:border-gray-200 text-blue-500 hover:bg-gray-200 py-1 px-3 "
+                       href="#">Questionários</a>
                 </li>
             </ul>
         </div>
@@ -233,7 +237,10 @@ export default defineComponent({
         },
         submit() {
             this.form.put(this.route('editCourse', this.course.id), {
-                onFinish: () => swal("Está feito", "alterado com sucesso, as informações foram atualizadas ", "success")
+                onFinish: () => swal(
+                    "Está feito",
+                    "alterado com sucesso, as informações foram atualizadas ",
+                    "success")
             })
         },
         submitClass() {
