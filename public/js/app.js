@@ -23175,6 +23175,11 @@ __webpack_require__.r(__webpack_exports__);
       }),
       deleteForm: this.$inertia.form({
         id: ''
+      }),
+      moduleForm: this.$inertia.form({
+        name: '',
+        description: '',
+        course_id: this.course.id
       })
     };
   },
@@ -27681,7 +27686,7 @@ var _hoisted_18 = {
 
 var _hoisted_19 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("p", {
   "class": "pb-2 text-xl text-gray-400 font-bold"
-}, "Cadastrar novo módulo", -1
+}, "Cadastrar nova aula", -1
 /* HOISTED */
 );
 
@@ -27706,7 +27711,7 @@ var _hoisted_25 = {
 
 var _hoisted_26 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("p", {
   "class": "pb-2 text-xl text-gray-400 font-bold"
-}, "Cadastrar nova aula", -1
+}, "Cadastrar novo módulo", -1
 /* HOISTED */
 );
 
@@ -27714,16 +27719,10 @@ var _hoisted_27 = {
   "class": "mt-4"
 };
 var _hoisted_28 = {
-  "class": "mt-4"
-};
-var _hoisted_29 = {
-  "class": "mt-4"
-};
-var _hoisted_30 = {
   "class": "flex items-center justify-end mt-4"
 };
 
-var _hoisted_31 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createTextVNode)(" adicionar nova aula ");
+var _hoisted_29 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createTextVNode)(" adicionar novo módulo ");
 
 function render(_ctx, _cache, $props, $setup, $data, $options) {
   var _component_jet_label = (0,vue__WEBPACK_IMPORTED_MODULE_0__.resolveComponent)("jet-label");
@@ -27903,77 +27902,49 @@ function render(_ctx, _cache, $props, $setup, $data, $options) {
       , ["class", "disabled"])])], 32
       /* HYDRATE_EVENTS */
       )]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_25, [_hoisted_26, (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("form", {
-        onSubmit: _cache[13] || (_cache[13] = (0,vue__WEBPACK_IMPORTED_MODULE_0__.withModifiers)(function () {
+        onSubmit: _cache[11] || (_cache[11] = (0,vue__WEBPACK_IMPORTED_MODULE_0__.withModifiers)(function () {
           return _ctx.submitClass && _ctx.submitClass.apply(_ctx, arguments);
         }, ["prevent"]))
       }, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", null, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)(_component_jet_label, {
-        "for": "className",
-        value: "Nome da aula"
+        "for": "moduleName",
+        value: "Nome do módulo"
       }), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)(_component_jet_input, {
-        id: "className",
+        id: "moduleName",
         type: "text",
         "class": "mt-1 block w-full",
-        modelValue: _ctx.classForm.name,
+        modelValue: _ctx.moduleForm.name,
         "onUpdate:modelValue": _cache[9] || (_cache[9] = function ($event) {
-          return _ctx.classForm.name = $event;
+          return _ctx.moduleForm.name = $event;
         }),
         required: "",
         autofocus: "",
-        autocomplete: "className"
+        autocomplete: "moduleName"
       }, null, 8
       /* PROPS */
       , ["modelValue"])]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_27, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)(_component_jet_label, {
-        "for": "classDescription",
-        value: "Descrição"
+        "for": "moduleDescription",
+        value: "Descrição do módulo"
       }), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)(_component_jet_input, {
-        id: "classDescription",
+        id: "moduleDescription",
         type: "text",
         "class": "mt-1 block w-full",
-        modelValue: _ctx.classForm.description,
+        modelValue: _ctx.moduleForm.description,
         "onUpdate:modelValue": _cache[10] || (_cache[10] = function ($event) {
-          return _ctx.classForm.description = $event;
+          return _ctx.moduleForm.description = $event;
         }),
         required: "",
         autofocus: "",
-        autocomplete: "className"
+        autocomplete: "moduleDescription"
       }, null, 8
       /* PROPS */
-      , ["modelValue"])]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_28, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)(_component_jet_label, {
-        "for": "urlClass",
-        value: "URL da Aula"
-      }), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)(_component_jet_input, {
-        id: "urlClass",
-        type: "text",
-        "class": "mt-1 block w-full",
-        modelValue: _ctx.classForm.classLink,
-        "onUpdate:modelValue": _cache[11] || (_cache[11] = function ($event) {
-          return _ctx.classForm.classLink = $event;
-        }),
-        required: ""
-      }, null, 8
-      /* PROPS */
-      , ["modelValue"])]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_29, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)(_component_jet_label, {
-        "for": "order",
-        value: "Qual número dessa aula?"
-      }), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)(_component_jet_input, {
-        id: "order",
-        type: "number",
-        "class": "mt-1 block w-full",
-        modelValue: _ctx.classForm.order,
-        "onUpdate:modelValue": _cache[12] || (_cache[12] = function ($event) {
-          return _ctx.classForm.order = $event;
-        }),
-        required: ""
-      }, null, 8
-      /* PROPS */
-      , ["modelValue"])]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_30, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)(_component_jet_button, {
+      , ["modelValue"])]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_28, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)(_component_jet_button, {
         "class": (0,vue__WEBPACK_IMPORTED_MODULE_0__.normalizeClass)(["ml-4", {
           'opacity-25': _ctx.classForm.processing
         }]),
         disabled: _ctx.classForm.processing
       }, {
         "default": (0,vue__WEBPACK_IMPORTED_MODULE_0__.withCtx)(function () {
-          return [_hoisted_31];
+          return [_hoisted_29];
         }),
         _: 1
         /* STABLE */
