@@ -18,6 +18,7 @@ class ClassController extends Controller
             'course_id' => $request->input('course_id'),
             'class_order' => $request->input('order')
         ]);
+
         return Inertia::render('EditCourse', [
             'course' => Course::find($ClassCourse->course_id),
             'classes' => Course::find($ClassCourse->course_id)->classCourse()->orderBy('class_order')->get()
