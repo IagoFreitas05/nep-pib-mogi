@@ -131,7 +131,7 @@
                 class="w-full mt-4 sm:max-w-xl mx-auto  p-1 mt-2 px-6 py-4 bg-white
                     shadow-md overflow-hidden sm:rounded-lg   ">
                 <p class="pb-2 text-xl text-gray-400 font-bold">Cadastrar novo módulo</p>
-                <form @submit.prevent="submitClass">
+                <form @submit.prevent="submitModule">
                     <div>
                         <jet-label for="moduleName" value="Nome do módulo"/>
                         <jet-input id="moduleName" type="text" class="mt-1 block w-full" v-model="moduleForm.name"
@@ -151,8 +151,6 @@
                             adicionar novo módulo
                         </jet-button>
                     </div>
-
-
                 </form>
             </div>
         </div>
@@ -246,6 +244,11 @@ export default defineComponent({
         submitClass() {
             this.classForm.post(this.route('newClass'), {
                 onFinish: () => swal("Isso ai!", "Aula adicionada com sucesso !", "success")
+            })
+        },
+        submitModule(){
+            this.moduleForm.post(this.route('newModule'),{
+                onFinish:() => swal("Isso ai!","Novo módulo adicionado","success")
             })
         }
     }
