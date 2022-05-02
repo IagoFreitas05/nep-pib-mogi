@@ -8,19 +8,31 @@
         <div class=" w-full p-2 mt-2 grid place-content-center">
             <ul class="flex ">
                 <li class="mr-3">
-                    <a class="inline-block border border-blue-500 rounded py-1 px-3 bg-blue-500 text-white" href="#">Dados
+                    <a class="inline-block
+                    border border-blue-500
+                    rounded
+                    shadow-sm py-1
+                    px-3 bg-blue-500
+                    text-white" @click="setVisualization('dataCourse')">Dados
                         do curso</a>
                 </li>
                 <li class="mr-3">
-                    <a class="inline-block border border-white rounded hover:border-gray-200 text-blue-500 hover:bg-gray-200 py-1 px-3"
-                       href="#">Aulas</a>
+                    <a class="inline-block
+                    rounded shadow
+                    hover:border-gray-200
+                    text-blue-500 hover:bg-gray-200
+                    py-1 px-3"
+                       @click="setVisualization('classes')">Aulas</a>
                 </li>
                 <li class="mr-3">
-                    <a class="inline-block border border-white rounded hover:border-gray-200 text-blue-500 hover:bg-gray-200 py-1 px-3"
-                       href="#">Módulos</a>
+                    <a class="inline-block
+                    shadow rounded hover:border-gray-200
+                    text-blue-500
+                    hover:bg-gray-200 py-1 px-3"
+                    @click="setVisualization('modules')">Módulos</a>
                 </li>
                 <li class="mr-3">
-                    <a class="inline-block border border-white rounded hover:border-gray-200 text-blue-500 hover:bg-gray-200 py-1 px-3 "
+                    <a class="inline-block shadow rounded hover:border-gray-200 text-blue-500 hover:bg-gray-200 py-1 px-3 "
                        href="#">Questionários</a>
                 </li>
             </ul>
@@ -185,9 +197,10 @@ export default defineComponent({
         Link,
         AppLayout
     },
-    props: ['course', 'classes'],
+    props: ['course', 'classes', 'modules'],
     data() {
         return {
+            visualization: '',
             form: this.$inertia.form({
                 name: this.course.name,
                 duration: this.course.duration,
@@ -212,6 +225,9 @@ export default defineComponent({
         }
     },
     methods: {
+        setVisualization(expression) {
+            this.visualization = expression;
+        },
         confirmExclusion(id) {
             swal({
                 title: "você tem certeza que deseja excluir essa aula?",
@@ -246,9 +262,9 @@ export default defineComponent({
                 onFinish: () => swal("Isso ai!", "Aula adicionada com sucesso !", "success")
             })
         },
-        submitModule(){
-            this.moduleForm.post(this.route('newModule'),{
-                onFinish:() => swal("Isso ai!","Novo módulo adicionado","success")
+        submitModule() {
+            this.moduleForm.post(this.route('newModule'), {
+                onFinish: () => swal("Isso ai!", "Novo módulo adicionado", "success")
             })
         }
     }
