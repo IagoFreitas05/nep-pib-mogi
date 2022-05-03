@@ -9,31 +9,32 @@
             <ul class="flex ">
                 <li class="mr-3">
                     <a class="inline-block
-                    border border-blue-500
-                    rounded
-                    shadow-sm py-1
-                    px-3 bg-blue-500
-                    text-white" @click="setVisualization(visualizationType.dataCourse)">Dados
-                        do curso</a>
+                    shadow rounded hover:border-gray-200
+                    cursor-pointer
+                     py-1 px-3"
+                     v-bind:class="visualizationType.dataCourse === visualization?'bg-blue-500 text-white':'hover:bg-gray-200  bg-gray-100  text-blue-500'"
+                       @click="setVisualization(visualizationType.dataCourse)"> Curso </a>
                 </li>
                 <li class="mr-3">
                     <a class="inline-block
                     rounded shadow
-                    hover:border-gray-200
-                    text-blue-500 hover:bg-gray-200
-                    py-1 px-3"
+                    py-1 px-3
+                    cursor-pointer
+                    " v-bind:class="visualizationType.classes === visualization?'bg-blue-500 text-white':'hover:bg-gray-200 bg-gray-100  text-blue-500'"
                        @click="setVisualization(visualizationType.classes)">Aulas</a>
                 </li>
                 <li class="mr-3">
                     <a class="inline-block
                     shadow rounded hover:border-gray-200
-                    text-blue-500
-                    hover:bg-gray-200 py-1 px-3"
-                    @click="setVisualization(visualizationType.modules)">Módulos</a>
+                    cursor-pointer
+                     py-1 px-3"
+                       v-bind:class="visualizationType.modules === visualization?'bg-blue-500 text-white':'hover:bg-gray-200  bg-gray-100  text-blue-500'"
+                       @click="setVisualization(visualizationType.modules)">Módulos</a>
                 </li>
                 <li class="mr-3">
-                    <a  @click="setVisualization(visualizationType.modules)" class="inline-block shadow rounded
-                    hover:border-gray-200 text-blue-500 hover:bg-gray-200 py-1 px-3 "
+                    <a @click="setVisualization(visualizationType.quiz)" class="inline-block shadow rounded
+                   py-1 px-3 "
+                       v-bind:class="visualizationType.quiz === visualization?'bg-blue-500 text-white':'hover:bg-gray-200 bg-gray-100  text-blue-500'"
                        href="#">Questionários</a>
                 </li>
             </ul>
@@ -77,7 +78,7 @@
         </div>
 
         <!-- class data -->
-        <div class="sm:grid sm:grid-cols-2" v-if="visualization === visualizationType.dataCourse">
+        <div class="sm:grid sm:grid-cols-2" v-if="visualization === visualizationType.classes">
             <div
                 class="w-full mt-4 sm:max-w-xl mx-auto  p-1 mt-2 px-6 py-4 bg-white
                     shadow-md overflow-hidden sm:rounded-lg   ">
@@ -174,6 +175,39 @@
                 </form>
             </div>
         </div>
+
+        <!-- questionarios -->
+        <div class="sm:grid sm:grid-cols-1" v-if="visualization === visualizationType.quiz">
+            <div
+                class="w-full mt-4 sm:max-w-xl mx-auto  p-1 mt-2 px-6 py-4 bg-white
+                    shadow-md overflow-hidden sm:rounded-lg   ">
+                <p class="pb-2 text-xl text-gray-400 font-bold">Cadastrar novo questionário</p>
+                <form @submit.prevent="submitModule">
+                    <div>
+                        <jet-label for="question" value="Qual sua questão?"/>
+                        <jet-input id="question" type="text" class="mt-1 block w-full" v-model="quizForm.question"
+                                   required
+                                   autofocus />
+                    </div>
+
+                    <div class="mt-4">
+                        <jet-label for="answer" value="resposta correta para sua pergunta"/>
+                        <jet-input id="answer" type="text" class="mt-1 block w-full"
+                                   v-model="quizForm.answer" required
+                                   autofocus />
+                    </div>
+                    <div class="mt-4">
+                        <p>selecione o módulo</p>
+                    </div>
+                    <div class="flex items-center justify-end mt-4">
+                        <jet-button class="ml-4" :class="{ 'opacity-25': classForm.processing }"
+                                    :disabled="classForm.processing">
+                            adicionar novo questionário
+                        </jet-button>
+                    </div>
+                </form>
+            </div>
+        </div>
     </app-layout>
 </template>
 
@@ -208,8 +242,14 @@ export default defineComponent({
     props: ['course', 'classes', 'modules'],
     data() {
         return {
-            visualizationType:{dataCourse : 'dataCourse', classes: 'classes', modules: 'modules'},
-            visualization: '',
+            visualizationType:
+                {
+                    dataCourse: 'dataCourse',
+                    classes: 'classes',
+                    modules: 'modules',
+                    quiz : 'quiz'
+                },
+            visualization: 'dataCourse',
             form: this.$inertia.form({
                 name: this.course.name,
                 duration: this.course.duration,
@@ -229,7 +269,12 @@ export default defineComponent({
             moduleForm: this.$inertia.form({
                 name: '',
                 description: '',
-                course_id: this.course.id
+                course_id:''
+            }),
+            quizForm: this.$inertia.form({
+                question:'',
+                answer: '',
+                module_id: ''
             })
         }
     },
@@ -272,6 +317,7 @@ export default defineComponent({
             })
         },
         submitModule() {
+            this.moduleForm.course_id = this.course.id;
             this.moduleForm.post(this.route('newModule'), {
                 onFinish: () => swal("Isso ai!", "Novo módulo adicionado", "success")
             })

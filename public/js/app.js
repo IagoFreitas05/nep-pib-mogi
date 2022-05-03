@@ -23163,9 +23163,10 @@ __webpack_require__.r(__webpack_exports__);
       visualizationType: {
         dataCourse: 'dataCourse',
         classes: 'classes',
-        modules: 'modules'
+        modules: 'modules',
+        quiz: 'quiz'
       },
-      visualization: '',
+      visualization: 'dataCourse',
       form: this.$inertia.form({
         name: this.course.name,
         duration: this.course.duration,
@@ -23185,7 +23186,12 @@ __webpack_require__.r(__webpack_exports__);
       moduleForm: this.$inertia.form({
         name: '',
         description: '',
-        course_id: this.course.id
+        course_id: ''
+      }),
+      quizForm: this.$inertia.form({
+        question: '',
+        answer: '',
+        module_id: ''
       })
     };
   },
@@ -23233,6 +23239,7 @@ __webpack_require__.r(__webpack_exports__);
       });
     },
     submitModule: function submitModule() {
+      this.moduleForm.course_id = this.course.id;
       this.moduleForm.post(this.route('newModule'), {
         onFinish: function onFinish() {
           return sweetalert__WEBPACK_IMPORTED_MODULE_11___default()("Isso ai!", "Novo módulo adicionado", "success");
@@ -27735,6 +27742,36 @@ var _hoisted_34 = {
 
 var _hoisted_35 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createTextVNode)(" adicionar novo módulo ");
 
+var _hoisted_36 = {
+  key: 3,
+  "class": "sm:grid sm:grid-cols-1"
+};
+var _hoisted_37 = {
+  "class": "w-full mt-4 sm:max-w-xl mx-auto p-1 mt-2 px-6 py-4 bg-white shadow-md overflow-hidden sm:rounded-lg"
+};
+
+var _hoisted_38 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("p", {
+  "class": "pb-2 text-xl text-gray-400 font-bold"
+}, "Cadastrar novo questionário", -1
+/* HOISTED */
+);
+
+var _hoisted_39 = {
+  "class": "mt-4"
+};
+
+var _hoisted_40 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", {
+  "class": "mt-4"
+}, [/*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("p", null, "selecione o módulo")], -1
+/* HOISTED */
+);
+
+var _hoisted_41 = {
+  "class": "flex items-center justify-end mt-4"
+};
+
+var _hoisted_42 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createTextVNode)(" adicionar novo questionário ");
+
 function render(_ctx, _cache, $props, $setup, $data, $options) {
   var _component_jet_label = (0,vue__WEBPACK_IMPORTED_MODULE_0__.resolveComponent)("jet-label");
 
@@ -27754,27 +27791,35 @@ function render(_ctx, _cache, $props, $setup, $data, $options) {
     }),
     "default": (0,vue__WEBPACK_IMPORTED_MODULE_0__.withCtx)(function () {
       return [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_2, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("ul", _hoisted_3, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("li", _hoisted_4, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("a", {
-        "class": "inline-block border border-blue-500 rounded shadow-sm py-1 px-3 bg-blue-500 text-white",
+        "class": (0,vue__WEBPACK_IMPORTED_MODULE_0__.normalizeClass)(["inline-block shadow rounded hover:border-gray-200 cursor-pointer py-1 px-3", _ctx.visualizationType.dataCourse === _ctx.visualization ? 'bg-blue-500 text-white' : 'hover:bg-gray-200  bg-gray-100  text-blue-500']),
         onClick: _cache[0] || (_cache[0] = function ($event) {
           return _ctx.setVisualization(_ctx.visualizationType.dataCourse);
         })
-      }, "Dados do curso")]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("li", _hoisted_5, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("a", {
-        "class": "inline-block rounded shadow hover:border-gray-200 text-blue-500 hover:bg-gray-200 py-1 px-3",
+      }, " Curso ", 2
+      /* CLASS */
+      )]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("li", _hoisted_5, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("a", {
+        "class": (0,vue__WEBPACK_IMPORTED_MODULE_0__.normalizeClass)(["inline-block rounded shadow py-1 px-3 cursor-pointer", _ctx.visualizationType.classes === _ctx.visualization ? 'bg-blue-500 text-white' : 'hover:bg-gray-200 bg-gray-100  text-blue-500']),
         onClick: _cache[1] || (_cache[1] = function ($event) {
           return _ctx.setVisualization(_ctx.visualizationType.classes);
         })
-      }, "Aulas")]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("li", _hoisted_6, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("a", {
-        "class": "inline-block shadow rounded hover:border-gray-200 text-blue-500 hover:bg-gray-200 py-1 px-3",
+      }, "Aulas", 2
+      /* CLASS */
+      )]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("li", _hoisted_6, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("a", {
+        "class": (0,vue__WEBPACK_IMPORTED_MODULE_0__.normalizeClass)(["inline-block shadow rounded hover:border-gray-200 cursor-pointer py-1 px-3", _ctx.visualizationType.modules === _ctx.visualization ? 'bg-blue-500 text-white' : 'hover:bg-gray-200  bg-gray-100  text-blue-500']),
         onClick: _cache[2] || (_cache[2] = function ($event) {
           return _ctx.setVisualization(_ctx.visualizationType.modules);
         })
-      }, "Módulos")]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("li", _hoisted_7, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("a", {
+      }, "Módulos", 2
+      /* CLASS */
+      )]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("li", _hoisted_7, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("a", {
         onClick: _cache[3] || (_cache[3] = function ($event) {
-          return _ctx.setVisualization(_ctx.visualizationType.modules);
+          return _ctx.setVisualization(_ctx.visualizationType.quiz);
         }),
-        "class": "inline-block shadow rounded hover:border-gray-200 text-blue-500 hover:bg-gray-200 py-1 px-3",
+        "class": (0,vue__WEBPACK_IMPORTED_MODULE_0__.normalizeClass)(["inline-block shadow rounded py-1 px-3", _ctx.visualizationType.quiz === _ctx.visualization ? 'bg-blue-500 text-white' : 'hover:bg-gray-200 bg-gray-100  text-blue-500']),
         href: "#"
-      }, "Questionários")])])]), _ctx.visualization === _ctx.visualizationType.dataCourse ? ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("div", _hoisted_8, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", null, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_9, [_hoisted_10, (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("form", {
+      }, "Questionários", 2
+      /* CLASS */
+      )])])]), _ctx.visualization === _ctx.visualizationType.dataCourse ? ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("div", _hoisted_8, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", null, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_9, [_hoisted_10, (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("form", {
         onSubmit: _cache[7] || (_cache[7] = (0,vue__WEBPACK_IMPORTED_MODULE_0__.withModifiers)(function () {
           return _ctx.submit && _ctx.submit.apply(_ctx, arguments);
         }, ["prevent"]))
@@ -27838,7 +27883,7 @@ function render(_ctx, _cache, $props, $setup, $data, $options) {
       /* PROPS */
       , ["class", "disabled"])])], 32
       /* HYDRATE_EVENTS */
-      )])])])) : (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("v-if", true), _ctx.visualization === _ctx.visualizationType.dataCourse ? ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("div", _hoisted_15, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_16, [_hoisted_17, (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("form", {
+      )])])])) : (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("v-if", true), _ctx.visualization === _ctx.visualizationType.classes ? ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("div", _hoisted_15, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_16, [_hoisted_17, (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("form", {
         onSubmit: _cache[12] || (_cache[12] = (0,vue__WEBPACK_IMPORTED_MODULE_0__.withModifiers)(function () {
           return _ctx.submitClass && _ctx.submitClass.apply(_ctx, arguments);
         }, ["prevent"]))
@@ -27977,6 +28022,56 @@ function render(_ctx, _cache, $props, $setup, $data, $options) {
       }, {
         "default": (0,vue__WEBPACK_IMPORTED_MODULE_0__.withCtx)(function () {
           return [_hoisted_35];
+        }),
+        _: 1
+        /* STABLE */
+
+      }, 8
+      /* PROPS */
+      , ["class", "disabled"])])], 32
+      /* HYDRATE_EVENTS */
+      )])])) : (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("v-if", true), _ctx.visualization === _ctx.visualizationType.quiz ? ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("div", _hoisted_36, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_37, [_hoisted_38, (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("form", {
+        onSubmit: _cache[18] || (_cache[18] = (0,vue__WEBPACK_IMPORTED_MODULE_0__.withModifiers)(function () {
+          return _ctx.submitModule && _ctx.submitModule.apply(_ctx, arguments);
+        }, ["prevent"]))
+      }, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", null, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)(_component_jet_label, {
+        "for": "question",
+        value: "Qual sua questão?"
+      }), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)(_component_jet_input, {
+        id: "question",
+        type: "text",
+        "class": "mt-1 block w-full",
+        modelValue: _ctx.quizForm.question,
+        "onUpdate:modelValue": _cache[16] || (_cache[16] = function ($event) {
+          return _ctx.quizForm.question = $event;
+        }),
+        required: "",
+        autofocus: ""
+      }, null, 8
+      /* PROPS */
+      , ["modelValue"])]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_39, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)(_component_jet_label, {
+        "for": "answer",
+        value: "resposta correta para sua pergunta"
+      }), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)(_component_jet_input, {
+        id: "answer",
+        type: "text",
+        "class": "mt-1 block w-full",
+        modelValue: _ctx.quizForm.answer,
+        "onUpdate:modelValue": _cache[17] || (_cache[17] = function ($event) {
+          return _ctx.quizForm.answer = $event;
+        }),
+        required: "",
+        autofocus: ""
+      }, null, 8
+      /* PROPS */
+      , ["modelValue"])]), _hoisted_40, (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_41, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)(_component_jet_button, {
+        "class": (0,vue__WEBPACK_IMPORTED_MODULE_0__.normalizeClass)(["ml-4", {
+          'opacity-25': _ctx.classForm.processing
+        }]),
+        disabled: _ctx.classForm.processing
+      }, {
+        "default": (0,vue__WEBPACK_IMPORTED_MODULE_0__.withCtx)(function () {
+          return [_hoisted_42];
         }),
         _: 1
         /* STABLE */
