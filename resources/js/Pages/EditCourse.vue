@@ -13,7 +13,7 @@
                     rounded
                     shadow-sm py-1
                     px-3 bg-blue-500
-                    text-white" @click="setVisualization('dataCourse')">Dados
+                    text-white" @click="setVisualization(visualizationType.dataCourse)">Dados
                         do curso</a>
                 </li>
                 <li class="mr-3">
@@ -22,23 +22,25 @@
                     hover:border-gray-200
                     text-blue-500 hover:bg-gray-200
                     py-1 px-3"
-                       @click="setVisualization('classes')">Aulas</a>
+                       @click="setVisualization(visualizationType.classes)">Aulas</a>
                 </li>
                 <li class="mr-3">
                     <a class="inline-block
                     shadow rounded hover:border-gray-200
                     text-blue-500
                     hover:bg-gray-200 py-1 px-3"
-                    @click="setVisualization('modules')">Módulos</a>
+                    @click="setVisualization(visualizationType.modules)">Módulos</a>
                 </li>
                 <li class="mr-3">
-                    <a class="inline-block shadow rounded hover:border-gray-200 text-blue-500 hover:bg-gray-200 py-1 px-3 "
+                    <a  @click="setVisualization(visualizationType.modules)" class="inline-block shadow rounded
+                    hover:border-gray-200 text-blue-500 hover:bg-gray-200 py-1 px-3 "
                        href="#">Questionários</a>
                 </li>
             </ul>
         </div>
 
-        <div class="sm:grid sm:grid-cols-2 ">
+        <!-- course data -->
+        <div class="sm:grid sm:grid-cols-1 " v-if="visualization === visualizationType.dataCourse">
             <div>
                 <div
                     class="w-full mx-auto mt-4 overflow-y-auto
@@ -72,36 +74,10 @@
                     </form>
                 </div>
             </div>
-            <div>
-                <div
-                    class="w-full  mt-4 sm:max-w-xl overflow-y-auto p-2 mt-2 px-6 py-4 bg-white shadow-md overflow-scroll sm:rounded-lg">
-                    <p class="font-bold text-gray-600">aulas</p>
-
-                    <div v-for="classe in classes"
-                         class="w-full mt-4 sm:max-w-xl grid grid-cols-5
-                        p-2 text-black mt-2 px-6 py-4 bg-white border-2 border-gray-200
-                        overflow-hidden sm:rounded-lg"
-                    >
-                        <div>#{{ classe.class_order }}</div>
-                        <div class="col-span-2">{{ classe.name }}</div>
-
-                        <div class="">
-                            <button @click="confirmExclusion(classe.id)" class="bg-purple-500
-            rounded  block
-            text-white pl-1 pr-1 ">apagar
-                            </button>
-                        </div>
-                        <div class="">
-                            <button class="bg-sky-500
-            rounded  block
-            text-white pl-1 pr-1">editar
-                            </button>
-                        </div>
-                    </div>
-                </div>
-            </div>
         </div>
-        <div class="sm:grid sm:grid-cols-2">
+
+        <!-- class data -->
+        <div class="sm:grid sm:grid-cols-2" v-if="visualization === visualizationType.dataCourse">
             <div
                 class="w-full mt-4 sm:max-w-xl mx-auto  p-1 mt-2 px-6 py-4 bg-white
                     shadow-md overflow-hidden sm:rounded-lg   ">
@@ -139,6 +115,38 @@
                     </div>
                 </form>
             </div>
+            <div>
+                <div
+                    class="w-full  mt-4 sm:max-w-xl overflow-y-auto p-2 mt-2 px-6 py-4 bg-white shadow-md overflow-scroll sm:rounded-lg">
+                    <p class="font-bold text-gray-600">aulas</p>
+
+                    <div v-for="classe in classes"
+                         class="w-full mt-4 sm:max-w-xl grid grid-cols-5
+                        p-2 text-black mt-2 px-6 py-4 bg-white border-2 border-gray-200
+                        overflow-hidden sm:rounded-lg"
+                    >
+                        <div>#{{ classe.class_order }}</div>
+                        <div class="col-span-2">{{ classe.name }}</div>
+
+                        <div class="">
+                            <button @click="confirmExclusion(classe.id)" class="bg-purple-500
+            rounded  block
+            text-white pl-1 pr-1 ">apagar
+                            </button>
+                        </div>
+                        <div class="">
+                            <button class="bg-sky-500
+            rounded  block
+            text-white pl-1 pr-1">editar
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- modules -->
+        <div class="sm:grid sm:grid-cols-1" v-if="visualization === visualizationType.modules">
             <div
                 class="w-full mt-4 sm:max-w-xl mx-auto  p-1 mt-2 px-6 py-4 bg-white
                     shadow-md overflow-hidden sm:rounded-lg   ">
@@ -200,6 +208,7 @@ export default defineComponent({
     props: ['course', 'classes', 'modules'],
     data() {
         return {
+            visualizationType:{dataCourse : 'dataCourse', classes: 'classes', modules: 'modules'},
             visualization: '',
             form: this.$inertia.form({
                 name: this.course.name,
