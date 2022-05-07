@@ -10,7 +10,7 @@ class Quiz extends Model
 {
     use HasFactory;
 
-    protected $fillable = ['question','order','answer'];
+    protected $fillable = ['question','order','answer','module_id'];
 
     public function module(): BelongsTo{
         return $this->belongsTo(Module::class);
