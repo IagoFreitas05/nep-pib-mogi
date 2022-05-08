@@ -21,7 +21,6 @@ class QuizController extends Controller
         return Inertia::render('EditCourse', [
             'course' => Course::find(),
             'classes' => Course::find(Module::find('module_id')->course_id)->classCourse()->orderBy('class_order')->get()
-
         ]);
     }
 }
