@@ -23,4 +23,8 @@ class QuizController extends Controller
             'classes' => Course::find(Module::find('module_id')->course_id)->classCourse()->orderBy('class_order')->get()
         ]);
     }
+
+    public function update(Request $request){
+
+    }
 }
