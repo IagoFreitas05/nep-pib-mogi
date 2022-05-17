@@ -147,7 +147,7 @@
         </div>
 
         <!-- modules -->
-        <div class="sm:grid sm:grid-cols-1" v-if="visualization === visualizationType.modules">
+        <div class="sm:grid sm:grid-cols-2" v-if="visualization === visualizationType.modules">
             <div
                 class="w-full mt-4 sm:max-w-xl mx-auto  p-1 mt-2 px-6 py-4 bg-white
                     shadow-md overflow-hidden sm:rounded-lg   ">
@@ -173,6 +173,35 @@
                         </jet-button>
                     </div>
                 </form>
+            </div>
+
+            <div>
+                <div
+                    class="w-full  mt-4 sm:max-w-xl overflow-y-auto p-2 mt-2 px-6 py-4 bg-white shadow-md overflow-scroll sm:rounded-lg">
+                    <p class="font-bold text-gray-600">módulos cadastrados</p>
+
+                    <div v-for="classe in classes"
+                         class="w-full mt-4 sm:max-w-xl grid grid-cols-5
+                        p-2 text-black mt-2 px-6 py-4 bg-white border-2 border-gray-200
+                        overflow-hidden sm:rounded-lg"
+                    >
+                        <div>#{{ classe.class_order }}</div>
+                        <div class="col-span-2">{{ classe.name }}</div>
+
+                        <div class="">
+                            <button @click="confirmExclusion(classe.id)" class="bg-purple-500
+            rounded  block
+            text-white pl-1 pr-1 ">apagar
+                            </button>
+                        </div>
+                        <div class="">
+                            <button class="bg-sky-500
+            rounded  block
+            text-white pl-1 pr-1">editar
+                            </button>
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
 
