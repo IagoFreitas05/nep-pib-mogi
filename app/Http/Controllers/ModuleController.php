@@ -2,10 +2,9 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\Course;
 use App\Models\Module;
 use Illuminate\Http\Request;
-use Inertia\Inertia;
+use Illuminate\Support\Facades\Redirect;
 
 class ModuleController extends Controller
 {
@@ -16,9 +15,6 @@ class ModuleController extends Controller
             'course_id' => $request->input('course_id')
         ]);
 
-        return Inertia::render('EditCourse', [
-            'course' => Course::find($ModuleCourse->course_id),
-            'classes' => Course::find($ModuleCourse->course_id)->classCourse()->orderBy('class_order')->get()
-        ]);
+        return Redirect::route('editCourse', $request->input('course_id'));
     }
 }

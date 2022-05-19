@@ -6,6 +6,7 @@ use App\Models\Course;
 use App\Models\Module;
 use App\Models\Quiz;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Redirect;
 use Inertia\Inertia;
 
 class QuizController extends Controller
@@ -18,10 +19,11 @@ class QuizController extends Controller
             "module_id" => $request->input('module_id')
         ]);
 
-        return Inertia::render('EditCourse', [
-            'course' => Course::find(),
-            'classes' => Course::find(Module::find($request->input('module_id'))->course_id)->classCourse()->orderBy('class_order')->get()
-        ]);
+        return Redirect::route('editCourse', Course::find(
+            Module::find(
+                $request
+                    ->input('module_id'))
+                ->course_id));
     }
 
     public function update(Request $request){
@@ -31,9 +33,6 @@ class QuizController extends Controller
         $quiz->answer = $request->input('answer');
         $quiz->save();
 
-        return Inertia::render('EditCourse', [
-            'course' => Course::find(),
-            'classes' => Course::find(Module::find($quiz->module_id)->course_id)->classCourse()->orderBy('class_order')->get()
-        ]);
+        return Redirect::route('editCourse', Course::find(Module::find($quiz->module_id)->course_id));
     }
 }

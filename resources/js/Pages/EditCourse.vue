@@ -211,7 +211,7 @@
                 class="w-full mt-4 sm:max-w-xl mx-auto  p-1 mt-2 px-6 py-4 bg-white
                     shadow-md overflow-hidden sm:rounded-lg   ">
                 <p class="pb-2 text-xl text-gray-400 font-bold">Cadastrar novo questionário</p>
-                <form @submit.prevent="submitModule">
+                <form @submit.prevent="submitQuiz">
                     <div>
                         <jet-label for="question" value="Qual sua questão?"/>
                         <jet-input id="question" type="text" class="mt-1 block w-full" v-model="quizForm.question"
@@ -226,7 +226,12 @@
                                    autofocus />
                     </div>
                     <div class="mt-4">
-                        <p>selecione o módulo</p>
+                        <jet-label for="categoria do curso" value="Selecione o módulo" />
+                        <select class="border-gray-300 focus:border-indigo-300 focus:ring
+                    focus:ring-indigo-200
+                    focus:ring-opacity-50 rounded-md shadow-sm" name="category" id="" v-model="quizForm.module_id">
+                            <option v-for="module in modules" :value="module.id">{{module.name}}</option>
+                        </select>
                     </div>
                     <div class="flex items-center justify-end mt-4">
                         <jet-button class="ml-4" :class="{ 'opacity-25': classForm.processing }"
@@ -349,6 +354,11 @@ export default defineComponent({
             this.moduleForm.course_id = this.course.id;
             this.moduleForm.post(this.route('newModule'), {
                 onFinish: () => swal("Isso ai!", "Novo módulo adicionado", "success")
+            })
+        },
+        submitQuiz(){
+            this.quizForm.post(this.route("newQuiz"),{
+                onFinish: () => swl("Isso ai!","Novo questionário adicionado","success")
             })
         }
     }
