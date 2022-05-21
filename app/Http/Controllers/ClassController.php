@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\ClassCourse;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Redirect;
 use Inertia\Inertia;
 use App\Models\Course;
 
@@ -19,10 +20,7 @@ class ClassController extends Controller
             'class_order' => $request->input('order')
         ]);
 
-        return Inertia::render('EditCourse', [
-            'course' => Course::find($ClassCourse->course_id),
-            'classes' => Course::find($ClassCourse->course_id)->classCourse()->orderBy('class_order')->get()
-        ]);
+        return Redirect::route('editCourse', $request->input('course_id'));
     }
 
     public function update(Request $request)
@@ -33,10 +31,7 @@ class ClassController extends Controller
         $ClassCourse->class_link = $request->input('class_link');
         $ClassCourse->class_order = $request->input('order');
         $ClassCourse->save();
-        return Inertia::render('EditCourse', [
-            'course' => Course::find($ClassCourse->course_id),
-            'classes' => Course::find($ClassCourse->course_id)->classCourse()->orderBy('class_order')->get()
-        ]);
+        return Redirect::route('editCourse', $ClassCourse->id);
     }
 
     public function delete($id)
@@ -44,9 +39,6 @@ class ClassController extends Controller
         $ClassCourse = ClassCourse::find($id);
         $idCourse = ClassCourse::find($id)->course->id;
         $ClassCourse->delete();
-        return Inertia::render('EditCourse', [
-            'course' => Course::find($idCourse),
-            'classes' => Course::find($idCourse)->classCourse()->orderBy('class_order')->get()
-        ]);
+        return Redirect::route('editCourse',$idCourse);
     }
 }
