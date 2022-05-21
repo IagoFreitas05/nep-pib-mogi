@@ -34,4 +34,8 @@ class Course extends Model
         return $this->belongsTo(Category::class);
     }
 
+    public function quiz(): HasMany{
+        return $this->hasMany(Quiz::class);
+    }
+
 }

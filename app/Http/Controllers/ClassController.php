@@ -39,6 +39,6 @@ class ClassController extends Controller
         $ClassCourse = ClassCourse::find($id);
         $idCourse = ClassCourse::find($id)->course->id;
         $ClassCourse->delete();
-        return Redirect::route('editCourse',$idCourse);
+        return Redirect::route('editCourse', $idCourse);
     }
 }

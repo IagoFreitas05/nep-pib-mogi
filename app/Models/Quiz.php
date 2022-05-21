@@ -10,9 +10,13 @@ class Quiz extends Model
 {
     use HasFactory;
 
-    protected $fillable = ['question','order','answer','module_id'];
+    protected $fillable = ['question','order','answer','module_id','course_id'];
 
     public function module(): BelongsTo{
         return $this->belongsTo(Module::class);
+    }
+
+    public function course():BelongsTo{
+        return $this->belongsTo(Couse::class);
     }
 }

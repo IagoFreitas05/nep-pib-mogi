@@ -179,17 +179,16 @@
                 <div
                     class="w-full  mt-4 sm:max-w-xl overflow-y-auto p-2 mt-2 px-6 py-4 bg-white shadow-md overflow-scroll sm:rounded-lg">
                     <p class="font-bold text-gray-600">módulos cadastrados</p>
-
-                    <div v-for="classe in classes"
-                         class="w-full mt-4 sm:max-w-xl grid grid-cols-5
+                    <div v-for="module in modules"
+                         class="w-full mt-4 sm:max-w-xl grid grid-cols-4
                         p-2 text-black mt-2 px-6 py-4 bg-white border-2 border-gray-200
                         overflow-hidden sm:rounded-lg"
                     >
-                        <div>#{{ classe.class_order }}</div>
-                        <div class="col-span-2">{{ classe.name }}</div>
+
+                        <div class="col-span-2">{{ module.name }}</div>
 
                         <div class="">
-                            <button @click="confirmExclusion(classe.id)" class="bg-purple-500
+                            <button @click="confirmExclusion(module.id)" class="bg-purple-500
             rounded  block
             text-white pl-1 pr-1 ">apagar
                             </button>
@@ -206,7 +205,7 @@
         </div>
 
         <!-- questionarios -->
-        <div class="sm:grid sm:grid-cols-1" v-if="visualization === visualizationType.quiz">
+        <div class="sm:grid sm:grid-cols-2" v-if="visualization === visualizationType.quiz">
             <div
                 class="w-full mt-4 sm:max-w-xl mx-auto  p-1 mt-2 px-6 py-4 bg-white
                     shadow-md overflow-hidden sm:rounded-lg   ">
@@ -226,7 +225,13 @@
                                    autofocus />
                     </div>
                     <div class="mt-4">
-                        <jet-label for="categoria do curso" value="Selecione o módulo" />
+                        <jet-label for="orderQuestion" value="qual a ordem desta pergunta?"/>
+                        <jet-input id="orderQuestion" type="number" class="mt-1 block w-full"
+                                   v-model="quizForm.order" required
+                                   autofocus />
+                    </div>
+                    <div class="mt-4">
+                        <jet-label for="módulo" value="Selecione o módulo" />
                         <select class="border-gray-300 focus:border-indigo-300 focus:ring
                     focus:ring-indigo-200
                     focus:ring-opacity-50 rounded-md shadow-sm" name="category" id="" v-model="quizForm.module_id">
@@ -235,11 +240,39 @@
                     </div>
                     <div class="flex items-center justify-end mt-4">
                         <jet-button class="ml-4" :class="{ 'opacity-25': classForm.processing }"
-                                    :disabled="classForm.processing">
+                                    :disabled="quizForm.processing">
                             adicionar novo questionário
                         </jet-button>
                     </div>
                 </form>
+            </div>
+
+            <div>
+                <div
+                    class="w-full  mt-4 sm:max-w-xl overflow-y-auto p-2 mt-2 px-6 py-4 bg-white shadow-md overflow-scroll sm:rounded-lg">
+                    <p class="font-bold text-gray-600">questões cadastradas</p>
+                    <div v-for="quiz in quizzes"
+                         class="w-full mt-4 sm:max-w-xl grid grid-cols-4
+                        p-2 text-black mt-2 px-6 py-4 bg-white border-2 border-gray-200
+                        overflow-hidden sm:rounded-lg"
+                    >
+
+                        <div class="col-span-2">{{ quiz.question }}</div>
+
+                        <div class="">
+                            <button @click="confirmExclusion(quiz.id)" class="bg-purple-500
+            rounded  block
+            text-white pl-1 pr-1 ">apagar
+                            </button>
+                        </div>
+                        <div class="">
+                            <button class="bg-sky-500
+            rounded  block
+            text-white pl-1 pr-1">editar
+                            </button>
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
     </app-layout>
@@ -273,7 +306,7 @@ export default defineComponent({
         Link,
         AppLayout
     },
-    props: ['course', 'classes', 'modules'],
+    props: ['course', 'classes', 'modules','quizzes'],
     data() {
         return {
             visualizationType:
@@ -308,7 +341,8 @@ export default defineComponent({
             quizForm: this.$inertia.form({
                 question:'',
                 answer: '',
-                module_id: ''
+                module_id: '',
+                order:''
             })
         }
     },
