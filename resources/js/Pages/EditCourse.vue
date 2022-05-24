@@ -174,6 +174,12 @@
                                    v-model="moduleForm.description" required
                                    autofocus autocomplete="moduleDescription"/>
                     </div>
+                    <div class="mt-4">
+                        <jet-label for="orderModule" value="qual a ordem deste módulo?"/>
+                        <jet-input id="orderModule" type="number" class="mt-1 block w-full"
+                                   v-model="moduleForm.order" required
+                                   autofocus />
+                    </div>
                     <div class="flex items-center justify-end mt-4">
                         <jet-button class="ml-4" :class="{ 'opacity-25': classForm.processing }"
                                     :disabled="classForm.processing">
@@ -345,7 +351,8 @@ export default defineComponent({
             moduleForm: this.$inertia.form({
                 name: '',
                 description: '',
-                course_id:''
+                course_id:'',
+                order:''
             }),
             quizForm: this.$inertia.form({
                 question:'',

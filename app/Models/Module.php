@@ -12,7 +12,7 @@ class Module extends Model
 {
     use HasFactory;
 
-    protected $fillable = ['name','description','course_id'];
+    protected $fillable = ['name','description','course_id','module_order'];
 
     public function course(): BelongsTo
     {

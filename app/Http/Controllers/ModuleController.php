@@ -14,7 +14,8 @@ class ModuleController extends Controller
             'name' => $request->input('name'),
             'description' => $request->input('description'),
             'course_id' => $request->input('course_id'),
-            'module_id' => $request->input('module_id')
+            'module_id' => $request->input('module_id'),
+            'module_order' => $request->input('order')
         ]);
 
         return Redirect::route('editCourse', $request->input('course_id'));
