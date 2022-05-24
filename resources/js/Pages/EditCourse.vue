@@ -108,6 +108,14 @@
                         <jet-input id="order" type="number" class="mt-1 block w-full" v-model="classForm.order"
                                    required/>
                     </div>
+                    <div class="mt-4">
+                        <jet-label for="módulo" value="Selecione o módulo" />
+                        <select class="border-gray-300 focus:border-indigo-300 focus:ring
+                    focus:ring-indigo-200
+                    focus:ring-opacity-50 rounded-md shadow-sm" name="category" v-model="classForm.module_id">
+                            <option v-for="module in modules" :value="module.id">{{module.name}}</option>
+                        </select>
+                    </div>
                     <div class="flex items-center justify-end mt-4">
                         <jet-button class="ml-4" :class="{ 'opacity-25': classForm.processing }"
                                     :disabled="classForm.processing">
@@ -328,6 +336,7 @@ export default defineComponent({
                 description: '',
                 classLink: '',
                 course_id: this.course.id,
+                module_id: '',
                 order: ''
             }),
             deleteForm: this.$inertia.form({
