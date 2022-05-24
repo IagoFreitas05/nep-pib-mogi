@@ -14,6 +14,7 @@ class ClassCourse extends Model
         'description',
         'class_link',
         'course_id',
+        'module_id',
         'class_order'
     ];
 
