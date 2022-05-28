@@ -24,6 +24,7 @@ return new class extends Migration
             $table->foreignId('current_team_id')->nullable();
             $table->string('profile_photo_path', 2048)->nullable();
             $table->string('celphone')->nullable();
+            $table->string('isMember')->nullable();
             $table->timestamps();
         });
     }
