@@ -12,7 +12,7 @@ class ClassController extends Controller
 {
     public function create(Request $request)
     {
-        $ClassCourse = ClassCourse::create([
+       ClassCourse::create([
             'name' => $request->input('name'),
             'description' => $request->input('description'),
             'class_link' => $request->input('classLink'),
