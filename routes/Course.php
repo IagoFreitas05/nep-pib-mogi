@@ -1,6 +1,9 @@
 <?php
 
+use App\Models\ClassCourse;
 use App\Models\Course;
+use App\Models\Module;
+use App\Models\Quiz;
 use App\Models\User;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
@@ -47,8 +50,8 @@ Route::middleware(['auth:sanctum', 'verified'])->get('/editCourse/{id}', functio
     return Inertia::render('EditCourse', [
         'course' => Course::find($id),
         'classes' => Course::find($id)->classCourse()->orderBy('class_order')->get(),
-        'modules' => Course::find($id)->module()->get(),
-        'quiz' => Course::find($id)->quiz()->orderBy('order')->get()
+        'modules' => Course::find($id)->module()->get() ,
+        'quizzes' => Quiz::with('module')->where('course_id', '=',$id)->get()
     ]);
 })->name("editCourse");
 

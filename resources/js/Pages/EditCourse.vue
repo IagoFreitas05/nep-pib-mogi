@@ -260,7 +260,6 @@
                     </div>
                 </form>
             </div>
-
             <div>
                 <div
                     class="w-full  mt-4 sm:max-w-xl overflow-y-auto p-2 mt-2 px-6 py-4 bg-white shadow-md overflow-scroll sm:rounded-lg">
@@ -271,7 +270,7 @@
                         overflow-hidden sm:rounded-lg"
                     >
 
-                        <div class="col-span-2">{{ quiz.question }}</div>
+                        <div class="col-span-2">módulo: {{quiz.module.name}}, questão: {{quiz.order}} - {{ quiz.question }}</div>
 
                         <div class="">
                             <button @click="confirmExclusion(quiz.id)" class="bg-purple-500
@@ -358,7 +357,8 @@ export default defineComponent({
                 question:'',
                 answer: '',
                 module_id: '',
-                order:''
+                order:'',
+                course_id:''
             })
         }
     },
@@ -407,8 +407,9 @@ export default defineComponent({
             })
         },
         submitQuiz(){
+            this.quizForm.course_id = this.course.id;
             this.quizForm.post(this.route("newQuiz"),{
-                onFinish: () => swl("Isso ai!","Novo questionário adicionado","success")
+                onFinish: () => swal("Isso ai!","Novo questionário adicionado","success")
             })
         }
     }

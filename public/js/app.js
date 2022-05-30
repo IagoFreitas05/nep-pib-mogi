@@ -23194,7 +23194,8 @@ __webpack_require__.r(__webpack_exports__);
         question: '',
         answer: '',
         module_id: '',
-        order: ''
+        order: '',
+        course_id: ''
       })
     };
   },
@@ -23250,9 +23251,10 @@ __webpack_require__.r(__webpack_exports__);
       });
     },
     submitQuiz: function submitQuiz() {
+      this.quizForm.course_id = this.course.id;
       this.quizForm.post(this.route("newQuiz"), {
         onFinish: function onFinish() {
-          return swl("Isso ai!", "Novo questionário adicionado", "success");
+          return sweetalert__WEBPACK_IMPORTED_MODULE_11___default()("Isso ai!", "Novo questionário adicionado", "success");
         }
       });
     }
@@ -28238,7 +28240,7 @@ function render(_ctx, _cache, $props, $setup, $data, $options) {
       , ["class", "disabled"])])], 32
       /* HYDRATE_EVENTS */
       )]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", null, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_55, [_hoisted_56, ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(true), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)(vue__WEBPACK_IMPORTED_MODULE_0__.Fragment, null, (0,vue__WEBPACK_IMPORTED_MODULE_0__.renderList)(_ctx.quizzes, function (quiz) {
-        return (0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("div", _hoisted_57, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_58, (0,vue__WEBPACK_IMPORTED_MODULE_0__.toDisplayString)(quiz.question), 1
+        return (0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("div", _hoisted_57, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_58, "módulo: " + (0,vue__WEBPACK_IMPORTED_MODULE_0__.toDisplayString)(quiz.module.name) + ", questão: " + (0,vue__WEBPACK_IMPORTED_MODULE_0__.toDisplayString)(quiz.order) + " - " + (0,vue__WEBPACK_IMPORTED_MODULE_0__.toDisplayString)(quiz.question), 1
         /* TEXT */
         ), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_59, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("button", {
           onClick: function onClick($event) {

@@ -24,8 +24,8 @@ class Module extends Model
         return $this->hasMany(ClassCourse::class);
     }
 
-    public function quiz():HasOne
+    public function quiz():HasMany
     {
-        return $this->hasOne(Quiz::class);
+        return $this->hasMany(Quiz::class);
     }
 }
