@@ -34,10 +34,10 @@ Route::middleware(['auth:sanctum', 'verified'])
                 ->classCourse()
                 ->orderBy('class_order')
                 ->get(),
-            'modules' => Module::join('class_courses','modules.id','=','class_courses.module_id')
-                ->orderBy('class_courses.class_order','asc')
-                ->where('modules.course_id','=',$id)
-            ->get(['modules.name as module_name','modules.id as id_from_module','class_courses.*'])
+            'modules' => Module::with('class')
+                ->where('course_id','=', $id)
+                ->orderBy('module_order')
+                ->get()
         ]);
     })
     ->name("classes");
