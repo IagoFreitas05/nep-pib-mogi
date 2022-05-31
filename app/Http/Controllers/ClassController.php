@@ -17,7 +17,8 @@ class ClassController extends Controller
             'description' => $request->input('description'),
             'class_link' => $request->input('classLink'),
             'course_id' => $request->input('course_id'),
-            'class_order' => $request->input('order')
+            'class_order' => $request->input('order'),
+            'module_id' => $request->input('module_id')
         ]);
 
         return Redirect::route('editCourse', $request->input('course_id'));

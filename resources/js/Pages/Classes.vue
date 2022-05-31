@@ -11,6 +11,14 @@
                 <div
                     class="w-full mx-auto  p-3   bg-white shadow-md overflow-scroll sm:rounded-lg">
                     <p class="font-bold text-gray-600"> {{ course.name }}</p>
+                    <div v-for="module in modules"
+                         class="w-full mt-4 sm:max-w-xl grid grid-cols-1
+                        p-2 text-black mt-2 px-6 py-4 bg-white border
+                        overflow-y-auto sm:rounded-lg"
+                    >
+                        <div>módulo: {{ module.module_name }}</div>
+                        <p v-if="module.module_id === module.id_from_module">aula: {{module.name}}</p>
+                    </div>
 
                     <div v-for="classe in classes"
                          class="w-full mt-4 sm:max-w-xl grid grid-cols-5
@@ -59,7 +67,7 @@ export default defineComponent({
             })
         }
     },
-    props: ['classes', 'course'],
+    props: ['classes', 'course','modules'],
     methods: {
         confirmSubscription(id) {
             swal({

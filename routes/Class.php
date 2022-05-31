@@ -1,6 +1,7 @@
 <?php
 
 use App\Models\Course;
+use App\Models\Module;
 use Illuminate\Support\Facades\Route;
 use Inertia\Inertia;
 
@@ -32,7 +33,11 @@ Route::middleware(['auth:sanctum', 'verified'])
             'classes' => Course::find($id)
                 ->classCourse()
                 ->orderBy('class_order')
-                ->get()
+                ->get(),
+            'modules' => Module::join('class_courses','modules.id','=','class_courses.module_id')
+                ->orderBy('class_courses.class_order','asc')
+                ->where('modules.course_id','=',$id)
+            ->get(['modules.name as module_name','modules.id as id_from_module','class_courses.*'])
         ]);
     })
     ->name("classes");
