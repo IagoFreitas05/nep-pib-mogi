@@ -2,6 +2,7 @@
 
 use App\Models\Course;
 use App\Models\Module;
+use App\Models\Quiz;
 use Illuminate\Support\Facades\Route;
 use Inertia\Inertia;
 
@@ -37,6 +38,9 @@ Route::middleware(['auth:sanctum', 'verified'])
             'modules' => Module::with('class')
                 ->where('course_id','=', $id)
                 ->orderBy('module_order')
+                ->get(),
+            'quizzes' => Quiz::where('course_id', '=', $id)
+                ->orderBy('order','desc')
                 ->get()
         ]);
     })

@@ -31,10 +31,7 @@
                                 </button>
                             </div>
                         </div>
-
                     </div>
-
-
                 </div>
                 <div class="w-full mx-auto h-full col-span-2  bg-white shadow-md overflow-scroll sm:rounded-lg">
                     <iframe width="100%"  style="height:80vh" :src=code title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
