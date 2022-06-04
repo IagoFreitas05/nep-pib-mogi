@@ -22985,7 +22985,7 @@ __webpack_require__.r(__webpack_exports__);
       })
     };
   },
-  props: ['classes', 'course', 'modules'],
+  props: ['classes', 'course', 'modules', 'quizzes'],
   methods: {
     confirmSubscription: function confirmSubscription(id) {
       var _this = this;
@@ -27325,7 +27325,7 @@ var _hoisted_3 = {
   "class": "sm:grid sm:grid-cols-3 sm:gap-4 max-w-7xl mx-auto sm:px-6 lg:px-8"
 };
 var _hoisted_4 = {
-  "class": "w-full mx-auto p-3 h-80 bg-white shadow-md overflow-auto sm:rounded-lg"
+  "class": "w-full mx-auto p-3 h-90 bg-white shadow-md overflow-auto sm:rounded-lg"
 };
 var _hoisted_5 = {
   "class": "font-bold text-gray-600"
@@ -27350,9 +27350,16 @@ var _hoisted_12 = {
   key: 1
 };
 var _hoisted_13 = {
+  key: 0,
+  "class": "w-full mt-4 sm:max-w-xl grid grid-cols-3 p-2 text-black mt-2 px-6 py-4 bg-white border overflow-y-auto sm:rounded-lg"
+};
+var _hoisted_14 = {
+  "class": ""
+};
+var _hoisted_15 = {
   "class": "w-full mx-auto h-full col-span-2 bg-white shadow-md overflow-scroll sm:rounded-lg"
 };
-var _hoisted_14 = ["src"];
+var _hoisted_16 = ["src"];
 function render(_ctx, _cache, $props, $setup, $data, $options) {
   var _component_app_layout = (0,vue__WEBPACK_IMPORTED_MODULE_0__.resolveComponent)("app-layout");
 
@@ -27387,10 +27394,21 @@ function render(_ctx, _cache, $props, $setup, $data, $options) {
           );
         }), 256
         /* UNKEYED_FRAGMENT */
+        )), ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(true), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)(vue__WEBPACK_IMPORTED_MODULE_0__.Fragment, null, (0,vue__WEBPACK_IMPORTED_MODULE_0__.renderList)(_ctx.quizzes, function (quiz) {
+          return (0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("div", null, [quiz.module_id === module.id ? ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("div", _hoisted_13, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", null, "questão - " + (0,vue__WEBPACK_IMPORTED_MODULE_0__.toDisplayString)(quiz.order), 1
+          /* TEXT */
+          ), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_14, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("button", {
+            onClick: _cache[0] || (_cache[0] = function ($event) {
+              return _ctx.setCode(_ctx.classe.class_link);
+            }),
+            "class": "bg-purple-500 rounded block text-white pl-1 pr-1"
+          }, " responder ")])])) : (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("v-if", true)]);
+        }), 256
+        /* UNKEYED_FRAGMENT */
         ))]);
       }), 256
       /* UNKEYED_FRAGMENT */
-      ))]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_13, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("iframe", {
+      ))]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_15, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("iframe", {
         width: "100%",
         style: {
           "height": "80vh"
@@ -27402,7 +27420,7 @@ function render(_ctx, _cache, $props, $setup, $data, $options) {
         allowfullscreen: ""
       }, null, 8
       /* PROPS */
-      , _hoisted_14)])])])];
+      , _hoisted_16)])])])];
     }),
     _: 1
     /* STABLE */

@@ -8,7 +8,7 @@
         <div class="py-12">
             <div class="sm:grid sm:grid-cols-3 sm:gap-4  max-w-7xl mx-auto sm:px-6 lg:px-8 ">
                 <div
-                    class="w-full mx-auto  p-3  h-80 bg-white shadow-md overflow-auto sm:rounded-lg">
+                    class="w-full mx-auto  p-3  h-90 bg-white shadow-md overflow-auto sm:rounded-lg">
                     <p class="font-bold text-gray-600"> {{ course.name }}</p>
                     <div v-for="module in modules"
                          class="w-full mt-4 sm:max-w-xl grid grid-cols-1
@@ -30,6 +30,23 @@
             text-white pl-1 pr-1 "><span v-if="classe.class_link === justTheCode">reproduzindo</span> <span v-else>assistir</span>
                                 </button>
                             </div>
+                        </div>
+                        <div v-for="quiz in quizzes">
+                            <div v-if="quiz.module_id === module.id"
+                                 class="w-full mt-4 sm:max-w-xl grid grid-cols-3
+                                p-2 text-black mt-2 px-6 py-4 bg-white border
+                                overflow-y-auto sm:rounded-lg">
+                                <div>questão - {{ quiz.order}}</div>
+
+                                <div class="">
+                                    <button @click="setCode(classe.class_link)" class="bg-purple-500
+                                     rounded  block
+                                    text-white pl-1 pr-1 ">
+                                       responder
+                                    </button>
+                                </div>
+                            </div>
+
                         </div>
                     </div>
                 </div>
@@ -64,7 +81,7 @@ export default defineComponent({
             })
         }
     },
-    props: ['classes', 'course','modules'],
+    props: ['classes', 'course','modules','quizzes'],
     methods: {
         confirmSubscription(id) {
             swal({
