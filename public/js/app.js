@@ -27351,7 +27351,7 @@ var _hoisted_12 = {
 };
 var _hoisted_13 = {
   key: 0,
-  "class": "w-full mt-4 sm:max-w-xl grid grid-cols-3 p-2 text-black mt-2 px-6 py-4 bg-white border overflow-y-auto sm:rounded-lg"
+  "class": "w-full mt-4 sm:max-w-xl grid grid-cols-2 p-2 text-black mt-2 px-6 py-4 bg-white border overflow-y-auto sm:rounded-lg"
 };
 var _hoisted_14 = {
   "class": ""

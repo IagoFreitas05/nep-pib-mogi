@@ -31,9 +31,10 @@
                                 </button>
                             </div>
                         </div>
+
                         <div v-for="quiz in quizzes">
                             <div v-if="quiz.module_id === module.id"
-                                 class="w-full mt-4 sm:max-w-xl grid grid-cols-3
+                                 class="w-full mt-4 sm:max-w-xl grid grid-cols-2
                                 p-2 text-black mt-2 px-6 py-4 bg-white border
                                 overflow-y-auto sm:rounded-lg">
                                 <div>questão - {{ quiz.order}}</div>
