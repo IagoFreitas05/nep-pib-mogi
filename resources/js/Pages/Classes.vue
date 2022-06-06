@@ -7,8 +7,8 @@
         </template>
         <div class="py-12">
             <div class="sm:grid sm:grid-cols-3 sm:gap-4  max-w-7xl mx-auto sm:px-6 lg:px-8 ">
-                <div
-                    class="w-full mx-auto  p-3  h-90 bg-white shadow-md overflow-auto sm:rounded-lg">
+                <div style="height: 523px;"
+                    class="w-full mx-auto  p-3  bg-white shadow-md overflow-auto sm:rounded-lg">
                     <p class="font-bold text-gray-600"> {{ course.name }}</p>
                     <div v-for="module in modules"
                          class="w-full mt-4 sm:max-w-xl grid grid-cols-1
@@ -51,7 +51,7 @@
                         </div>
                     </div>
                 </div>
-                <div class="w-full mx-auto h-full col-span-2  bg-white shadow-md overflow-scroll sm:rounded-lg">
+                <div style="height: 523px;" class="w-full mx-auto  col-span-2  bg-white shadow-md overflow-scroll sm:rounded-lg">
                     <iframe width="100%"  style="height:80vh" :src=code title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
                 </div>
             </div>

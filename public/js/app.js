@@ -27325,7 +27325,10 @@ var _hoisted_3 = {
   "class": "sm:grid sm:grid-cols-3 sm:gap-4 max-w-7xl mx-auto sm:px-6 lg:px-8"
 };
 var _hoisted_4 = {
-  "class": "w-full mx-auto p-3 h-90 bg-white shadow-md overflow-auto sm:rounded-lg"
+  style: {
+    "height": "523px"
+  },
+  "class": "w-full mx-auto p-3 bg-white shadow-md overflow-auto sm:rounded-lg"
 };
 var _hoisted_5 = {
   "class": "font-bold text-gray-600"
@@ -27357,7 +27360,10 @@ var _hoisted_14 = {
   "class": ""
 };
 var _hoisted_15 = {
-  "class": "w-full mx-auto h-full col-span-2 bg-white shadow-md overflow-scroll sm:rounded-lg"
+  style: {
+    "height": "523px"
+  },
+  "class": "w-full mx-auto col-span-2 bg-white shadow-md overflow-scroll sm:rounded-lg"
 };
 var _hoisted_16 = ["src"];
 function render(_ctx, _cache, $props, $setup, $data, $options) {
