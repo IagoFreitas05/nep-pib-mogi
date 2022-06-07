@@ -36,6 +36,15 @@
                 <jet-input id="password_confirmation" type="password" class="mt-1 block w-full"
                            v-model="form.password_confirmation" required autocomplete="new-password"/>
             </div>
+            <div class="mt-4">
+                <jet-label for="isMember" value="Você é membro da PIB?"/>
+                <select class="border-gray-300 focus:border-indigo-300 focus:ring
+                    focus:ring-indigo-200
+                    focus:ring-opacity-50 rounded-md shadow-sm" name="category" id="" v-model="form.isMember">
+                    <option value="s">sou membro da PIB</option>
+                    <option value="n">não sou membro da PIB</option>
+                </select>
+            </div>
 
             <div class="mt-4" v-if="$page.props.jetstream.hasTermsAndPrivacyPolicyFeature">
                 <jet-label for="terms">
@@ -100,7 +109,8 @@ export default defineComponent({
                 password: '',
                 password_confirmation: '',
                 terms: false,
-                celphone: ''
+                celphone: '',
+                isMember:''
             })
         }
     },
