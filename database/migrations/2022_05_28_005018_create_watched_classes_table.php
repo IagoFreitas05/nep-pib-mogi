@@ -15,6 +15,8 @@ return new class extends Migration
     {
         Schema::create('watched_classes', function (Blueprint $table) {
             $table->id();
+            $table->foreignId('class_id')->unsigned();
+            $table->foreignId('user_id')->unsigned();
             $table->timestamps();
         });
     }
