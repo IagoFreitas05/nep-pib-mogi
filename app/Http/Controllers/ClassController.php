@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\ClassCourse;
+use App\Models\WatchedClass;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Redirect;
 use Inertia\Inertia;
@@ -41,5 +42,15 @@ class ClassController extends Controller
         $idCourse = ClassCourse::find($id)->course->id;
         $ClassCourse->delete();
         return Redirect::route('editCourse', $idCourse);
+    }
+
+    public function setWatchedClass(Request $request){
+
+        WatchedClass::create([
+            'class_id'=> $request->input('class_id'),
+            'course_id' => $request->input('course_id')
+        ]);
+
+        return Redirect::route('editCourse', $request->input('course_id'));
     }
 }
