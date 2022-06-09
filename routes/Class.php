@@ -26,7 +26,7 @@ Route::middleware(['auth:sanctum', 'verified'])
     ->name("deleteClass");
 
 Route::middleware(['auth:sanctum', 'verified'])
-    ->post('/setWatchedClass','App\Http\Controllers\ClassController@setWatchedClass');
+    ->post('/setWatchedClass','App\Http\Controllers\ClassController@setWatchedClass')
     ->name("setWatchedClass");
 
 /*adicionar rota de edição*/
