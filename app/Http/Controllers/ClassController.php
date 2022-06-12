@@ -48,7 +48,7 @@ class ClassController extends Controller
 
         WatchedClass::create([
             'class_id'=> $request->input('class_id'),
-            'course_id' => $request->input('course_id')
+            'user_id' => $request->input('user_id')
         ]);
 
         return Redirect::route('editCourse', $request->input('course_id'));

@@ -78,6 +78,10 @@ export default defineComponent({
             justTheCode:'',
             subscriptionForm: this.$inertia.form({
                 course_id: ''
+            }),
+            watchedClassForm: this.$inertia.form({
+                class_id: '',
+                user_id:''
             })
         }
     },
@@ -94,7 +98,9 @@ export default defineComponent({
                 .then((willDelete) => {
                     this.subscriptionForm.course_id = id
                     if (willDelete) {
-                        this.subscriptionForm.post(this.route('subscription'));
+                        this.subscriptionForm.post(this.route('subscription'),{
+                            onFinish: () => alert("aula assistida com sucesso") //remover esse cara;
+                        });
                     } else {
                         swal("Inscrição cancelada!");
                     }
@@ -103,6 +109,11 @@ export default defineComponent({
         setCode(code){
             this.justTheCode = code;
             this.code = `https://www.youtube.com/embed/${code}`;
+        },
+        setWatchedClass(class_id, user_id){
+            this.watchedClassForm.class_id = class_id;
+            this.watchedClassForm.user_id = user_id;
+            this.watchedClassForm.post(this.route('setWatchedClass'))
         }
     }
 })
