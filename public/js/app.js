@@ -22983,6 +22983,10 @@ __webpack_require__.r(__webpack_exports__);
       justTheCode: '',
       subscriptionForm: this.$inertia.form({
         course_id: ''
+      }),
+      watchedClassForm: this.$inertia.form({
+        class_id: '',
+        user_id: ''
       })
     };
   },
@@ -23001,7 +23005,12 @@ __webpack_require__.r(__webpack_exports__);
         _this.subscriptionForm.course_id = id;
 
         if (willDelete) {
-          _this.subscriptionForm.post(_this.route('subscription'));
+          _this.subscriptionForm.post(_this.route('subscription'), {
+            onFinish: function onFinish() {
+              return alert("aula assistida com sucesso");
+            } //remover esse cara;
+
+          });
         } else {
           sweetalert__WEBPACK_IMPORTED_MODULE_4___default()("Inscrição cancelada!");
         }
@@ -23010,6 +23019,11 @@ __webpack_require__.r(__webpack_exports__);
     setCode: function setCode(code) {
       this.justTheCode = code;
       this.code = "https://www.youtube.com/embed/".concat(code);
+    },
+    setWatchedClass: function setWatchedClass(class_id, user_id) {
+      this.watchedClassForm.class_id = class_id;
+      this.watchedClassForm.user_id = user_id;
+      this.watchedClassForm.post(this.route('setWatchedClass'));
     }
   }
 }));
@@ -27420,7 +27434,9 @@ function render(_ctx, _cache, $props, $setup, $data, $options) {
           /* TEXT */
           ), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_9, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("button", {
             onClick: function onClick($event) {
-              return _ctx.setCode(classe.class_link);
+              _ctx.setCode(classe.class_link);
+
+              _ctx.setWatchedClass(classe.id, 1);
             },
             "class": (0,vue__WEBPACK_IMPORTED_MODULE_0__.normalizeClass)([classe.class_link === _ctx.justTheCode ? 'bg-green-500' : 'bg-purple-500', "rounded block text-white pl-1 pr-1"])
           }, [classe.class_link === _ctx.justTheCode ? ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("span", _hoisted_11, "reproduzindo")) : ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("span", _hoisted_12, "assistir"))], 10

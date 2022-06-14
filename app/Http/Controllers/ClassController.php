@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\ClassCourse;
 use App\Models\WatchedClass;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Redirect;
 use Inertia\Inertia;
 use App\Models\Course;
@@ -48,7 +49,7 @@ class ClassController extends Controller
 
         WatchedClass::create([
             'class_id'=> $request->input('class_id'),
-            'user_id' => $request->input('user_id')
+            'user_id' => Auth::user()->id
         ]);
 
         return Redirect::route('editCourse', $request->input('course_id'));

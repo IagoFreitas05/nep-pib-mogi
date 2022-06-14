@@ -25,7 +25,7 @@
                             <div class="col-span-2">{{ classe.name }}</div>
 
                             <div class="">
-                                <button @click="setCode(classe.class_link)" v-bind:class="classe.class_link === justTheCode?'bg-green-500':'bg-purple-500'" class="
+                                <button @click="setCode(classe.class_link); setWatchedClass(classe.id, 1)" v-bind:class="classe.class_link === justTheCode?'bg-green-500':'bg-purple-500'" class="
             rounded  block
             text-white pl-1 pr-1 "><span v-if="classe.class_link === justTheCode">reproduzindo</span> <span v-else>assistir</span>
                                 </button>
