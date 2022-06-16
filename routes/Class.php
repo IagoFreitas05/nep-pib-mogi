@@ -3,6 +3,8 @@
 use App\Models\Course;
 use App\Models\Module;
 use App\Models\Quiz;
+use App\Models\WatchedClass;
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
 use Inertia\Inertia;
 
@@ -26,7 +28,7 @@ Route::middleware(['auth:sanctum', 'verified'])
     ->name("deleteClass");
 
 Route::middleware(['auth:sanctum', 'verified'])
-    ->post('/setWatchedClass','App\Http\Controllers\ClassController@setWatchedClass')
+    ->post('/setWatchedClass', 'App\Http\Controllers\ClassController@setWatchedClass')
     ->name("setWatchedClass");
 
 /*adicionar rota de edição*/
@@ -40,12 +42,13 @@ Route::middleware(['auth:sanctum', 'verified'])
                 ->orderBy('class_order')
                 ->get(),
             'modules' => Module::with('class')
-                ->where('course_id','=', $id)
+                ->where('course_id', '=', $id)
                 ->orderBy('module_order')
                 ->get(),
             'quizzes' => Quiz::where('course_id', '=', $id)
-                ->orderBy('order','desc')
-                ->get()
+                ->orderBy('order', 'desc')
+                ->get(),
+            'watched_class' => WatchedClass::where('user_id', '=', Auth::user()->id)->get()
         ]);
     })
     ->name("classes");

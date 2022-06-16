@@ -52,8 +52,7 @@ Route::middleware(['auth:sanctum', 'verified'])->get('/editCourse/{id}', functio
         'course' => Course::find($id),
         'classes' => Course::find($id)->classCourse()->orderBy('class_order')->get(),
         'modules' => Course::find($id)->module()->get() ,
-        'quizzes' => Quiz::with('module')->where('course_id', '=',$id)->get(),
-        'watched_class' => WatchedClass::where('course_id','=',$id)->get()
+        'quizzes' => Quiz::with('module')->where('course_id', '=',$id)->get()
     ]);
 })->name("editCourse");
 

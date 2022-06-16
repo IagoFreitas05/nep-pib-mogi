@@ -85,7 +85,7 @@ export default defineComponent({
             })
         }
     },
-    props: ['classes', 'course','modules','quizzes'],
+    props: ['classes', 'course','modules','quizzes','watchedClasses'],
     methods: {
         confirmSubscription(id) {
             swal({
