@@ -8,7 +8,7 @@
         <div class="py-12">
             <div class="sm:grid sm:grid-cols-3 sm:gap-4  max-w-7xl mx-auto sm:px-6 lg:px-8 ">
                 <div style="height: 523px;"
-                    class="w-full mx-auto  p-3  bg-white shadow-md overflow-auto sm:rounded-lg">
+                     class="w-full mx-auto  p-3  bg-white shadow-md overflow-auto sm:rounded-lg">
                     <p class="font-bold text-gray-600"> {{ course.name }}</p>
                     <div v-for="module in modules"
                          class="w-full mt-4 sm:max-w-xl grid grid-cols-1
@@ -19,15 +19,20 @@
                         <div v-for="classe in module.class"
                              class="w-full mt-4 sm:max-w-xl grid grid-cols-5
                         p-2 text-black mt-2 px-6 py-4 bg-white border
-                        overflow-y-auto sm:rounded-lg" v-bind:class="classe.class_link === justTheCode?'border-green-400':'border-gray-400'"
+                        overflow-y-auto sm:rounded-lg"
+                             v-bind:class="classe.class_link === justTheCode?'border-green-400':'border-gray-400'"
                         >
                             <div>#{{ classe.class_order }}</div>
                             <div class="col-span-2">{{ classe.name }}</div>
 
                             <div class="">
-                                <button @click="setCode(classe.class_link); setWatchedClass(classe.id, 1)" v-bind:class="classe.class_link === justTheCode?'bg-green-500':'bg-purple-500'" class="
-            rounded  block
-            text-white pl-1 pr-1 "><span v-if="classe.class_link === justTheCode">reproduzindo</span> <span v-else>assistir</span>
+                                <button @click="setCode(classe.class_link);
+                                                setWatchedClass(classe.id, 1)"
+                                        v-bind:class="classe.class_link === justTheCode?'bg-green-500':'bg-purple-500'"
+                                        class=" rounded  block text-white pl-1 pr-1 ">
+                                    <span v-if="classe.class_link === justTheCode">reproduzindo</span>
+                                    <span v-if="watchedClasses.find(element => element.class_id === classe.id)">assistido</span>
+                                    <span v-else>assistir</span>
                                 </button>
                             </div>
                         </div>
@@ -37,13 +42,13 @@
                                  class="w-full mt-4 sm:max-w-xl grid grid-cols-2
                                 p-2 text-black mt-2 px-6 py-4 bg-white border
                                 overflow-y-auto sm:rounded-lg">
-                                <div>questão - {{ quiz.order}}</div>
+                                <div>questão - {{ quiz.order }}</div>
 
                                 <div class="">
                                     <button @click="setCode(classe.class_link)" class="bg-purple-500
                                      rounded  block
                                     text-white pl-1 pr-1 ">
-                                       responder
+                                        responder
                                     </button>
                                 </div>
                             </div>
@@ -51,8 +56,11 @@
                         </div>
                     </div>
                 </div>
-                <div style="height: 523px;" class="w-full mx-auto  col-span-2  bg-white shadow-md overflow-scroll sm:rounded-lg">
-                    <iframe width="100%"  style="height:80vh" :src=code title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                <div style="height: 523px;"
+                     class="w-full mx-auto  col-span-2  bg-white shadow-md overflow-scroll sm:rounded-lg">
+                    <iframe width="100%" style="height:80vh" :src=code title="YouTube video player" frameborder="0"
+                            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                            allowfullscreen></iframe>
                 </div>
             </div>
         </div>
@@ -75,17 +83,17 @@ export default defineComponent({
     data() {
         return {
             code: '',
-            justTheCode:'',
+            justTheCode: '',
             subscriptionForm: this.$inertia.form({
                 course_id: ''
             }),
             watchedClassForm: this.$inertia.form({
                 class_id: '',
-                user_id:''
+                user_id: ''
             })
         }
     },
-    props: ['classes', 'course','modules','quizzes','watchedClasses'],
+    props: ['classes', 'course', 'modules', 'quizzes', 'watchedClasses'],
     methods: {
         confirmSubscription(id) {
             swal({
@@ -98,7 +106,7 @@ export default defineComponent({
                 .then((willDelete) => {
                     this.subscriptionForm.course_id = id
                     if (willDelete) {
-                        this.subscriptionForm.post(this.route('subscription'),{
+                        this.subscriptionForm.post(this.route('subscription'), {
                             onFinish: () => alert("aula assistida com sucesso") //remover esse cara;
                         });
                     } else {
@@ -106,11 +114,11 @@ export default defineComponent({
                     }
                 });
         },
-        setCode(code){
+        setCode(code) {
             this.justTheCode = code;
             this.code = `https://www.youtube.com/embed/${code}`;
         },
-        setWatchedClass(class_id, user_id){
+        setWatchedClass(class_id, user_id) {
             this.watchedClassForm.class_id = class_id;
             this.watchedClassForm.user_id = user_id;
             this.watchedClassForm.post(this.route('setWatchedClass'))
