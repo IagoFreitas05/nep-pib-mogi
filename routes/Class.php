@@ -48,7 +48,7 @@ Route::middleware(['auth:sanctum', 'verified'])
             'quizzes' => Quiz::where('course_id', '=', $id)
                 ->orderBy('order', 'desc')
                 ->get(),
-            'watched_class' => WatchedClass::where('user_id', '=', Auth::user()->id)->get()
+            'watchedClasses' => WatchedClass::where('user_id', '=', Auth::user()->id)->get()
         ]);
     })
     ->name("classes");

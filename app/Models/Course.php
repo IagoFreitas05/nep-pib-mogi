@@ -11,30 +11,35 @@ class Course extends Model
 {
     use HasFactory;
 
-    protected $fillable =[
+    protected $fillable = [
         'name',
         'duration',
         'description',
         'profile_photo_path'
     ];
 
-    public function subscription(): HasMany{
-       return $this->hasMany(Subscription::class);
+    public function subscription(): HasMany
+    {
+        return $this->hasMany(Subscription::class);
     }
 
-    public function classCourse(): HasMany{
-      return  $this->hasMany(ClassCourse::class);
+    public function classCourse(): HasMany
+    {
+        return $this->hasMany(ClassCourse::class);
     }
 
-    public function module(): HasMany{
+    public function module(): HasMany
+    {
         return $this->hasMany(Module::class);
     }
 
-    public function category(): BelongsTo{
+    public function category(): BelongsTo
+    {
         return $this->belongsTo(Category::class);
     }
 
-    public function quiz(): HasMany{
+    public function quiz(): HasMany
+    {
         return $this->hasMany(Quiz::class);
     }
 

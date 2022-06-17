@@ -22964,9 +22964,6 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _Layouts_AppLayout_vue__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @/Layouts/AppLayout.vue */ "./resources/js/Layouts/AppLayout.vue");
 /* harmony import */ var _Jetstream_Welcome_vue__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @/Jetstream/Welcome.vue */ "./resources/js/Jetstream/Welcome.vue");
 /* harmony import */ var _Jetstream_NavLink_vue__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @/Jetstream/NavLink.vue */ "./resources/js/Jetstream/NavLink.vue");
-/* harmony import */ var sweetalert__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! sweetalert */ "./node_modules/sweetalert/dist/sweetalert.min.js");
-/* harmony import */ var sweetalert__WEBPACK_IMPORTED_MODULE_4___default = /*#__PURE__*/__webpack_require__.n(sweetalert__WEBPACK_IMPORTED_MODULE_4__);
-
 
 
 
@@ -22981,41 +22978,15 @@ __webpack_require__.r(__webpack_exports__);
     return {
       code: '',
       justTheCode: '',
-      subscriptionForm: this.$inertia.form({
-        course_id: ''
-      }),
       watchedClassForm: this.$inertia.form({
         class_id: '',
-        user_id: ''
+        user_id: '',
+        course_id: ''
       })
     };
   },
-  props: ['classes', 'course', 'modules', 'quizzes'],
+  props: ['classes', 'course', 'modules', 'quizzes', 'watchedClasses'],
   methods: {
-    confirmSubscription: function confirmSubscription(id) {
-      var _this = this;
-
-      sweetalert__WEBPACK_IMPORTED_MODULE_4___default()({
-        title: "Você tem certeza?",
-        text: "gostaria de realizar a sua inscrição nesse curso?!",
-        icon: "warning",
-        buttons: true,
-        dangerMode: true
-      }).then(function (willDelete) {
-        _this.subscriptionForm.course_id = id;
-
-        if (willDelete) {
-          _this.subscriptionForm.post(_this.route('subscription'), {
-            onFinish: function onFinish() {
-              return alert("aula assistida com sucesso");
-            } //remover esse cara;
-
-          });
-        } else {
-          sweetalert__WEBPACK_IMPORTED_MODULE_4___default()("Inscrição cancelada!");
-        }
-      });
-    },
     setCode: function setCode(code) {
       this.justTheCode = code;
       this.code = "https://www.youtube.com/embed/".concat(code);
@@ -23023,6 +22994,7 @@ __webpack_require__.r(__webpack_exports__);
     setWatchedClass: function setWatchedClass(class_id, user_id) {
       this.watchedClassForm.class_id = class_id;
       this.watchedClassForm.user_id = user_id;
+      this.watchedClassForm.course_id = this.course.id;
       this.watchedClassForm.post(this.route('setWatchedClass'));
     }
   }
@@ -27397,19 +27369,22 @@ var _hoisted_12 = {
   key: 1
 };
 var _hoisted_13 = {
+  key: 2
+};
+var _hoisted_14 = {
   key: 0,
   "class": "w-full mt-4 sm:max-w-xl grid grid-cols-2 p-2 text-black mt-2 px-6 py-4 bg-white border overflow-y-auto sm:rounded-lg"
 };
-var _hoisted_14 = {
+var _hoisted_15 = {
   "class": ""
 };
-var _hoisted_15 = {
+var _hoisted_16 = {
   style: {
     "height": "523px"
   },
   "class": "w-full mx-auto col-span-2 bg-white shadow-md overflow-scroll sm:rounded-lg"
 };
-var _hoisted_16 = ["src"];
+var _hoisted_17 = ["src"];
 function render(_ctx, _cache, $props, $setup, $data, $options) {
   var _component_app_layout = (0,vue__WEBPACK_IMPORTED_MODULE_0__.resolveComponent)("app-layout");
 
@@ -27427,10 +27402,10 @@ function render(_ctx, _cache, $props, $setup, $data, $options) {
         /* TEXT */
         ), ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(true), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)(vue__WEBPACK_IMPORTED_MODULE_0__.Fragment, null, (0,vue__WEBPACK_IMPORTED_MODULE_0__.renderList)(module["class"], function (classe) {
           return (0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("div", {
-            "class": (0,vue__WEBPACK_IMPORTED_MODULE_0__.normalizeClass)(["w-full mt-4 sm:max-w-xl grid grid-cols-5 p-2 text-black mt-2 px-6 py-4 bg-white border overflow-y-auto sm:rounded-lg", classe.class_link === _ctx.justTheCode ? 'border-green-400' : 'border-gray-400'])
-          }, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", null, "#" + (0,vue__WEBPACK_IMPORTED_MODULE_0__.toDisplayString)(classe.class_order), 1
-          /* TEXT */
-          ), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_8, (0,vue__WEBPACK_IMPORTED_MODULE_0__.toDisplayString)(classe.name), 1
+            "class": (0,vue__WEBPACK_IMPORTED_MODULE_0__.normalizeClass)(["w-full mt-4 sm:max-w-xl grid grid-cols-4 p-2 text-black mt-2 px-6 py-4 bg-white border overflow-y-auto sm:rounded-lg", classe.class_link === _ctx.justTheCode ? 'border-green-400' : _ctx.$page.props.watchedClasses.find(function (element) {
+              return element.class_id === classe.id;
+            }) ? 'border-green-500' : 'border-gray-400'])
+          }, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_8, "#" + (0,vue__WEBPACK_IMPORTED_MODULE_0__.toDisplayString)(classe.class_order) + " " + (0,vue__WEBPACK_IMPORTED_MODULE_0__.toDisplayString)(classe.name), 1
           /* TEXT */
           ), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_9, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("button", {
             onClick: function onClick($event) {
@@ -27438,8 +27413,12 @@ function render(_ctx, _cache, $props, $setup, $data, $options) {
 
               _ctx.setWatchedClass(classe.id, 1);
             },
-            "class": (0,vue__WEBPACK_IMPORTED_MODULE_0__.normalizeClass)([classe.class_link === _ctx.justTheCode ? 'bg-green-500' : 'bg-purple-500', "rounded block text-white pl-1 pr-1"])
-          }, [classe.class_link === _ctx.justTheCode ? ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("span", _hoisted_11, "reproduzindo")) : ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("span", _hoisted_12, "assistir"))], 10
+            "class": (0,vue__WEBPACK_IMPORTED_MODULE_0__.normalizeClass)([classe.class_link === _ctx.justTheCode ? 'bg-green-500' : _ctx.$page.props.watchedClasses.find(function (element) {
+              return element.class_id === classe.id;
+            }) ? 'bg-green-500' : 'bg-purple-500', "rounded block text-white pl-1 pr-1"])
+          }, [classe.class_link === _ctx.justTheCode ? ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("span", _hoisted_11, "reproduzindo")) : _ctx.$page.props.watchedClasses.find(function (element) {
+            return element.class_id === classe.id;
+          }) ? ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("span", _hoisted_12, "assistido")) : ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("span", _hoisted_13, "assistir"))], 10
           /* CLASS, PROPS */
           , _hoisted_10)])], 2
           /* CLASS */
@@ -27447,9 +27426,9 @@ function render(_ctx, _cache, $props, $setup, $data, $options) {
         }), 256
         /* UNKEYED_FRAGMENT */
         )), ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(true), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)(vue__WEBPACK_IMPORTED_MODULE_0__.Fragment, null, (0,vue__WEBPACK_IMPORTED_MODULE_0__.renderList)(_ctx.quizzes, function (quiz) {
-          return (0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("div", null, [quiz.module_id === module.id ? ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("div", _hoisted_13, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", null, "questão - " + (0,vue__WEBPACK_IMPORTED_MODULE_0__.toDisplayString)(quiz.order), 1
+          return (0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("div", null, [quiz.module_id === module.id ? ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("div", _hoisted_14, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", null, "questão - " + (0,vue__WEBPACK_IMPORTED_MODULE_0__.toDisplayString)(quiz.order), 1
           /* TEXT */
-          ), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_14, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("button", {
+          ), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_15, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("button", {
             onClick: _cache[0] || (_cache[0] = function ($event) {
               return _ctx.setCode(_ctx.classe.class_link);
             }),
@@ -27460,7 +27439,7 @@ function render(_ctx, _cache, $props, $setup, $data, $options) {
         ))]);
       }), 256
       /* UNKEYED_FRAGMENT */
-      ))]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_15, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("iframe", {
+      ))]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_16, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("iframe", {
         width: "100%",
         style: {
           "height": "80vh"
@@ -27472,7 +27451,7 @@ function render(_ctx, _cache, $props, $setup, $data, $options) {
         allowfullscreen: ""
       }, null, 8
       /* PROPS */
-      , _hoisted_16)])])])];
+      , _hoisted_17)])])])];
     }),
     _: 1
     /* STABLE */

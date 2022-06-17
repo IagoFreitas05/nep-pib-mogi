@@ -17,21 +17,25 @@
                     >
                         <div class="text-cyan-600 font-bold rounded p-2">{{ module.name }}</div>
                         <div v-for="classe in module.class"
-                             class="w-full mt-4 sm:max-w-xl grid grid-cols-5
+                             class="w-full mt-4 sm:max-w-xl grid grid-cols-4
                         p-2 text-black mt-2 px-6 py-4 bg-white border
                         overflow-y-auto sm:rounded-lg"
-                             v-bind:class="classe.class_link === justTheCode?'border-green-400':'border-gray-400'"
-                        >
-                            <div>#{{ classe.class_order }}</div>
-                            <div class="col-span-2">{{ classe.name }}</div>
-
+                             v-bind:class="classe.class_link === justTheCode?'border-green-400':$page.props.watchedClasses
+                                        .find(element => element.class_id === classe.id)
+                                        ?'border-green-500':'border-gray-400'">
+                            <div class="col-span-2">#{{ classe.class_order }} {{ classe.name }}</div>
                             <div class="">
                                 <button @click="setCode(classe.class_link);
                                                 setWatchedClass(classe.id, 1)"
-                                        v-bind:class="classe.class_link === justTheCode?'bg-green-500':'bg-purple-500'"
+                                        v-bind:class="
+                                        classe.class_link === justTheCode?'bg-green-500':
+                                        $page.props.watchedClasses
+                                        .find(element => element.class_id === classe.id)
+                                        ?'bg-green-500':'bg-purple-500'"
                                         class=" rounded  block text-white pl-1 pr-1 ">
                                     <span v-if="classe.class_link === justTheCode">reproduzindo</span>
-                                    <span v-if="watchedClasses.find(element => element.class_id === classe.id)">assistido</span>
+                                    <span v-else-if="$page.props.watchedClasses
+                                    .find(element => element.class_id === classe.id)">assistido</span>
                                     <span v-else>assistir</span>
                                 </button>
                             </div>
@@ -52,7 +56,6 @@
                                     </button>
                                 </div>
                             </div>
-
                         </div>
                     </div>
                 </div>
@@ -72,7 +75,6 @@ import {defineComponent} from 'vue'
 import AppLayout from '@/Layouts/AppLayout.vue'
 import Welcome from '@/Jetstream/Welcome.vue'
 import JetNavLink from '@/Jetstream/NavLink.vue'
-import swal from "sweetalert";
 
 export default defineComponent({
     components: {
@@ -84,36 +86,15 @@ export default defineComponent({
         return {
             code: '',
             justTheCode: '',
-            subscriptionForm: this.$inertia.form({
-                course_id: ''
-            }),
             watchedClassForm: this.$inertia.form({
                 class_id: '',
-                user_id: ''
+                user_id: '',
+                course_id: ''
             })
         }
     },
     props: ['classes', 'course', 'modules', 'quizzes', 'watchedClasses'],
     methods: {
-        confirmSubscription(id) {
-            swal({
-                title: "Você tem certeza?",
-                text: "gostaria de realizar a sua inscrição nesse curso?!",
-                icon: "warning",
-                buttons: true,
-                dangerMode: true,
-            })
-                .then((willDelete) => {
-                    this.subscriptionForm.course_id = id
-                    if (willDelete) {
-                        this.subscriptionForm.post(this.route('subscription'), {
-                            onFinish: () => alert("aula assistida com sucesso") //remover esse cara;
-                        });
-                    } else {
-                        swal("Inscrição cancelada!");
-                    }
-                });
-        },
         setCode(code) {
             this.justTheCode = code;
             this.code = `https://www.youtube.com/embed/${code}`;
@@ -121,6 +102,7 @@ export default defineComponent({
         setWatchedClass(class_id, user_id) {
             this.watchedClassForm.class_id = class_id;
             this.watchedClassForm.user_id = user_id;
+            this.watchedClassForm.course_id = this.course.id;
             this.watchedClassForm.post(this.route('setWatchedClass'))
         }
     }

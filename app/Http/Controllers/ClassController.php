@@ -14,7 +14,7 @@ class ClassController extends Controller
 {
     public function create(Request $request)
     {
-       ClassCourse::create([
+        ClassCourse::create([
             'name' => $request->input('name'),
             'description' => $request->input('description'),
             'class_link' => $request->input('classLink'),
@@ -45,13 +45,15 @@ class ClassController extends Controller
         return Redirect::route('editCourse', $idCourse);
     }
 
-    public function setWatchedClass(Request $request){
+    public function setWatchedClass(Request $request)
+    {
 
         WatchedClass::create([
-            'class_id'=> $request->input('class_id'),
-            'user_id' => Auth::user()->id
+            'class_id' => $request->input('class_id'),
+            'user_id' => Auth::user()->id,
+            'course_id' => $request->input('course_id')
         ]);
 
-        return Redirect::route('editCourse', $request->input('course_id'));
+        return Redirect::route('classes', $request->input('course_id'));
     }
 }

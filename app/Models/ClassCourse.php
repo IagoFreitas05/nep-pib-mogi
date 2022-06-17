@@ -4,6 +4,7 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\Relations\BelongsTo;
 
 class ClassCourse extends Model
 {
@@ -18,7 +19,7 @@ class ClassCourse extends Model
         'class_order'
     ];
 
-    public function course(){
+    public function course(): BelongsTo{
         return $this->belongsTo(Course::class);
     }
 
