@@ -66,24 +66,7 @@ export default defineComponent({
     },
     props: ['courses', 'subscriptions', 'errors'],
     methods: {
-        confirmSubscription(id) {
-            console.log(this.subscriptions)
-            swal({
-                title: "Você tem certeza?",
-                text: "gostaria de realizar a sua inscrição nesse curso?!",
-                icon: "warning",
-                buttons: true,
-                dangerMode: true,
-            })
-                .then((willDelete) => {
-                    this.subscriptionForm.course_id = id
-                    if (willDelete) {
-                        this.subscriptionForm.post(this.route('subscription'));
-                    } else {
-                        swal("Inscrição cancelada!");
-                    }
-                });
-        }
+
     }
 })
 </script>

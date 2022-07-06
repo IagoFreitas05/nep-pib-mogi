@@ -10,11 +10,11 @@
                 <div class="bg-white overflow-hidden p-4 shadow-xl sm:rounded-lg">
                     <div v-if="subscription.length > 0">
                         <p class="font-bold text-gray-600">cursos em andamento: {{ subscription.length }}</p>
-                        <div class="p-2 grid grid-cols-3 mt-3 bg-white border-2 border-gray-200 sm:rounded-lg"
+                        <div class="p-2 grid grid-cols-3 hover:bg-gray-200
+                            hover:ease-in duration-200 mt-3 bg-white border-2 border-gray-200 sm:rounded-lg"
                              v-for="course in subscription">
                             <div
-                                class="bg-white overflow-hidden col-span-2  hover:text-white hover:bg-cyan-600
-                            hover:ease-in duration-200 sm:rounded mt-2 p-4  ">
+                                class=" overflow-hidden col-span-2 hover:bg-gray-200  hover:ease-in duration-200  sm:rounded mt-2 p-4  ">
                                 <p class=" text-lg mb-1 mt-1">{{ course.name }}</p>
                             </div>
                             <div class="grid place-items-center">

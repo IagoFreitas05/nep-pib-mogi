@@ -22984,7 +22984,7 @@ __webpack_require__.r(__webpack_exports__);
       })
     };
   },
-  props: ['course', 'classes', 'modulos'],
+  props: ['course', 'classes', 'modules', 'quizzes'],
   methods: {
     confirmSubscription: function confirmSubscription(id) {
       var _this = this;
@@ -23100,28 +23100,7 @@ __webpack_require__.r(__webpack_exports__);
     };
   },
   props: ['courses', 'subscriptions', 'errors'],
-  methods: {
-    confirmSubscription: function confirmSubscription(id) {
-      var _this = this;
-
-      console.log(this.subscriptions);
-      sweetalert__WEBPACK_IMPORTED_MODULE_4___default()({
-        title: "Você tem certeza?",
-        text: "gostaria de realizar a sua inscrição nesse curso?!",
-        icon: "warning",
-        buttons: true,
-        dangerMode: true
-      }).then(function (willDelete) {
-        _this.subscriptionForm.course_id = id;
-
-        if (willDelete) {
-          _this.subscriptionForm.post(_this.route('subscription'));
-        } else {
-          sweetalert__WEBPACK_IMPORTED_MODULE_4___default()("Inscrição cancelada!");
-        }
-      });
-    }
-  }
+  methods: {}
 }));
 
 /***/ }),
@@ -27402,6 +27381,27 @@ var _hoisted_3 = {
 var _hoisted_4 = {
   "class": "bg-white overflow-hidden p-4 shadow-xl sm:rounded-lg"
 };
+var _hoisted_5 = {
+  "class": "rounded font-bold text-purple-400 text-2xl p-4"
+};
+var _hoisted_6 = {
+  "class": "text-justify p-4 font-light"
+};
+var _hoisted_7 = {
+  "class": "flex flex-row p-4 mx-auto mt-5 justify-start gap-4"
+};
+var _hoisted_8 = {
+  "class": "p-2 rounded bg-purple-300 text-sm"
+};
+var _hoisted_9 = {
+  "class": "p-2 rounded bg-blue-300 text-sm"
+};
+var _hoisted_10 = {
+  "class": "p-2 rounded bg-amber-300 text-sm"
+};
+var _hoisted_11 = {
+  "class": "flex justify-end p-4"
+};
 function render(_ctx, _cache, $props, $setup, $data, $options) {
   var _component_app_layout = (0,vue__WEBPACK_IMPORTED_MODULE_0__.resolveComponent)("app-layout");
 
@@ -27414,11 +27414,22 @@ function render(_ctx, _cache, $props, $setup, $data, $options) {
       )];
     }),
     "default": (0,vue__WEBPACK_IMPORTED_MODULE_0__.withCtx)(function () {
-      return [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_2, [_ctx.$page.props.user.user_type === 'user' ? ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("div", _hoisted_3, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_4, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("h1", null, "Sobre o curso " + (0,vue__WEBPACK_IMPORTED_MODULE_0__.toDisplayString)(_ctx.course.name), 1
+      return [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_2, [_ctx.$page.props.user.user_type === 'user' ? ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("div", _hoisted_3, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_4, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("h1", _hoisted_5, "Sobre o curso " + (0,vue__WEBPACK_IMPORTED_MODULE_0__.toDisplayString)(_ctx.course.name), 1
       /* TEXT */
-      ), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("p", null, "quantidade de aulas " + (0,vue__WEBPACK_IMPORTED_MODULE_0__.toDisplayString)(_ctx.classes.length), 1
+      ), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("p", _hoisted_6, (0,vue__WEBPACK_IMPORTED_MODULE_0__.toDisplayString)(_ctx.course.description), 1
       /* TEXT */
-      )])])) : (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("v-if", true)])];
+      ), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_7, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_8, "quantidade de aulas " + (0,vue__WEBPACK_IMPORTED_MODULE_0__.toDisplayString)(_ctx.classes.length), 1
+      /* TEXT */
+      ), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_9, "quantidade de módulos " + (0,vue__WEBPACK_IMPORTED_MODULE_0__.toDisplayString)(_ctx.modules.length), 1
+      /* TEXT */
+      ), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_10, "quantidade de questões " + (0,vue__WEBPACK_IMPORTED_MODULE_0__.toDisplayString)(_ctx.quizzes.length), 1
+      /* TEXT */
+      )]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_11, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("button", {
+        onClick: _cache[0] || (_cache[0] = function ($event) {
+          return _ctx.confirmSubscription(_ctx.course.id);
+        }),
+        "class": "rounded bg-green-600 text-white font-medium p-2 hover:bg-green-500 transition-all"
+      }, " me inscrever! ")])])])) : (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("v-if", true)])];
     }),
     _: 1
     /* STABLE */
@@ -27719,10 +27730,10 @@ var _hoisted_6 = {
   "class": "font-bold text-gray-600"
 };
 var _hoisted_7 = {
-  "class": "p-2 grid grid-cols-3 mt-3 bg-white border-2 border-gray-200 sm:rounded-lg"
+  "class": "p-2 grid grid-cols-3 hover:bg-gray-200 hover:ease-in duration-200 mt-3 bg-white border-2 border-gray-200 sm:rounded-lg"
 };
 var _hoisted_8 = {
-  "class": "bg-white overflow-hidden col-span-2 hover:text-white hover:bg-cyan-600 hover:ease-in duration-200 sm:rounded mt-2 p-4"
+  "class": "overflow-hidden col-span-2 hover:bg-gray-200 hover:ease-in duration-200 sm:rounded mt-2 p-4"
 };
 var _hoisted_9 = {
   "class": "text-lg mb-1 mt-1"
