@@ -2,10 +2,18 @@
     <app-layout title="Cursos">
         <template #header>
             <h2 class="font-semibold text-xl text-gray-800 leading-tight">
-                Nome do curso aqui
+                {{course.name}}
             </h2>
         </template>
-push
+        <div class="py-12">
+            <div class="max-w-7xl mx-auto sm:px-6 lg:px-8" v-if="$page.props.user.user_type === 'user' ">
+                <div class="bg-white overflow-hidden p-4 shadow-xl sm:rounded-lg">
+
+                    <h1>Sobre o curso {{course.name}}</h1>
+                    <p>quantidade de aulas {{classes.length}}</p>
+                </div>
+            </div>
+        </div>
 
     </app-layout>
 </template>
@@ -30,7 +38,7 @@ export default defineComponent({
             })
         }
     },
-    props: ['courses', 'subscriptions', 'errors'],
+    props: ['course', 'classes', 'modulos'],
     methods: {
         confirmSubscription(id) {
             console.log(this.subscriptions)

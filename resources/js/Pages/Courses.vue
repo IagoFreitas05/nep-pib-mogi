@@ -22,11 +22,11 @@
                             já inscrito!
                         </button>
 
-                        <button v-else-if="$page.props.user.user_type === 'user'" class="bg-purple-500
+                        <a v-else-if="$page.props.user.user_type === 'user'" class="bg-purple-500
             rounded mb-1 block ml-1
-            text-white p-2" @click="confirmSubscription(course.id)">
+            text-white p-2"  :href="route('checkoutPage', course.id)">
                             realizar inscrição
-                        </button>
+                        </a>
                     </div>
                     <div class="grid place-items-center" v-if="$page.props.user.user_type === 'admin'">
                         <a class="bg-purple-500

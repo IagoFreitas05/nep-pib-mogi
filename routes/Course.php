@@ -37,8 +37,9 @@ Route::middleware(['auth:sanctum', 'verified'])->get('/courses', function () {
         'courses' => Course::all(),
         'subscriptions' => User::find(Auth::user()->id)->subscription
     ]);
-
 })->name("courses");
+
+
 
 Route::middleware(['auth:sanctum', 'verified'])->get('/newCourse', function () {
     return Inertia::render('NewCourse',
@@ -55,5 +56,14 @@ Route::middleware(['auth:sanctum', 'verified'])->get('/editCourse/{id}', functio
         'quizzes' => Quiz::with('module')->where('course_id', '=',$id)->get()
     ]);
 })->name("editCourse");
+
+Route::middleware(['auth:sanctum','verified'])->get('/checkoutPage/{id}', function($id){
+   return Inertia::render('CheckoutPage',[
+       'course' => Course::find($id),
+       'classes' => Course::find($id)->classCourse()->orderBy('class_order')->get(),
+       'modules' => Course::find($id)->module()->get(),
+       'quizzes' => Quiz::with('module')->where('course_id', '=',$id)->get()
+   ]);
+})->name("checkoutPage");
 
 
