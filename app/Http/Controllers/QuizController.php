@@ -40,6 +40,7 @@ class QuizController extends Controller
 
     public function saveAnswer(Request $request){
 
-       return $request;
+
+       return Redirect::route('classes', $request->input('course_id'));
     }
 }
