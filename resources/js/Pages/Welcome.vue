@@ -39,17 +39,21 @@
             </div>
         </div>
     </div>
+
+
 </template>
 <script>
 import {defineComponent} from 'vue'
 import {Head, Link} from '@inertiajs/inertia-vue3';
 import JetApplicationMark from '@/Jetstream/ApplicationMark.vue'
 
+
 export default defineComponent({
     components: {
         Head,
         Link,
         JetApplicationMark,
+
     },
 
     props: {

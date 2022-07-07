@@ -23175,17 +23175,14 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ });
 /* harmony import */ var vue__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! vue */ "./node_modules/vue/dist/vue.esm-bundler.js");
 /* harmony import */ var _Layouts_AppLayout_vue__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @/Layouts/AppLayout.vue */ "./resources/js/Layouts/AppLayout.vue");
-/* harmony import */ var _Jetstream_Welcome_vue__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @/Jetstream/Welcome.vue */ "./resources/js/Jetstream/Welcome.vue");
-/* harmony import */ var _Jetstream_ArrowCircleBlack__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @/Jetstream/ArrowCircleBlack */ "./resources/js/Jetstream/ArrowCircleBlack.vue");
-
+/* harmony import */ var _Jetstream_ArrowCircleBlack__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @/Jetstream/ArrowCircleBlack */ "./resources/js/Jetstream/ArrowCircleBlack.vue");
 
 
 
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ((0,vue__WEBPACK_IMPORTED_MODULE_0__.defineComponent)({
   components: {
     AppLayout: _Layouts_AppLayout_vue__WEBPACK_IMPORTED_MODULE_1__["default"],
-    Welcome: _Jetstream_Welcome_vue__WEBPACK_IMPORTED_MODULE_2__["default"],
-    ArrowCircleBlack: _Jetstream_ArrowCircleBlack__WEBPACK_IMPORTED_MODULE_3__["default"]
+    ArrowCircleBlack: _Jetstream_ArrowCircleBlack__WEBPACK_IMPORTED_MODULE_2__["default"]
   },
   props: ['subscription']
 }));
@@ -27574,9 +27571,10 @@ var _hoisted_20 = {
   key: 1,
   "class": "p-6 justify-center mt-7 flex-col items-center align-middle"
 };
-
-var _hoisted_21 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createTextVNode)(" /* mostrar aqui caso ele já tenha respondido */ ");
-
+var _hoisted_21 = {
+  key: 0,
+  "class": "mt-4 font-bold text-gray-400"
+};
 var _hoisted_22 = {
   "class": "flex items-center justify-end mt-4"
 };
@@ -27676,7 +27674,7 @@ function render(_ctx, _cache, $props, $setup, $data, $options) {
         }, ["prevent"]))
       }, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", null, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)(_component_jet_label, {
         "for": "moduleName",
-        "class": "font-bold text-2xl",
+        "class": "font-bold text-2xl mb-4",
         value: _ctx.currentQuiz.question
       }, null, 8
       /* PROPS */
@@ -27693,7 +27691,16 @@ function render(_ctx, _cache, $props, $setup, $data, $options) {
         autocomplete: "moduleName"
       }, null, 8
       /* PROPS */
-      , ["modelValue"])]), _hoisted_21, (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_22, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)(_component_jet_button, {
+      , ["modelValue"])]), _ctx.$page.props.answerQuizzes.find(function (element) {
+        return element.question_id === _ctx.currentQuiz.id;
+      }) ? ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("p", _hoisted_21, " Sua resposta para esta questão foi: " + (0,vue__WEBPACK_IMPORTED_MODULE_0__.toDisplayString)(_ctx.$page.props.answerQuizzes.find(function (element) {
+        return element.question_id === _ctx.currentQuiz.id;
+      }).answer), 1
+      /* TEXT */
+      )) : (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("v-if", true), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_22, [!_ctx.$page.props.answerQuizzes.find(function (element) {
+        return element.question_id === _ctx.currentQuiz.id;
+      }) ? ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createBlock)(_component_jet_button, {
+        key: 0,
         "class": "ml-4"
       }, {
         "default": (0,vue__WEBPACK_IMPORTED_MODULE_0__.withCtx)(function () {
@@ -27702,7 +27709,7 @@ function render(_ctx, _cache, $props, $setup, $data, $options) {
         _: 1
         /* STABLE */
 
-      })])], 32
+      })) : (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("v-if", true)])], 32
       /* HYDRATE_EVENTS */
       )])) : (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("v-if", true)])])])];
     }),
@@ -27874,19 +27881,8 @@ var _hoisted_12 = {
   "class": "overflow-hidden bg-cyan-600 hover:ease-in duration-200 hover:bg-purple-600 flex flex-row gap-2 mt-3 p-4 shadow-xl sm:rounded-lg"
 };
 var _hoisted_13 = ["href"];
-var _hoisted_14 = {
-  "class": "py-12"
-};
-var _hoisted_15 = {
-  "class": "max-w-7xl mx-auto sm:px-6 lg:px-8"
-};
-var _hoisted_16 = {
-  "class": "bg-white overflow-hidden shadow-xl sm:rounded-lg"
-};
 function render(_ctx, _cache, $props, $setup, $data, $options) {
   var _component_ArrowCircleBlack = (0,vue__WEBPACK_IMPORTED_MODULE_0__.resolveComponent)("ArrowCircleBlack");
-
-  var _component_welcome = (0,vue__WEBPACK_IMPORTED_MODULE_0__.resolveComponent)("welcome");
 
   var _component_app_layout = (0,vue__WEBPACK_IMPORTED_MODULE_0__.resolveComponent)("app-layout");
 
@@ -27915,7 +27911,7 @@ function render(_ctx, _cache, $props, $setup, $data, $options) {
         "class": "font-bold text-white"
       }, "conheça nossos cursos ", 8
       /* PROPS */
-      , _hoisted_13), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)(_component_ArrowCircleBlack)])])])) : (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("v-if", true)]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_14, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_15, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_16, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)(_component_welcome)])])])];
+      , _hoisted_13), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)(_component_ArrowCircleBlack)])])])) : (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("v-if", true)])];
     }),
     _: 1
     /* STABLE */

@@ -75,15 +75,19 @@
                     <div v-if="Object.keys(currentQuiz).length !== 0" class="p-6 justify-center mt-7 flex-col items-center align-middle">
                         <form @submit.prevent="confirmResponse()">
                             <div>
-                                <jet-label for="moduleName" class="font-bold text-2xl" :value=currentQuiz.question />
+                                <jet-label for="moduleName" class="font-bold text-2xl mb-4" :value=currentQuiz.question />
                                 <jet-input id="moduleName" type="text" class="mt-1 block w-full"
                                            required v-model="this.answerForm.answer"
                                            autofocus autocomplete="moduleName"/>
                             </div>
-                            /* mostrar aqui caso ele já tenha respondido */
+                            <p class="mt-4 font-bold text-gray-400" v-if="$page.props.answerQuizzes
+                                            .find(element => element.question_id === currentQuiz.id)">
+                                Sua resposta para esta questão foi: {{$page.props.answerQuizzes.find(element => element.question_id === currentQuiz.id).answer}}
+                            </p>
 
                             <div class="flex items-center justify-end mt-4">
-                                <jet-button class="ml-4">
+                                <jet-button class="ml-4" v-if="!$page.props.answerQuizzes
+                                            .find(element => element.question_id === currentQuiz.id)" >
                                     responder
                                 </jet-button>
                             </div>
