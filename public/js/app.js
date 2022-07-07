@@ -23026,39 +23026,63 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _Layouts_AppLayout_vue__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @/Layouts/AppLayout.vue */ "./resources/js/Layouts/AppLayout.vue");
 /* harmony import */ var _Jetstream_Welcome_vue__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @/Jetstream/Welcome.vue */ "./resources/js/Jetstream/Welcome.vue");
 /* harmony import */ var _Jetstream_NavLink_vue__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @/Jetstream/NavLink.vue */ "./resources/js/Jetstream/NavLink.vue");
+/* harmony import */ var _Jetstream_Label__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! @/Jetstream/Label */ "./resources/js/Jetstream/Label.vue");
+/* harmony import */ var _Jetstream_Button__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! @/Jetstream/Button */ "./resources/js/Jetstream/Button.vue");
+/* harmony import */ var _Jetstream_Input__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! @/Jetstream/Input */ "./resources/js/Jetstream/Input.vue");
+
+
+
 
 
 
 
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ((0,vue__WEBPACK_IMPORTED_MODULE_0__.defineComponent)({
   components: {
+    JetButton: _Jetstream_Button__WEBPACK_IMPORTED_MODULE_5__["default"],
+    JetInput: _Jetstream_Input__WEBPACK_IMPORTED_MODULE_6__["default"],
+    JetLabel: _Jetstream_Label__WEBPACK_IMPORTED_MODULE_4__["default"],
     AppLayout: _Layouts_AppLayout_vue__WEBPACK_IMPORTED_MODULE_1__["default"],
     Welcome: _Jetstream_Welcome_vue__WEBPACK_IMPORTED_MODULE_2__["default"],
     JetNavLink: _Jetstream_NavLink_vue__WEBPACK_IMPORTED_MODULE_3__["default"]
   },
   data: function data() {
     return {
+      currentQuiz: {},
       code: '',
       justTheCode: '',
       watchedClassForm: this.$inertia.form({
         class_id: '',
         user_id: '',
         course_id: ''
+      }),
+      answerForm: this.$inertia.form({
+        question_id: '',
+        answer: '',
+        course_id: '',
+        module_id: this.course.id,
+        user_id: ''
       })
     };
   },
   props: ['classes', 'course', 'modules', 'quizzes', 'watchedClasses'],
   methods: {
     setCode: function setCode(code) {
+      this.currentQuiz = {};
       this.justTheCode = code;
       this.code = "https://www.youtube.com/embed/".concat(code);
+    },
+    setQuiz: function setQuiz(Quiz) {
+      this.currentQuiz = Quiz;
+      this.code = "";
+      console.log(Quiz);
     },
     setWatchedClass: function setWatchedClass(class_id, user_id) {
       this.watchedClassForm.class_id = class_id;
       this.watchedClassForm.user_id = user_id;
       this.watchedClassForm.course_id = this.course.id;
       this.watchedClassForm.post(this.route('setWatchedClass'));
-    }
+    },
+    responseQuiz: function responseQuiz() {}
   }
 }));
 
@@ -27503,14 +27527,31 @@ var _hoisted_14 = {
 var _hoisted_15 = {
   "class": ""
 };
-var _hoisted_16 = {
+var _hoisted_16 = ["onClick"];
+var _hoisted_17 = {
   style: {
     "height": "80vh"
   },
   "class": "w-full mx-auto col-span-2 bg-white shadow-md overflow-scroll sm:rounded-lg"
 };
-var _hoisted_17 = ["src"];
+var _hoisted_18 = ["src"];
+var _hoisted_19 = {
+  key: 1,
+  "class": "p-6 justify-center mt-7 flex-col items-center align-middle"
+};
+var _hoisted_20 = {
+  "class": "flex items-center justify-end mt-4"
+};
+
+var _hoisted_21 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createTextVNode)(" responder ");
+
 function render(_ctx, _cache, $props, $setup, $data, $options) {
+  var _component_jet_label = (0,vue__WEBPACK_IMPORTED_MODULE_0__.resolveComponent)("jet-label");
+
+  var _component_jet_input = (0,vue__WEBPACK_IMPORTED_MODULE_0__.resolveComponent)("jet-input");
+
+  var _component_jet_button = (0,vue__WEBPACK_IMPORTED_MODULE_0__.resolveComponent)("jet-button");
+
   var _component_app_layout = (0,vue__WEBPACK_IMPORTED_MODULE_0__.resolveComponent)("app-layout");
 
   return (0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createBlock)(_component_app_layout, {
@@ -27554,17 +27595,20 @@ function render(_ctx, _cache, $props, $setup, $data, $options) {
           return (0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("div", null, [quiz.module_id === module.id ? ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("div", _hoisted_14, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", null, "questão - " + (0,vue__WEBPACK_IMPORTED_MODULE_0__.toDisplayString)(quiz.order), 1
           /* TEXT */
           ), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_15, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("button", {
-            onClick: _cache[0] || (_cache[0] = function ($event) {
-              return _ctx.setCode(_ctx.classe.class_link);
-            }),
+            onClick: function onClick($event) {
+              return _ctx.setQuiz(quiz);
+            },
             "class": "bg-purple-500 rounded block text-white pl-1 pr-1"
-          }, " responder ")])])) : (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("v-if", true)]);
+          }, " responder ", 8
+          /* PROPS */
+          , _hoisted_16)])])) : (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("v-if", true)]);
         }), 256
         /* UNKEYED_FRAGMENT */
         ))]);
       }), 256
       /* UNKEYED_FRAGMENT */
-      ))]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_16, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("iframe", {
+      ))]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_17, [_ctx.code ? ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("iframe", {
+        key: 0,
         width: "100%",
         style: {
           "height": "80vh"
@@ -27575,7 +27619,35 @@ function render(_ctx, _cache, $props, $setup, $data, $options) {
         allowfullscreen: ""
       }, null, 8
       /* PROPS */
-      , _hoisted_17)])])])];
+      , _hoisted_18)) : (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("v-if", true), Object.keys(_ctx.currentQuiz).length !== 0 ? ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("div", _hoisted_19, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("form", {
+        onSubmit: _cache[0] || (_cache[0] = (0,vue__WEBPACK_IMPORTED_MODULE_0__.withModifiers)(function ($event) {
+          return _ctx.responseQuiz();
+        }, ["prevent"]))
+      }, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", null, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)(_component_jet_label, {
+        "for": "moduleName",
+        "class": "font-bold text-2xl",
+        value: _ctx.currentQuiz.question
+      }, null, 8
+      /* PROPS */
+      , ["value"]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)(_component_jet_input, {
+        id: "moduleName",
+        type: "text",
+        "class": "mt-1 block w-full",
+        required: "",
+        autofocus: "",
+        autocomplete: "moduleName"
+      })]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_20, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)(_component_jet_button, {
+        "class": "ml-4"
+      }, {
+        "default": (0,vue__WEBPACK_IMPORTED_MODULE_0__.withCtx)(function () {
+          return [_hoisted_21];
+        }),
+        _: 1
+        /* STABLE */
+
+      })])], 32
+      /* HYDRATE_EVENTS */
+      )])) : (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("v-if", true)])])])];
     }),
     _: 1
     /* STABLE */

@@ -49,7 +49,7 @@
                                 <div>questão - {{ quiz.order }}</div>
 
                                 <div class="">
-                                    <button @click="setCode(classe.class_link)" class="bg-purple-500
+                                    <button @click="setQuiz(quiz)" class="bg-purple-500
                                      rounded  block
                                     text-white pl-1 pr-1 ">
                                         responder
@@ -59,11 +59,28 @@
                         </div>
                     </div>
                 </div>
-                <div
-                     style="height: 80vh" class="w-full mx-auto  col-span-2  bg-white shadow-md overflow-scroll sm:rounded-lg">
-                    <iframe width="100%" style="height:80vh" :src=code title="YouTube video player"
+                <div style="height: 80vh" class="w-full mx-auto   col-span-2  bg-white shadow-md overflow-scroll sm:rounded-lg">
+                    <iframe v-if="code" width="100%" style="height:80vh" :src=code title="YouTube video player"
                             allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
                             allowfullscreen></iframe>
+
+                    <div v-if="Object.keys(currentQuiz).length !== 0" class="p-6 justify-center mt-7 flex-col items-center align-middle">
+                        <form @submit.prevent="responseQuiz()">
+                            <div>
+                                <jet-label for="moduleName" class="font-bold text-2xl" :value=currentQuiz.question />
+                                <jet-input id="moduleName" type="text" class="mt-1 block w-full"
+                                           required
+                                           autofocus autocomplete="moduleName"/>
+                            </div>
+
+
+                            <div class="flex items-center justify-end mt-4">
+                                <jet-button class="ml-4">
+                                    responder
+                                </jet-button>
+                            </div>
+                        </form>
+                    </div>
                 </div>
             </div>
         </div>
@@ -75,35 +92,59 @@ import {defineComponent} from 'vue'
 import AppLayout from '@/Layouts/AppLayout.vue'
 import Welcome from '@/Jetstream/Welcome.vue'
 import JetNavLink from '@/Jetstream/NavLink.vue'
+import JetLabel from "@/Jetstream/Label";
+import JetButton from "@/Jetstream/Button";
+import JetInput from "@/Jetstream/Input";
+
 
 export default defineComponent({
     components: {
+        JetButton,
+        JetInput,
+        JetLabel,
         AppLayout,
         Welcome,
         JetNavLink,
     },
     data() {
         return {
+            currentQuiz : {},
             code: '',
             justTheCode: '',
             watchedClassForm: this.$inertia.form({
                 class_id: '',
                 user_id: '',
                 course_id: ''
-            })
+            }),
+            answerForm: this.$inertia.form({
+                question_id: '',
+                answer: '',
+                course_id: '',
+                module_id: this.course.id,
+                user_id: ''
+            }),
         }
     },
     props: ['classes', 'course', 'modules', 'quizzes', 'watchedClasses'],
     methods: {
         setCode(code) {
+            this.currentQuiz = {};
             this.justTheCode = code;
             this.code = `https://www.youtube.com/embed/${code}`;
+        },
+        setQuiz(Quiz){
+            this.currentQuiz = Quiz
+            this.code = "";
+            console.log(Quiz);
         },
         setWatchedClass(class_id, user_id) {
             this.watchedClassForm.class_id = class_id;
             this.watchedClassForm.user_id = user_id;
             this.watchedClassForm.course_id = this.course.id;
             this.watchedClassForm.post(this.route('setWatchedClass'))
+        },
+        responseQuiz(){
+
         }
     }
 })
