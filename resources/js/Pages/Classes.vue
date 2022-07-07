@@ -45,14 +45,22 @@
                             <div v-if="quiz.module_id === module.id"
                                  class="w-full mt-4 sm:max-w-xl grid grid-cols-2
                                 p-2 text-black mt-2 px-6 py-4 bg-white border
-                                overflow-y-auto sm:rounded-lg">
+                                overflow-y-auto sm:rounded-lg" v-bind:class="$page.props.answerQuizzes
+                                        .find(element => element.question_id === quiz.id)
+                                        ?'border-green-500':''">
                                 <div>questão - {{ quiz.order }}</div>
 
                                 <div class="">
-                                    <button @click="setQuiz(quiz)" class="bg-purple-500
+                                    <button @click="setQuiz(quiz)" class="
                                      rounded  block
-                                    text-white pl-1 pr-1 ">
-                                        responder
+                                    text-white pl-1 pr-1 "
+                                            v-bind:class="$page.props.answerQuizzes
+                                        .find(element => element.question_id === quiz.id)
+                                        ?'bg-green-500':' bg-purple-500'">
+
+                                        <span v-if="$page.props.answerQuizzes
+                                            .find(element => element.question_id === quiz.id)">respondido</span>
+                                        <span v-else>responder</span>
                                     </button>
                                 </div>
                             </div>
@@ -72,7 +80,7 @@
                                            required v-model="this.answerForm.answer"
                                            autofocus autocomplete="moduleName"/>
                             </div>
-
+                            /* mostrar aqui caso ele já tenha respondido */
 
                             <div class="flex items-center justify-end mt-4">
                                 <jet-button class="ml-4">
@@ -127,7 +135,7 @@ export default defineComponent({
             }),
         }
     },
-    props: ['classes', 'course', 'modules', 'quizzes', 'watchedClasses'],
+    props: ['classes', 'course', 'modules', 'quizzes', 'watchedClasses','answerQuizzes'],
     methods: {
         setCode(code) {
             this.currentQuiz = {};
@@ -150,8 +158,8 @@ export default defineComponent({
             this.answerForm.course_id = this.course.id;
             this.answerForm.module_id = this.currentQuiz.module_id;
             this.answerForm.post(this.route('setAnswerQuiz'),{
-                onSuccess: () => swal("success","Sua resposta foi enviada com sucesso!"),
-                onFailure: () => swal("warning","Houve um erro ao processar sua resposta")
+                onSuccess: () => swal("Boa resposta!","Sua resposta foi enviada com sucesso","success"),
+                onFailure: () => swal("Opa!","Sua resposta não pode ser enviada","warning")
             });
         },
         confirmResponse(){
@@ -165,9 +173,8 @@ export default defineComponent({
                 .then((willDelete) => {
                     if (willDelete) {
                         this.responseQuiz();
-                        swal("Boa resposta!","Sua resposta foi enviada com sucesso!","success")
                     } else {
-                        swal("Inscrição cancelada!");
+                        swal("Envio cancelado!");
                     }
                 });
         }

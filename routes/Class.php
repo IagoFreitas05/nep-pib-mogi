@@ -3,6 +3,7 @@
 use App\Models\Course;
 use App\Models\Module;
 use App\Models\Quiz;
+use App\Models\QuizAnswer;
 use App\Models\WatchedClass;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
@@ -48,7 +49,8 @@ Route::middleware(['auth:sanctum', 'verified'])
             'quizzes' => Quiz::where('course_id', '=', $id)
                 ->orderBy('order', 'desc')
                 ->get(),
-            'watchedClasses' => WatchedClass::where('user_id', '=', Auth::user()->id)->get()
+            'watchedClasses' => WatchedClass::where('user_id', '=', Auth::user()->id)->get(),
+            'answerQuizzes' => QuizAnswer::where('user_id','=', Auth::user()->id)->get()
         ]);
     })
     ->name("classes");

@@ -45,7 +45,7 @@ class QuizController extends Controller
             "answer" => $request->input('answer'),
             "question_id" => $request->input('question_id'),
             "module_id" => $request->input('module_id'),
-            "user_id" => $request->input('user_id')
+            "user_id" => Auth::user()->id
         ]);
 
        return Redirect::route('classes', $request->input('course_id'));

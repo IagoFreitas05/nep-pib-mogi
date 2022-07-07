@@ -23068,7 +23068,7 @@ __webpack_require__.r(__webpack_exports__);
       })
     };
   },
-  props: ['classes', 'course', 'modules', 'quizzes', 'watchedClasses'],
+  props: ['classes', 'course', 'modules', 'quizzes', 'watchedClasses', 'answerQuizzes'],
   methods: {
     setCode: function setCode(code) {
       this.currentQuiz = {};
@@ -23092,10 +23092,10 @@ __webpack_require__.r(__webpack_exports__);
       this.answerForm.module_id = this.currentQuiz.module_id;
       this.answerForm.post(this.route('setAnswerQuiz'), {
         onSuccess: function onSuccess() {
-          return sweetalert__WEBPACK_IMPORTED_MODULE_7___default()("success", "Sua resposta foi enviada com sucesso!");
+          return sweetalert__WEBPACK_IMPORTED_MODULE_7___default()("Boa resposta!", "Sua resposta foi enviada com sucesso", "success");
         },
         onFailure: function onFailure() {
-          return sweetalert__WEBPACK_IMPORTED_MODULE_7___default()("warning", "Houve um erro ao processar sua resposta");
+          return sweetalert__WEBPACK_IMPORTED_MODULE_7___default()("Opa!", "Sua resposta não pode ser enviada", "warning");
         }
       });
     },
@@ -23111,10 +23111,8 @@ __webpack_require__.r(__webpack_exports__);
       }).then(function (willDelete) {
         if (willDelete) {
           _this.responseQuiz();
-
-          sweetalert__WEBPACK_IMPORTED_MODULE_7___default()("Boa resposta!", "Sua resposta foi enviada com sucesso!", "success");
         } else {
-          sweetalert__WEBPACK_IMPORTED_MODULE_7___default()("Inscrição cancelada!");
+          sweetalert__WEBPACK_IMPORTED_MODULE_7___default()("Envio cancelado!");
         }
       });
     }
@@ -27556,29 +27554,34 @@ var _hoisted_13 = {
   key: 2
 };
 var _hoisted_14 = {
-  key: 0,
-  "class": "w-full mt-4 sm:max-w-xl grid grid-cols-2 p-2 text-black mt-2 px-6 py-4 bg-white border overflow-y-auto sm:rounded-lg"
-};
-var _hoisted_15 = {
   "class": ""
 };
-var _hoisted_16 = ["onClick"];
+var _hoisted_15 = ["onClick"];
+var _hoisted_16 = {
+  key: 0
+};
 var _hoisted_17 = {
+  key: 1
+};
+var _hoisted_18 = {
   style: {
     "height": "80vh"
   },
   "class": "w-full mx-auto col-span-2 bg-white shadow-md overflow-scroll sm:rounded-lg"
 };
-var _hoisted_18 = ["src"];
-var _hoisted_19 = {
+var _hoisted_19 = ["src"];
+var _hoisted_20 = {
   key: 1,
   "class": "p-6 justify-center mt-7 flex-col items-center align-middle"
 };
-var _hoisted_20 = {
+
+var _hoisted_21 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createTextVNode)(" /* mostrar aqui caso ele já tenha respondido */ ");
+
+var _hoisted_22 = {
   "class": "flex items-center justify-end mt-4"
 };
 
-var _hoisted_21 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createTextVNode)(" responder ");
+var _hoisted_23 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createTextVNode)(" responder ");
 
 function render(_ctx, _cache, $props, $setup, $data, $options) {
   var _this = this;
@@ -27629,22 +27632,33 @@ function render(_ctx, _cache, $props, $setup, $data, $options) {
         }), 256
         /* UNKEYED_FRAGMENT */
         )), ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(true), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)(vue__WEBPACK_IMPORTED_MODULE_0__.Fragment, null, (0,vue__WEBPACK_IMPORTED_MODULE_0__.renderList)(_ctx.quizzes, function (quiz) {
-          return (0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("div", null, [quiz.module_id === module.id ? ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("div", _hoisted_14, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", null, "questão - " + (0,vue__WEBPACK_IMPORTED_MODULE_0__.toDisplayString)(quiz.order), 1
+          return (0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("div", null, [quiz.module_id === module.id ? ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("div", {
+            key: 0,
+            "class": (0,vue__WEBPACK_IMPORTED_MODULE_0__.normalizeClass)(["w-full mt-4 sm:max-w-xl grid grid-cols-2 p-2 text-black mt-2 px-6 py-4 bg-white border overflow-y-auto sm:rounded-lg", _ctx.$page.props.answerQuizzes.find(function (element) {
+              return element.question_id === quiz.id;
+            }) ? 'border-green-500' : ''])
+          }, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", null, "questão - " + (0,vue__WEBPACK_IMPORTED_MODULE_0__.toDisplayString)(quiz.order), 1
           /* TEXT */
-          ), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_15, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("button", {
+          ), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_14, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("button", {
             onClick: function onClick($event) {
               return _ctx.setQuiz(quiz);
             },
-            "class": "bg-purple-500 rounded block text-white pl-1 pr-1"
-          }, " responder ", 8
-          /* PROPS */
-          , _hoisted_16)])])) : (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("v-if", true)]);
+            "class": (0,vue__WEBPACK_IMPORTED_MODULE_0__.normalizeClass)(["rounded block text-white pl-1 pr-1", _ctx.$page.props.answerQuizzes.find(function (element) {
+              return element.question_id === quiz.id;
+            }) ? 'bg-green-500' : ' bg-purple-500'])
+          }, [_ctx.$page.props.answerQuizzes.find(function (element) {
+            return element.question_id === quiz.id;
+          }) ? ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("span", _hoisted_16, "respondido")) : ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("span", _hoisted_17, "responder"))], 10
+          /* CLASS, PROPS */
+          , _hoisted_15)])], 2
+          /* CLASS */
+          )) : (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("v-if", true)]);
         }), 256
         /* UNKEYED_FRAGMENT */
         ))]);
       }), 256
       /* UNKEYED_FRAGMENT */
-      ))]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_17, [_ctx.code ? ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("iframe", {
+      ))]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_18, [_ctx.code ? ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("iframe", {
         key: 0,
         width: "100%",
         style: {
@@ -27656,7 +27670,7 @@ function render(_ctx, _cache, $props, $setup, $data, $options) {
         allowfullscreen: ""
       }, null, 8
       /* PROPS */
-      , _hoisted_18)) : (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("v-if", true), Object.keys(_ctx.currentQuiz).length !== 0 ? ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("div", _hoisted_19, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("form", {
+      , _hoisted_19)) : (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("v-if", true), Object.keys(_ctx.currentQuiz).length !== 0 ? ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("div", _hoisted_20, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("form", {
         onSubmit: _cache[1] || (_cache[1] = (0,vue__WEBPACK_IMPORTED_MODULE_0__.withModifiers)(function ($event) {
           return _ctx.confirmResponse();
         }, ["prevent"]))
@@ -27679,11 +27693,11 @@ function render(_ctx, _cache, $props, $setup, $data, $options) {
         autocomplete: "moduleName"
       }, null, 8
       /* PROPS */
-      , ["modelValue"])]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_20, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)(_component_jet_button, {
+      , ["modelValue"])]), _hoisted_21, (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_22, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)(_component_jet_button, {
         "class": "ml-4"
       }, {
         "default": (0,vue__WEBPACK_IMPORTED_MODULE_0__.withCtx)(function () {
-          return [_hoisted_21];
+          return [_hoisted_23];
         }),
         _: 1
         /* STABLE */

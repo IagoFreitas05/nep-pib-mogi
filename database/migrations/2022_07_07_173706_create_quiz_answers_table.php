@@ -19,7 +19,7 @@ return new class extends Migration
             $table->foreignId('user_id')->unsigned();
             $table->foreignId('module_id')->unsigned();
             $table->foreignId('question_id')->unsigned();
-            $table->foreignId('answer')->unsigned();
+            $table->string('answer');
             $table->timestamps();
         });
     }
