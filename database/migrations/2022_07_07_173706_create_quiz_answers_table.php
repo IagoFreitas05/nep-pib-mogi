@@ -15,6 +15,11 @@ return new class extends Migration
     {
         Schema::create('quiz_answers', function (Blueprint $table) {
             $table->id();
+            $table->foreignId('course_id')->unsigned();
+            $table->foreignId('user_id')->unsigned();
+            $table->foreignId('module_id')->unsigned();
+            $table->foreignId('question_id')->unsigned();
+            $table->foreignId('answer')->unsigned();
             $table->timestamps();
         });
     }
