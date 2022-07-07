@@ -27460,14 +27460,14 @@ var _hoisted_1 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementV
 );
 
 var _hoisted_2 = {
-  "class": "py-12"
+  "class": "py-12 w-full"
 };
 var _hoisted_3 = {
   "class": "sm:grid sm:grid-cols-3 sm:gap-4 max-w-7xl mx-auto sm:px-6 lg:px-8"
 };
 var _hoisted_4 = {
   style: {
-    "height": "523px"
+    "height": "80vh"
   },
   "class": "w-full mx-auto p-3 bg-white shadow-md overflow-auto sm:rounded-lg"
 };
@@ -27505,7 +27505,7 @@ var _hoisted_15 = {
 };
 var _hoisted_16 = {
   style: {
-    "height": "523px"
+    "height": "80vh"
   },
   "class": "w-full mx-auto col-span-2 bg-white shadow-md overflow-scroll sm:rounded-lg"
 };
@@ -27571,7 +27571,6 @@ function render(_ctx, _cache, $props, $setup, $data, $options) {
         },
         src: _ctx.code,
         title: "YouTube video player",
-        frameborder: "0",
         allow: "accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture",
         allowfullscreen: ""
       }, null, 8
