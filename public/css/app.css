@@ -1075,6 +1075,9 @@ select {
 .-mt-px {
   margin-top: -1px;
 }
+.mt-7 {
+  margin-top: 1.75rem;
+}
 .mb-2 {
   margin-bottom: 0.5rem;
 }
@@ -1086,9 +1089,6 @@ select {
 }
 .mb-8 {
   margin-bottom: 2rem;
-}
-.mt-7 {
-  margin-top: 1.75rem;
 }
 .block {
   display: block;

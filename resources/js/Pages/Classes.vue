@@ -69,7 +69,7 @@
                             <div>
                                 <jet-label for="moduleName" class="font-bold text-2xl" :value=currentQuiz.question />
                                 <jet-input id="moduleName" type="text" class="mt-1 block w-full"
-                                           required
+                                           required v-model="this.answerForm.answer"
                                            autofocus autocomplete="moduleName"/>
                             </div>
 
@@ -111,6 +111,7 @@ export default defineComponent({
             currentQuiz : {},
             code: '',
             justTheCode: '',
+            answer :'',
             watchedClassForm: this.$inertia.form({
                 class_id: '',
                 user_id: '',
@@ -120,7 +121,7 @@ export default defineComponent({
                 question_id: '',
                 answer: '',
                 course_id: '',
-                module_id: this.course.id,
+                module_id: '',
                 user_id: ''
             }),
         }
@@ -144,7 +145,10 @@ export default defineComponent({
             this.watchedClassForm.post(this.route('setWatchedClass'))
         },
         responseQuiz(){
-
+            this.answerForm.question_id = this.currentQuiz.id;
+            this.answerForm.course_id = this.course.id;
+            this.answerForm.module_id = this.currentQuiz.module_id;
+            this.answerForm.post(this.route('setAnswerQuiz'))
         }
     }
 })

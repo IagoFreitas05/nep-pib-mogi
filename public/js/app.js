@@ -23050,6 +23050,7 @@ __webpack_require__.r(__webpack_exports__);
       currentQuiz: {},
       code: '',
       justTheCode: '',
+      answer: '',
       watchedClassForm: this.$inertia.form({
         class_id: '',
         user_id: '',
@@ -23059,7 +23060,7 @@ __webpack_require__.r(__webpack_exports__);
         question_id: '',
         answer: '',
         course_id: '',
-        module_id: this.course.id,
+        module_id: '',
         user_id: ''
       })
     };
@@ -23082,7 +23083,12 @@ __webpack_require__.r(__webpack_exports__);
       this.watchedClassForm.course_id = this.course.id;
       this.watchedClassForm.post(this.route('setWatchedClass'));
     },
-    responseQuiz: function responseQuiz() {}
+    responseQuiz: function responseQuiz() {
+      this.answerForm.question_id = this.currentQuiz.id;
+      this.answerForm.course_id = this.course.id;
+      this.answerForm.module_id = this.currentQuiz.module_id;
+      this.answerForm.post(this.route('setAnswerQuiz'));
+    }
   }
 }));
 
@@ -27546,6 +27552,8 @@ var _hoisted_20 = {
 var _hoisted_21 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createTextVNode)(" responder ");
 
 function render(_ctx, _cache, $props, $setup, $data, $options) {
+  var _this = this;
+
   var _component_jet_label = (0,vue__WEBPACK_IMPORTED_MODULE_0__.resolveComponent)("jet-label");
 
   var _component_jet_input = (0,vue__WEBPACK_IMPORTED_MODULE_0__.resolveComponent)("jet-input");
@@ -27620,7 +27628,7 @@ function render(_ctx, _cache, $props, $setup, $data, $options) {
       }, null, 8
       /* PROPS */
       , _hoisted_18)) : (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("v-if", true), Object.keys(_ctx.currentQuiz).length !== 0 ? ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("div", _hoisted_19, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("form", {
-        onSubmit: _cache[0] || (_cache[0] = (0,vue__WEBPACK_IMPORTED_MODULE_0__.withModifiers)(function ($event) {
+        onSubmit: _cache[1] || (_cache[1] = (0,vue__WEBPACK_IMPORTED_MODULE_0__.withModifiers)(function ($event) {
           return _ctx.responseQuiz();
         }, ["prevent"]))
       }, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", null, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)(_component_jet_label, {
@@ -27634,9 +27642,15 @@ function render(_ctx, _cache, $props, $setup, $data, $options) {
         type: "text",
         "class": "mt-1 block w-full",
         required: "",
+        modelValue: _this.answerForm.answer,
+        "onUpdate:modelValue": _cache[0] || (_cache[0] = function ($event) {
+          return _this.answerForm.answer = $event;
+        }),
         autofocus: "",
         autocomplete: "moduleName"
-      })]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_20, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)(_component_jet_button, {
+      }, null, 8
+      /* PROPS */
+      , ["modelValue"])]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_20, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)(_component_jet_button, {
         "class": "ml-4"
       }, {
         "default": (0,vue__WEBPACK_IMPORTED_MODULE_0__.withCtx)(function () {
