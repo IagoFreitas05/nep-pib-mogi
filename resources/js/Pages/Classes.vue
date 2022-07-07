@@ -65,7 +65,7 @@
                             allowfullscreen></iframe>
 
                     <div v-if="Object.keys(currentQuiz).length !== 0" class="p-6 justify-center mt-7 flex-col items-center align-middle">
-                        <form @submit.prevent="responseQuiz()">
+                        <form @submit.prevent="confirmResponse()">
                             <div>
                                 <jet-label for="moduleName" class="font-bold text-2xl" :value=currentQuiz.question />
                                 <jet-input id="moduleName" type="text" class="mt-1 block w-full"
@@ -95,6 +95,7 @@ import JetNavLink from '@/Jetstream/NavLink.vue'
 import JetLabel from "@/Jetstream/Label";
 import JetButton from "@/Jetstream/Button";
 import JetInput from "@/Jetstream/Input";
+import swal from "sweetalert";
 
 
 export default defineComponent({
@@ -148,7 +149,27 @@ export default defineComponent({
             this.answerForm.question_id = this.currentQuiz.id;
             this.answerForm.course_id = this.course.id;
             this.answerForm.module_id = this.currentQuiz.module_id;
-            this.answerForm.post(this.route('setAnswerQuiz'))
+            this.answerForm.post(this.route('setAnswerQuiz'),{
+                onSuccess: () => swal("success","Sua resposta foi enviada com sucesso!"),
+                onFailure: () => swal("warning","Houve um erro ao processar sua resposta")
+            });
+        },
+        confirmResponse(){
+            swal({
+                title: "Você tem certeza?",
+                text: "Confirma o envio da sua resposta?",
+                icon: "warning",
+                buttons: true,
+                dangerMode: true,
+            })
+                .then((willDelete) => {
+                    if (willDelete) {
+                        this.responseQuiz();
+                        swal("Boa resposta!","Sua resposta foi enviada com sucesso!","success")
+                    } else {
+                        swal("Inscrição cancelada!");
+                    }
+                });
         }
     }
 })

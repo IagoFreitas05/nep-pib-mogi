@@ -23029,6 +23029,9 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _Jetstream_Label__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! @/Jetstream/Label */ "./resources/js/Jetstream/Label.vue");
 /* harmony import */ var _Jetstream_Button__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! @/Jetstream/Button */ "./resources/js/Jetstream/Button.vue");
 /* harmony import */ var _Jetstream_Input__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! @/Jetstream/Input */ "./resources/js/Jetstream/Input.vue");
+/* harmony import */ var sweetalert__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! sweetalert */ "./node_modules/sweetalert/dist/sweetalert.min.js");
+/* harmony import */ var sweetalert__WEBPACK_IMPORTED_MODULE_7___default = /*#__PURE__*/__webpack_require__.n(sweetalert__WEBPACK_IMPORTED_MODULE_7__);
+
 
 
 
@@ -23087,7 +23090,33 @@ __webpack_require__.r(__webpack_exports__);
       this.answerForm.question_id = this.currentQuiz.id;
       this.answerForm.course_id = this.course.id;
       this.answerForm.module_id = this.currentQuiz.module_id;
-      this.answerForm.post(this.route('setAnswerQuiz'));
+      this.answerForm.post(this.route('setAnswerQuiz'), {
+        onSuccess: function onSuccess() {
+          return sweetalert__WEBPACK_IMPORTED_MODULE_7___default()("success", "Sua resposta foi enviada com sucesso!");
+        },
+        onFailure: function onFailure() {
+          return sweetalert__WEBPACK_IMPORTED_MODULE_7___default()("warning", "Houve um erro ao processar sua resposta");
+        }
+      });
+    },
+    confirmResponse: function confirmResponse() {
+      var _this = this;
+
+      sweetalert__WEBPACK_IMPORTED_MODULE_7___default()({
+        title: "Você tem certeza?",
+        text: "Confirma o envio da sua resposta?",
+        icon: "warning",
+        buttons: true,
+        dangerMode: true
+      }).then(function (willDelete) {
+        if (willDelete) {
+          _this.responseQuiz();
+
+          sweetalert__WEBPACK_IMPORTED_MODULE_7___default()("Boa resposta!", "Sua resposta foi enviada com sucesso!", "success");
+        } else {
+          sweetalert__WEBPACK_IMPORTED_MODULE_7___default()("Inscrição cancelada!");
+        }
+      });
     }
   }
 }));
@@ -27629,7 +27658,7 @@ function render(_ctx, _cache, $props, $setup, $data, $options) {
       /* PROPS */
       , _hoisted_18)) : (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("v-if", true), Object.keys(_ctx.currentQuiz).length !== 0 ? ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("div", _hoisted_19, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("form", {
         onSubmit: _cache[1] || (_cache[1] = (0,vue__WEBPACK_IMPORTED_MODULE_0__.withModifiers)(function ($event) {
-          return _ctx.responseQuiz();
+          return _ctx.confirmResponse();
         }, ["prevent"]))
       }, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", null, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)(_component_jet_label, {
         "for": "moduleName",

@@ -6,6 +6,7 @@ use App\Models\Course;
 use App\Models\Module;
 use App\Models\Quiz;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Redirect;
 use Inertia\Inertia;
 
@@ -35,5 +36,10 @@ class QuizController extends Controller
         $quiz->save();
 
         return Redirect::route('editCourse', Course::find(Module::find($quiz->module_id)->course_id));
+    }
+
+    public function saveAnswer(Request $request){
+
+       return $request;
     }
 }

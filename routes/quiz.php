@@ -11,3 +11,7 @@ Route::middleware(['auth:sanctum', 'verified'])
     ->post('/index', function(){
         return Quiz::All();
     })->name("indexQuiz");
+
+Route::middleware(['auth:sanctum','verified'])
+    ->post('/setAnswerQuiz','App\Http\Controllers\QuizController@SaveAnswer')
+    ->name('setAnswerQuiz');
