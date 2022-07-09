@@ -97,9 +97,28 @@
                 </div>
             </div>
         </div>
-        <div class="py-12 w-full">
-            <div class="p-20">
-                <h1>Perguntas sobre a aula</h1>
+        <div class="w-full">
+            <div class="pr-20 pl-20 w-full">
+                <h1 class="text-2xl text-gray-500">Perguntas sobre a aula</h1>
+                <small>caso tenha ficado alguma dúvida, faça uma pergunta ao professor!</small>
+                <form @submit.prevent="confirmForumQuest()" class=" mb-10 w-full">
+                    <div class="flex flex-col items-start justify-start w-full mt-4">
+                        <div class="w-full">
+                            <jet-label class="font-bold text-2xl mb-4" :value=currentQuiz.question />
+                            <textarea class="rounded border-gray-200 w-3/6" rows="5">
+
+                            </textarea>
+                        </div>
+
+                        <div class="flex items-start justify-start mt-4">
+                            <jet-button class="" >
+                                fazer pergunta
+                            </jet-button>
+                        </div>
+                    </div>
+                </form>
+
+                adadsasd
             </div>
         </div>
     </app-layout>
