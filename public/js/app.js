@@ -27526,7 +27526,7 @@ var _hoisted_4 = {
   "class": "w-full mx-auto p-3 bg-white shadow-md overflow-auto sm:rounded-lg"
 };
 var _hoisted_5 = {
-  "class": "font-bold text-gray-600"
+  "class": "font-bold text-gray-600 bg-white"
 };
 var _hoisted_6 = {
   "class": "w-full mt-4 sm:max-w-xl grid grid-cols-1 p-2 text-black mt-2 px-6 py-4 bg-white border overflow-y-auto sm:rounded-lg"
@@ -27580,6 +27580,14 @@ var _hoisted_22 = {
 };
 
 var _hoisted_23 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createTextVNode)(" responder ");
+
+var _hoisted_24 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", {
+  "class": "py-12 w-full"
+}, [/*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", {
+  "class": "p-20"
+}, [/*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("h1", null, "Perguntas sobre a aula")])], -1
+/* HOISTED */
+);
 
 function render(_ctx, _cache, $props, $setup, $data, $options) {
   var _this = this;
@@ -27711,7 +27719,7 @@ function render(_ctx, _cache, $props, $setup, $data, $options) {
 
       })) : (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("v-if", true)])], 32
       /* HYDRATE_EVENTS */
-      )])) : (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("v-if", true)])])])];
+      )])) : (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("v-if", true)])])]), _hoisted_24];
     }),
     _: 1
     /* STABLE */

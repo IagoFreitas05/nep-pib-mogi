@@ -5,11 +5,12 @@
                 área de aprendizagem
             </h2>
         </template>
+
         <div class="py-12 w-full">
             <div class="sm:grid sm:grid-cols-3 sm:gap-4  max-w-7xl mx-auto sm:px-6 lg:px-8 ">
                 <div style="height: 80vh"
                      class="w-full mx-auto p-3  bg-white shadow-md overflow-auto sm:rounded-lg">
-                    <p class="font-bold text-gray-600"> {{ course.name }}</p>
+                    <p class="font-bold text-gray-600 bg-white"> {{ course.name }}</p>
                     <div v-for="module in modules"
                          class="w-full mt-4 sm:max-w-xl grid grid-cols-1
                         p-2 text-black mt-2 px-6 py-4 bg-white border
@@ -18,8 +19,8 @@
                         <div class="text-cyan-600 font-bold rounded p-2">{{ module.name }}</div>
                         <div v-for="classe in module.class"
                              class="w-full mt-4 sm:max-w-xl grid grid-cols-4
-                        p-2 text-black mt-2 px-6 py-4 bg-white border
-                        overflow-y-auto sm:rounded-lg"
+                            p-2 text-black mt-2 px-6 py-4 bg-white border
+                            overflow-y-auto sm:rounded-lg"
                              v-bind:class="classe.class_link === justTheCode?'border-green-400':$page.props.watchedClasses
                                         .find(element => element.class_id === classe.id)
                                         ?'border-green-500':'border-gray-400'">
@@ -94,6 +95,11 @@
                         </form>
                     </div>
                 </div>
+            </div>
+        </div>
+        <div class="py-12 w-full">
+            <div class="p-20">
+                <h1>Perguntas sobre a aula</h1>
             </div>
         </div>
     </app-layout>
