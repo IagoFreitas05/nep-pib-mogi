@@ -19,6 +19,8 @@ return new class extends Migration
             $table->string("anwser")->nullable();
             $table->foreignId("course_id")->unsigned();
             $table->foreignId("class_id")->unsigned();
+            $table->string("username");
+            $table->string("user_id");
             $table->timestamps();
         });
     }

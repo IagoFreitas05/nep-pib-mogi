@@ -103,7 +103,7 @@
         </div>
         <div class="w-full" v-if="this.justTheCode">
             <div class="pr-20 pl-20 w-full">
-                <h1 class="text-2xl text-gray-500">Perguntas sobre a aula</h1>
+                <h1 class="text-2xl text-gray-500">Perguntas sobre a aula: {{classes.find(element => element.class_link === this.justTheCode).name}}</h1>
                 <small>caso tenha ficado alguma dúvida, faça uma pergunta ao professor!</small>
                 <form @submit.prevent="confirmForumQuest()" class=" mb-10 w-full">
                     <div class="flex flex-col items-start justify-start w-full mt-4">
@@ -257,7 +257,7 @@ export default defineComponent({
         },
         sendForumQuest(){
             this.forumQuestForm.course_id = this.course.id;
-            this.forumQuestForm.class_id = this.classes.find(element => element.code === this.justTheCode).id;
+            this.forumQuestForm.class_id = this.classes.find(element => element.class_link === this.justTheCode).id;
             this.forumQuestForm.post(this.route('setAnswerQuiz'), {
                 onSuccess: () => swal("Boa resposta!", "Sua resposta foi enviada com sucesso, em breve um professor irá responder sua pergunta!", "success"),
                 onFailure: () => swal("Opa!", "Sua resposta não pode ser enviada", "warning")

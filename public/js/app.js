@@ -23065,6 +23065,11 @@ __webpack_require__.r(__webpack_exports__);
         course_id: '',
         module_id: '',
         user_id: ''
+      }),
+      forumQuestForm: this.$inertia.form({
+        class_id: '',
+        course_id: '',
+        question: ''
       })
     };
   },
@@ -23077,8 +23082,8 @@ __webpack_require__.r(__webpack_exports__);
     },
     setQuiz: function setQuiz(Quiz) {
       this.currentQuiz = Quiz;
+      this.justTheCode = "";
       this.code = "";
-      console.log(Quiz);
     },
     setWatchedClass: function setWatchedClass(class_id, user_id) {
       this.watchedClassForm.class_id = class_id;
@@ -23111,6 +23116,39 @@ __webpack_require__.r(__webpack_exports__);
       }).then(function (willDelete) {
         if (willDelete) {
           _this.responseQuiz();
+        } else {
+          sweetalert__WEBPACK_IMPORTED_MODULE_7___default()("Envio cancelado!");
+        }
+      });
+    },
+    sendForumQuest: function sendForumQuest() {
+      var _this2 = this;
+
+      this.forumQuestForm.course_id = this.course.id;
+      this.forumQuestForm.class_id = this.classes.find(function (element) {
+        return element.class_link === _this2.justTheCode;
+      }).id;
+      this.forumQuestForm.post(this.route('setAnswerQuiz'), {
+        onSuccess: function onSuccess() {
+          return sweetalert__WEBPACK_IMPORTED_MODULE_7___default()("Boa resposta!", "Sua resposta foi enviada com sucesso, em breve um professor irá responder sua pergunta!", "success");
+        },
+        onFailure: function onFailure() {
+          return sweetalert__WEBPACK_IMPORTED_MODULE_7___default()("Opa!", "Sua resposta não pode ser enviada", "warning");
+        }
+      });
+    },
+    confirmForumQuest: function confirmForumQuest() {
+      var _this3 = this;
+
+      sweetalert__WEBPACK_IMPORTED_MODULE_7___default()({
+        title: "Você tem certeza?",
+        text: "Confirma o envio da sua resposta?",
+        icon: "warning",
+        buttons: true,
+        dangerMode: true
+      }).then(function (willDelete) {
+        if (willDelete) {
+          _this3.sendForumQuest();
         } else {
           sweetalert__WEBPACK_IMPORTED_MODULE_7___default()("Envio cancelado!");
         }
@@ -27582,17 +27620,15 @@ var _hoisted_22 = {
 var _hoisted_23 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createTextVNode)(" responder ");
 
 var _hoisted_24 = {
+  key: 0,
   "class": "w-full"
 };
 var _hoisted_25 = {
   "class": "pr-20 pl-20 w-full"
 };
-
-var _hoisted_26 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("h1", {
+var _hoisted_26 = {
   "class": "text-2xl text-gray-500"
-}, "Perguntas sobre a aula", -1
-/* HOISTED */
-);
+};
 
 var _hoisted_27 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("small", null, "caso tenha ficado alguma dúvida, faça uma pergunta ao professor!", -1
 /* HOISTED */
@@ -27794,18 +27830,23 @@ function render(_ctx, _cache, $props, $setup, $data, $options) {
 
       })) : (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("v-if", true)])], 32
       /* HYDRATE_EVENTS */
-      )])) : (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("v-if", true)])])]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_24, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_25, [_hoisted_26, _hoisted_27, (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("form", {
+      )])) : (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("v-if", true)])])]), _this.justTheCode ? ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("div", _hoisted_24, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_25, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("h1", _hoisted_26, "Perguntas sobre a aula: " + (0,vue__WEBPACK_IMPORTED_MODULE_0__.toDisplayString)(_ctx.classes.find(function (element) {
+        return element.class_link === _this.justTheCode;
+      }).name), 1
+      /* TEXT */
+      ), _hoisted_27, (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("form", {
         onSubmit: _cache[2] || (_cache[2] = (0,vue__WEBPACK_IMPORTED_MODULE_0__.withModifiers)(function ($event) {
           return _ctx.confirmForumQuest();
         }, ["prevent"])),
         "class": "mb-10 w-full"
       }, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_28, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_29, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)(_component_jet_label, {
         "class": "font-bold text-2xl mb-4",
-        value: _ctx.currentQuiz.question
+        value: _ctx.forumQuestForm.question
       }, null, 8
       /* PROPS */
       , ["value"]), _hoisted_30]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_31, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)(_component_jet_button, {
-        "class": ""
+        "class": "",
+        type: "submit"
       }, {
         "default": (0,vue__WEBPACK_IMPORTED_MODULE_0__.withCtx)(function () {
           return [_hoisted_32];
@@ -27815,7 +27856,7 @@ function render(_ctx, _cache, $props, $setup, $data, $options) {
 
       })])])], 32
       /* HYDRATE_EVENTS */
-      ), _hoisted_33])])];
+      ), _hoisted_33])])) : (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("v-if", true)];
     }),
     _: 1
     /* STABLE */
