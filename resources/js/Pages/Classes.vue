@@ -212,7 +212,7 @@ export default defineComponent({
             })
         }
     },
-    props: ['classes', 'course', 'modules', 'quizzes', 'watchedClasses', 'answerQuizzes'],
+    props: ['classes', 'course', 'modules', 'quizzes', 'watchedClasses', 'answerQuizzes','forums'],
     methods: {
         setCode(code) {
             this.currentQuiz = {};

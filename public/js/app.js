@@ -23073,7 +23073,7 @@ __webpack_require__.r(__webpack_exports__);
       })
     };
   },
-  props: ['classes', 'course', 'modules', 'quizzes', 'watchedClasses', 'answerQuizzes'],
+  props: ['classes', 'course', 'modules', 'quizzes', 'watchedClasses', 'answerQuizzes', 'forums'],
   methods: {
     setCode: function setCode(code) {
       this.currentQuiz = {};

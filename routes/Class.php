@@ -1,6 +1,7 @@
 <?php
 
 use App\Models\Course;
+use App\Models\Forum;
 use App\Models\Module;
 use App\Models\Quiz;
 use App\Models\QuizAnswer;
@@ -50,7 +51,8 @@ Route::middleware(['auth:sanctum', 'verified'])
                 ->orderBy('order')
                 ->get(),
             'watchedClasses' => WatchedClass::where('user_id', '=', Auth::user()->id)->get(),
-            'answerQuizzes' => QuizAnswer::where('user_id','=', Auth::user()->id)->get()
+            'answerQuizzes' => QuizAnswer::where('user_id','=', Auth::user()->id)->get(),
+            'forums' => Forum::where('course_id','=', $id)
         ]);
     })
     ->name("classes");
