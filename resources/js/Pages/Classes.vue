@@ -258,7 +258,7 @@ export default defineComponent({
         sendForumQuest(){
             this.forumQuestForm.course_id = this.course.id;
             this.forumQuestForm.class_id = this.classes.find(element => element.class_link === this.justTheCode).id;
-            this.forumQuestForm.post(this.route('setAnswerQuiz'), {
+            this.forumQuestForm.post(this.route('setForumQuestion'), {
                 onSuccess: () => swal("Boa resposta!", "Sua resposta foi enviada com sucesso, em breve um professor irá responder sua pergunta!", "success"),
                 onFailure: () => swal("Opa!", "Sua resposta não pode ser enviada", "warning")
             });

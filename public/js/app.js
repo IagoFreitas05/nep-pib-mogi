@@ -23128,7 +23128,7 @@ __webpack_require__.r(__webpack_exports__);
       this.forumQuestForm.class_id = this.classes.find(function (element) {
         return element.class_link === _this2.justTheCode;
       }).id;
-      this.forumQuestForm.post(this.route('setAnswerQuiz'), {
+      this.forumQuestForm.post(this.route('setForumQuestion'), {
         onSuccess: function onSuccess() {
           return sweetalert__WEBPACK_IMPORTED_MODULE_7___default()("Boa resposta!", "Sua resposta foi enviada com sucesso, em breve um professor irá responder sua pergunta!", "success");
         },
