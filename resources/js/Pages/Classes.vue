@@ -270,8 +270,7 @@ export default defineComponent({
                 icon: "warning",
                 buttons: true,
                 dangerMode: true,
-            })
-                .then((willDelete) => {
+            }).then((willDelete) => {
                     if (willDelete) {
                         this.sendForumQuest();
                     } else {
