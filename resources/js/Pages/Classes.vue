@@ -101,21 +101,21 @@
                 </div>
             </div>
         </div>
-        <div class="w-full">
+        <div class="w-full" v-if="this.justTheCode">
             <div class="pr-20 pl-20 w-full">
                 <h1 class="text-2xl text-gray-500">Perguntas sobre a aula</h1>
                 <small>caso tenha ficado alguma dúvida, faça uma pergunta ao professor!</small>
                 <form @submit.prevent="confirmForumQuest()" class=" mb-10 w-full">
                     <div class="flex flex-col items-start justify-start w-full mt-4">
                         <div class="w-full">
-                            <jet-label class="font-bold text-2xl mb-4" :value=currentQuiz.question />
+                            <jet-label class="font-bold text-2xl mb-4" :value=forumQuestForm.question />
                             <textarea class="w-full rounded border-gray-200 md:w-3/6 lg:w-3/6 xl:w-3/6"  rows="5">
 
                             </textarea>
                         </div>
 
                         <div class="flex items-start justify-start mt-4">
-                            <jet-button class="">
+                            <jet-button class="" type="submit">
                                 fazer pergunta
                             </jet-button>
                         </div>
@@ -205,6 +205,11 @@ export default defineComponent({
                 module_id: '',
                 user_id: ''
             }),
+            forumQuestForm: this.$inertia.form({
+                class_id: '',
+                course_id:'',
+                question: ''
+            })
         }
     },
     props: ['classes', 'course', 'modules', 'quizzes', 'watchedClasses', 'answerQuizzes'],
@@ -216,8 +221,8 @@ export default defineComponent({
         },
         setQuiz(Quiz) {
             this.currentQuiz = Quiz
+            this.justTheCode = ""
             this.code = "";
-            console.log(Quiz);
         },
         setWatchedClass(class_id, user_id) {
             this.watchedClassForm.class_id = class_id;
@@ -245,6 +250,30 @@ export default defineComponent({
                 .then((willDelete) => {
                     if (willDelete) {
                         this.responseQuiz();
+                    } else {
+                        swal("Envio cancelado!");
+                    }
+                });
+        },
+        sendForumQuest(){
+            this.forumQuestForm.course_id = this.course.id;
+            this.forumQuestForm.class_id = this.classes.find(element => element.code === this.justTheCode).id;
+            this.forumQuestForm.post(this.route('setAnswerQuiz'), {
+                onSuccess: () => swal("Boa resposta!", "Sua resposta foi enviada com sucesso, em breve um professor irá responder sua pergunta!", "success"),
+                onFailure: () => swal("Opa!", "Sua resposta não pode ser enviada", "warning")
+            });
+        },
+        confirmForumQuest(){
+            swal({
+                title: "Você tem certeza?",
+                text: "Confirma o envio da sua resposta?",
+                icon: "warning",
+                buttons: true,
+                dangerMode: true,
+            })
+                .then((willDelete) => {
+                    if (willDelete) {
+                        this.sendForumQuest();
                     } else {
                         swal("Envio cancelado!");
                     }
