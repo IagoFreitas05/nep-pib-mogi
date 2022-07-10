@@ -68,27 +68,31 @@
                         </div>
                     </div>
                 </div>
-                <div style="height: 80vh" class="w-full mx-auto   col-span-2  bg-white shadow-md overflow-scroll sm:rounded-lg">
+                <div style="height: 80vh"
+                     class="w-full mx-auto   col-span-2  bg-white shadow-md overflow-scroll sm:rounded-lg">
                     <iframe v-if="code" width="100%" style="height:80vh" :src=code title="YouTube video player"
                             allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
                             allowfullscreen></iframe>
 
-                    <div v-if="Object.keys(currentQuiz).length !== 0" class="p-6 justify-center mt-7 flex-col items-center align-middle">
+                    <div v-if="Object.keys(currentQuiz).length !== 0"
+                         class="p-6 justify-center mt-7 flex-col items-center align-middle">
                         <form @submit.prevent="confirmResponse()">
                             <div>
-                                <jet-label for="moduleName" class="font-bold text-2xl mb-4" :value=currentQuiz.question />
+                                <jet-label for="moduleName" class="font-bold text-2xl mb-4"
+                                           :value=currentQuiz.question />
                                 <jet-input id="moduleName" type="text" class="mt-1 block w-full"
                                            required v-model="this.answerForm.answer"
                                            autofocus autocomplete="moduleName"/>
                             </div>
                             <p class="mt-4 font-bold text-gray-400" v-if="$page.props.answerQuizzes
                                             .find(element => element.question_id === currentQuiz.id)">
-                                Sua resposta para esta questão foi: {{$page.props.answerQuizzes.find(element => element.question_id === currentQuiz.id).answer}}
+                                Sua resposta para esta questão foi:
+                                {{ $page.props.answerQuizzes.find(element => element.question_id === currentQuiz.id).answer }}
                             </p>
 
                             <div class="flex items-center justify-end mt-4">
                                 <jet-button class="ml-4" v-if="!$page.props.answerQuizzes
-                                            .find(element => element.question_id === currentQuiz.id)" >
+                                            .find(element => element.question_id === currentQuiz.id)">
                                     responder
                                 </jet-button>
                             </div>
@@ -105,18 +109,59 @@
                     <div class="flex flex-col items-start justify-start w-full mt-4">
                         <div class="w-full">
                             <jet-label class="font-bold text-2xl mb-4" :value=currentQuiz.question />
-                            <textarea class="rounded border-gray-200 w-3/6" rows="5">
+                            <textarea class="w-full rounded border-gray-200 md:w-3/6 lg:w-3/6 xl:w-3/6"  rows="5">
 
                             </textarea>
                         </div>
 
                         <div class="flex items-start justify-start mt-4">
-                            <jet-button class="" >
+                            <jet-button class="">
                                 fazer pergunta
                             </jet-button>
                         </div>
                     </div>
                 </form>
+                <section>
+                    <div class="bg-white rounded shadow-sm mt-4 border border-gray-200 mb-4 p-4 flex flex-col">
+                        <div class="flex flex-col items-start content-start  ">
+                            <p class="text-xl font-bold text-gray-400 text-left">Iago Freitas Cardoso</p>
+                            <p class="text-left">Professor, gostaria de entender qual era o contexto da época em que paulo escrevia as cartas
+                                dele?</p>
+                        </div>
+                       <div class="flex flex-col items-end content-end rounded bg-gray-100 p-3">
+                           <p class="text-xl text-gray-400 font-bold text-right">resposta do professor:</p>
+                           <p class="text-right">O contexto era o império romano perseguindo a igreja, e oprimindo os seguidores de Cristo a
+                               todo custo, e mesmo assim, Paulo pregrava a mansidão e amor entre os irmãos</p>
+                       </div>
+                    </div>
+
+                    <div class="bg-white rounded shadow-sm mt-4 border border-gray-200 mb-4 p-4 flex flex-col">
+                        <div class="flex flex-col items-start content-start  ">
+                            <p class="text-xl font-bold text-gray-400 text-left">Iago Freitas Cardoso</p>
+                            <p class="text-left">Professor, gostaria de entender qual era o contexto da época em que paulo escrevia as cartas
+                                dele?</p>
+                        </div>
+                        <div class="flex flex-col items-end content-end rounded bg-gray-100 p-3">
+                            <p class="text-xl text-gray-400 font-bold text-right">resposta do professor:</p>
+                            <p class="text-right">O contexto era o império romano perseguindo a igreja, e oprimindo os seguidores de Cristo a
+                                todo custo, e mesmo assim, Paulo pregrava a mansidão e amor entre os irmãos</p>
+                        </div>
+                    </div>
+
+                    <div class="bg-white rounded shadow-sm mt-4 border border-gray-200 mb-4 p-4 flex flex-col">
+                        <div class="flex flex-col items-start content-start  ">
+                            <p class="text-xl font-bold text-gray-400 text-left">Iago Freitas Cardoso</p>
+                            <p class="text-left">Professor, gostaria de entender qual era o contexto da época em que paulo escrevia as cartas
+                                dele?</p>
+                        </div>
+                        <div class="flex flex-col items-end content-end rounded bg-gray-100 p-3">
+                            <p class="text-xl text-gray-400 font-bold text-right">resposta do professor:</p>
+                            <p class="text-right">O contexto era o império romano perseguindo a igreja, e oprimindo os seguidores de Cristo a
+                                todo custo, e mesmo assim, Paulo pregrava a mansidão e amor entre os irmãos</p>
+                        </div>
+                    </div>
+
+                </section>
             </div>
         </div>
     </app-layout>
@@ -144,10 +189,10 @@ export default defineComponent({
     },
     data() {
         return {
-            currentQuiz : {},
+            currentQuiz: {},
             code: '',
             justTheCode: '',
-            answer :'',
+            answer: '',
             watchedClassForm: this.$inertia.form({
                 class_id: '',
                 user_id: '',
@@ -162,14 +207,14 @@ export default defineComponent({
             }),
         }
     },
-    props: ['classes', 'course', 'modules', 'quizzes', 'watchedClasses','answerQuizzes'],
+    props: ['classes', 'course', 'modules', 'quizzes', 'watchedClasses', 'answerQuizzes'],
     methods: {
         setCode(code) {
             this.currentQuiz = {};
             this.justTheCode = code;
             this.code = `https://www.youtube.com/embed/${code}`;
         },
-        setQuiz(Quiz){
+        setQuiz(Quiz) {
             this.currentQuiz = Quiz
             this.code = "";
             console.log(Quiz);
@@ -180,16 +225,16 @@ export default defineComponent({
             this.watchedClassForm.course_id = this.course.id;
             this.watchedClassForm.post(this.route('setWatchedClass'))
         },
-        responseQuiz(){
+        responseQuiz() {
             this.answerForm.question_id = this.currentQuiz.id;
             this.answerForm.course_id = this.course.id;
             this.answerForm.module_id = this.currentQuiz.module_id;
-            this.answerForm.post(this.route('setAnswerQuiz'),{
-                onSuccess: () => swal("Boa resposta!","Sua resposta foi enviada com sucesso","success"),
-                onFailure: () => swal("Opa!","Sua resposta não pode ser enviada","warning")
+            this.answerForm.post(this.route('setAnswerQuiz'), {
+                onSuccess: () => swal("Boa resposta!", "Sua resposta foi enviada com sucesso", "success"),
+                onFailure: () => swal("Opa!", "Sua resposta não pode ser enviada", "warning")
             });
         },
-        confirmResponse(){
+        confirmResponse() {
             swal({
                 title: "Você tem certeza?",
                 text: "Confirma o envio da sua resposta?",
