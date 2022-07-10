@@ -12,7 +12,7 @@ class ForumController extends Controller
     public function create(Request $request){
 
         Forum::create([
-            'course_id' => $request->input('user_id'),
+            'course_id' => $request->input('course_id'),
             'class_id' => $request->input('class_id'),
             'question' => $request->input('question'),
             'user_id' => Auth::user()->id,

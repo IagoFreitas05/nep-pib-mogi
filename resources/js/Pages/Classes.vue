@@ -108,8 +108,8 @@
                 <form @submit.prevent="confirmForumQuest()" class=" mb-10 w-full">
                     <div class="flex flex-col items-start justify-start w-full mt-4">
                         <div class="w-full">
-                            <jet-label class="font-bold text-2xl mb-4" :value=forumQuestForm.question />
-                            <textarea class="w-full rounded border-gray-200 md:w-3/6 lg:w-3/6 xl:w-3/6"  rows="5">
+                            <jet-label class="font-bold text-2xl mb-4"   />
+                            <textarea class="w-full rounded border-gray-200 md:w-3/6 lg:w-3/6 xl:w-3/6"  v-model="forumQuestForm.question" rows="5">
 
                             </textarea>
                         </div>
