@@ -30,7 +30,7 @@
     </div>
 
 
-    <div class="py-8 w-full">
+    <div class=" w-full">
         <div class="w-full mx-auto sm:px-6 lg:px-8">
             <div class="bg-white overflow-hidden  sm:rounded-lg">
                 <section class="text-gray-600 body-font">
@@ -49,6 +49,7 @@
                     </div>
                 </section>
             </div>
+            <Welcome/>
         </div>
     </div>
 
@@ -58,10 +59,11 @@
 import {defineComponent} from 'vue'
 import {Head, Link} from '@inertiajs/inertia-vue3';
 import JetApplicationMark from '@/Jetstream/ApplicationMark.vue'
-
+import Welcome from '@/Jetstream/Welcome'
 
 export default defineComponent({
     components: {
+        Welcome,
         Head,
         Link,
         JetApplicationMark,

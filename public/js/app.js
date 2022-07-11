@@ -24094,11 +24094,14 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var vue__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! vue */ "./node_modules/vue/dist/vue.esm-bundler.js");
 /* harmony import */ var _inertiajs_inertia_vue3__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @inertiajs/inertia-vue3 */ "./node_modules/@inertiajs/inertia-vue3/dist/index.js");
 /* harmony import */ var _Jetstream_ApplicationMark_vue__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @/Jetstream/ApplicationMark.vue */ "./resources/js/Jetstream/ApplicationMark.vue");
+/* harmony import */ var _Jetstream_Welcome__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @/Jetstream/Welcome */ "./resources/js/Jetstream/Welcome.vue");
+
 
 
 
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ((0,vue__WEBPACK_IMPORTED_MODULE_0__.defineComponent)({
   components: {
+    Welcome: _Jetstream_Welcome__WEBPACK_IMPORTED_MODULE_3__["default"],
     Head: _inertiajs_inertia_vue3__WEBPACK_IMPORTED_MODULE_1__.Head,
     Link: _inertiajs_inertia_vue3__WEBPACK_IMPORTED_MODULE_1__.Link,
     JetApplicationMark: _Jetstream_ApplicationMark_vue__WEBPACK_IMPORTED_MODULE_2__["default"]
@@ -25307,33 +25310,12 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ });
 /* harmony import */ var vue__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! vue */ "./node_modules/vue/dist/vue.esm-bundler.js");
 
-var _hoisted_1 = {
-  "class": "p-6 sm:px-20 bg-white border-b border-gray-200"
-};
-var _hoisted_2 = {
-  "class": "mt-2"
-};
 
-var _hoisted_3 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", {
-  "class": "mt-8 text-2xl"
-}, " Bem-vindo ao Núcleo de ensino PIB Mogi ", -1
-/* HOISTED */
-);
+var _hoisted_1 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createStaticVNode)("<div class=\"bg-gray-200 bg-opacity-25 grid grid-cols-1 md:grid-cols-2\"><div class=\"p-6\"><div class=\"flex items-center\"><div class=\"ml-12 text-lg text-gray-600 leading-7 font-semibold\">Professores capacitados</div></div><div class=\"ml-12\"><div class=\"mt-2 text-sm text-gray-500\"> O NEP conta com um corpo docente capacitado para te ensinar, com experiência e vivência diária na caminhada com cristo. Estando sempre de prontidão para dúvidas e fazer o que estiver no alcance deles para te ajudar. </div></div></div><div class=\"p-6 border-t border-gray-200 md:border-t-0 md:border-l\"><div class=\"flex items-center\"><div class=\"ml-12 text-lg text-gray-600 leading-7 font-semibold\">Sólida base teorica</div></div><div class=\"ml-12\"><div class=\"mt-2 text-sm text-gray-500\"> Toda base de cursos do NEP é fundamentada em uma teologia sólida, e de acordo com as escríturas sagradas. Nossa maior preocupação é evidênciar as escrituras da maneira mais pura e simples, como Jesus ensinava e nos deixou o exemplo para que fizessemos dessa forma quando fossêmos ensinar. </div></div></div><div class=\"p-6 border-t border-gray-200\"><div class=\"flex items-center\"><div class=\"ml-12 text-lg text-gray-600 leading-7 font-semibold\"><a href=\"https://tailwindcss.com/\">Conteúdo livre </a></div></div><div class=\"ml-12\"><div class=\"mt-2 text-sm text-gray-500\"> Todo conteúdo didático disponibilizado pelo NEP é livre de cobranças, produzimos todo conteúdo de qualidade e cristão, sem cobrar nada por isso. Acreditamos que todos devem ter o acesso a todo conteúdo que ensina e evidência a verdade de Deus em nossas vidas. </div></div></div><div class=\"p-6 border-t border-gray-200 md:border-l\"><div class=\"flex items-center\"><div class=\"ml-12 text-lg text-gray-600 leading-7 font-semibold\">Conheça nossos cursos</div></div><div class=\"ml-12\"><div class=\"mt-2 text-sm text-gray-500\"> Estamos sempre atualizando nossos cursos e criando novos também, venha conhecer mais! </div></div></div></div>", 1);
 
-var _hoisted_4 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", {
-  "class": "mt-6 text-gray-500"
-}, " Nosso propósito é transmitir a mensagem do reino de forma clara e aplicável na vida de todos os que quiserem aprender. Nossos cursos são desenhados para evidênciar a mensagem de Deus afim de ser aplicada na vida cotidiana, mostrando de forma didática, dinâmica e eficaz o poder de transformação do ensino bíblico na vida de todos. ", -1
-/* HOISTED */
-);
-
-var _hoisted_5 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createStaticVNode)("<div class=\"bg-gray-200 bg-opacity-25 grid grid-cols-1 md:grid-cols-2\"><div class=\"p-6\"><div class=\"flex items-center\"><div class=\"ml-12 text-lg text-gray-600 leading-7 font-semibold\">Professores capacitados</div></div><div class=\"ml-12\"><div class=\"mt-2 text-sm text-gray-500\"> O NEP conta com um corpo docente capacitado para te ensinar, com experiência e vivência diária na caminhada com cristo. Estando sempre de prontidão para dúvidas e fazer o que estiver no alcance deles para te ajudar. </div></div></div><div class=\"p-6 border-t border-gray-200 md:border-t-0 md:border-l\"><div class=\"flex items-center\"><div class=\"ml-12 text-lg text-gray-600 leading-7 font-semibold\">Sólida base teorica</div></div><div class=\"ml-12\"><div class=\"mt-2 text-sm text-gray-500\"> Toda base de cursos do NEP é fundamentada em uma teologia sólida, e de acordo com as escríturas sagradas. Nossa maior preocupação é evidênciar as escrituras da maneira mais pura e simples, como Jesus ensinava e nos deixou o exemplo para que fizessemos dessa forma quando fossêmos ensinar. </div></div></div><div class=\"p-6 border-t border-gray-200\"><div class=\"flex items-center\"><div class=\"ml-12 text-lg text-gray-600 leading-7 font-semibold\"><a href=\"https://tailwindcss.com/\">Conteúdo livre </a></div></div><div class=\"ml-12\"><div class=\"mt-2 text-sm text-gray-500\"> Todo conteúdo didático disponibilizado pelo NEP é livre de cobranças, produzimos todo conteúdo de qualidade e cristão, sem cobrar nada por isso. Acreditamos que todos devem ter o acesso a todo conteúdo que ensina e evidência a verdade de Deus em nossas vidas. </div></div></div><div class=\"p-6 border-t border-gray-200 md:border-l\"><div class=\"flex items-center\"><div class=\"ml-12 text-lg text-gray-600 leading-7 font-semibold\">Conheça nossos cursos</div></div><div class=\"ml-12\"><div class=\"mt-2 text-sm text-gray-500\"> Estamos sempre atualizando nossos cursos e criando novos também, venha conhecer mais! </div></div></div></div>", 1);
-
+var _hoisted_2 = [_hoisted_1];
 function render(_ctx, _cache, $props, $setup, $data, $options) {
-  var _component_jet_application_logo = (0,vue__WEBPACK_IMPORTED_MODULE_0__.resolveComponent)("jet-application-logo");
-
-  return (0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("div", null, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_1, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_2, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)(_component_jet_application_logo, {
-    "class": "block h-12 w-auto"
-  })]), _hoisted_3, _hoisted_4]), _hoisted_5]);
+  return (0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("div", null, _hoisted_2);
 }
 
 /***/ }),
@@ -30200,7 +30182,14 @@ var _hoisted_5 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createTextVNod
 
 var _hoisted_6 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createTextVNode)(" sobre o projeto ");
 
-var _hoisted_7 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createStaticVNode)("<div class=\"py-8 w-full\"><div class=\"w-full mx-auto sm:px-6 lg:px-8\"><div class=\"bg-white overflow-hidden sm:rounded-lg\"><section class=\"text-gray-600 body-font\"><div class=\"container mx-auto flex px-5 py-24 md:flex-row flex-col items-center\"><div class=\"lg:flex-grow md:w-1/2 lg:pr-24 md:pr-16 flex flex-col md:items-start md:text-left mb-16 md:mb-0 items-center text-center\"><h1 class=\"title-font font-bold sm:text-4xl text-3xl mb-4 font-medium text-gray-900\"> Núcleo de ensino PIB Mogi </h1><p class=\"mb-8 leading-relaxed\"> Seja muito bem vindo ao núcleo de ensino da Primeira Igreja Batista em Mogi das Cruzes, nosso propósito é espalhar a palavra de Deus, e garantir que mais pessoas tenham acesso ao ensino da Palavra do nosso Deus. </p></div></div></section></div></div></div>", 1);
+var _hoisted_7 = {
+  "class": "w-full"
+};
+var _hoisted_8 = {
+  "class": "w-full mx-auto sm:px-6 lg:px-8"
+};
+
+var _hoisted_9 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createStaticVNode)("<div class=\"bg-white overflow-hidden sm:rounded-lg\"><section class=\"text-gray-600 body-font\"><div class=\"container mx-auto flex px-5 py-24 md:flex-row flex-col items-center\"><div class=\"lg:flex-grow md:w-1/2 lg:pr-24 md:pr-16 flex flex-col md:items-start md:text-left mb-16 md:mb-0 items-center text-center\"><h1 class=\"title-font font-bold sm:text-4xl text-3xl mb-4 font-medium text-gray-900\"> Núcleo de ensino PIB Mogi </h1><p class=\"mb-8 leading-relaxed\"> Seja muito bem vindo ao núcleo de ensino da Primeira Igreja Batista em Mogi das Cruzes, nosso propósito é espalhar a palavra de Deus, e garantir que mais pessoas tenham acesso ao ensino da Palavra do nosso Deus. </p></div></div></section></div>", 1);
 
 function render(_ctx, _cache, $props, $setup, $data, $options) {
   var _component_Head = (0,vue__WEBPACK_IMPORTED_MODULE_0__.resolveComponent)("Head");
@@ -30208,6 +30197,8 @@ function render(_ctx, _cache, $props, $setup, $data, $options) {
   var _component_jet_application_mark = (0,vue__WEBPACK_IMPORTED_MODULE_0__.resolveComponent)("jet-application-mark");
 
   var _component_Link = (0,vue__WEBPACK_IMPORTED_MODULE_0__.resolveComponent)("Link");
+
+  var _component_Welcome = (0,vue__WEBPACK_IMPORTED_MODULE_0__.resolveComponent)("Welcome", true);
 
   return (0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)(vue__WEBPACK_IMPORTED_MODULE_0__.Fragment, null, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)(_component_Head, {
     title: "Bem vindo"
@@ -30264,7 +30255,7 @@ function render(_ctx, _cache, $props, $setup, $data, $options) {
 
   }, 8
   /* PROPS */
-  , ["href"])) : (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("v-if", true)])]), _hoisted_7], 64
+  , ["href"])) : (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("v-if", true)])]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_7, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_8, [_hoisted_9, (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)(_component_Welcome)])])], 64
   /* STABLE_FRAGMENT */
   );
 }
