@@ -30180,16 +30180,40 @@ var _hoisted_4 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createTextVNod
 
 var _hoisted_5 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createTextVNode)(" Dashboard ");
 
-var _hoisted_6 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createTextVNode)(" sobre o projeto ");
-
-var _hoisted_7 = {
+var _hoisted_6 = {
   "class": "w-full"
 };
-var _hoisted_8 = {
+var _hoisted_7 = {
   "class": "w-full mx-auto sm:px-6 lg:px-8"
 };
+var _hoisted_8 = {
+  "class": "bg-white overflow-hidden sm:rounded-lg"
+};
+var _hoisted_9 = {
+  "class": "text-gray-600 body-font"
+};
+var _hoisted_10 = {
+  "class": "container mx-auto flex px-5 py-24 md:flex-row flex-col items-center"
+};
+var _hoisted_11 = {
+  "class": "lg:flex-grow md:w-1/2 lg:pr-24 md:pr-16 flex flex-col md:items-start md:text-left mb-16 md:mb-0 items-center text-center"
+};
 
-var _hoisted_9 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createStaticVNode)("<div class=\"bg-white overflow-hidden sm:rounded-lg\"><section class=\"text-gray-600 body-font\"><div class=\"container mx-auto flex px-5 py-24 md:flex-row flex-col items-center\"><div class=\"lg:flex-grow md:w-1/2 lg:pr-24 md:pr-16 flex flex-col md:items-start md:text-left mb-16 md:mb-0 items-center text-center\"><h1 class=\"title-font font-bold sm:text-4xl text-3xl mb-4 font-medium text-gray-900\"> Núcleo de ensino PIB Mogi </h1><p class=\"mb-8 leading-relaxed\"> Seja muito bem vindo ao núcleo de ensino da Primeira Igreja Batista em Mogi das Cruzes, nosso propósito é espalhar a palavra de Deus, e garantir que mais pessoas tenham acesso ao ensino da Palavra do nosso Deus. </p></div></div></section></div>", 1);
+var _hoisted_12 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("h1", {
+  "class": "title-font font-bold sm:text-4xl text-3xl mb-4 font-medium text-gray-900"
+}, " Núcleo de ensino PIB Mogi ", -1
+/* HOISTED */
+);
+
+var _hoisted_13 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("p", {
+  "class": "mb-8 leading-relaxed"
+}, " Seja muito bem vindo ao núcleo de ensino da Primeira Igreja Batista em Mogi das Cruzes, nosso propósito é espalhar a palavra de Deus, e garantir que mais pessoas tenham acesso ao ensino da Palavra do nosso Deus. ", -1
+/* HOISTED */
+);
+
+var _hoisted_14 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createTextVNode)(" quero fazer parte ");
+
+var _hoisted_15 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createStaticVNode)("<div class=\"w-full mx-auto mb-6 mt-6 sm:px-6 lg:px-8\"><h1 class=\"sm:text-3xl text-2xl mb-4 font-bold text-gray-800\"> Categorias de cursos </h1><p class=\"mb-8 leading-relaxed text-gray-600\"> Dentro do ministério NEP (Núcleo de ensino Pib Mogi), existem 3 categorias de treinamentos: </p><div class=\"grid xl:grid-cols-3 md:grid-cols-3 gap-10 sm:grid-cols-1\"><div class=\"rounded bg-gray-200 border border-gray-300 p-4 flex-col flex justify-center items-center\"><p class=\"text-center text-gray-600 font-bold font-mono text-xl\">Integração</p><p class=\"text-justify p-4 color-gray-400\"> Os cursos de integração, tem por objetivo trabalhar com as bases do evangelho e também com as diretrizes batistas acerta que assuntos introdutórios da teologia. </p><button class=\"rounded bg-green-600 p-2 text-white\"> conhecer mais </button></div><div class=\"rounded bg-gray-200 border border-gray-300 flex-col flex justify-center items-center p-4\"><p class=\"text-center text-gray-600 font-mono font-bold text-xl\"> Avance </p><p class=\"text-justify p-4 color-gray-400\"> Os cursos Avance, tem o propósito de fazer com que você se aprofunde no conhecimento da palavra de Deus, analisando livros da Bíblia por completo, com o objetivo de expor o contexto e a mensagem passada na época. </p><button class=\"rounded bg-green-600 p-2 text-white\"> conhecer mais </button></div><div class=\"rounded bg-gray-200 border border-gray-300 p-4 flex-col flex justify-center items-center\"><p class=\"text-center text-gray-600 font-mono font-bold text-xl\"> Treinamentos </p><p class=\"text-justify p-4 color-gray-400\"> Os cursos de treinamentos, tem como objetivo trabalhar com habilidades práticas do dia a dia do evangelho: Pregações, ensino da palavra entre outros assuntos relacionados a técnica da aplicação da palavra de Deus </p><button class=\"rounded bg-green-600 p-2 text-white\"> conhecer mais </button></div></div></div>", 1);
 
 function render(_ctx, _cache, $props, $setup, $data, $options) {
   var _component_Head = (0,vue__WEBPACK_IMPORTED_MODULE_0__.resolveComponent)("Head");
@@ -30242,20 +30266,20 @@ function render(_ctx, _cache, $props, $setup, $data, $options) {
 
   }, 8
   /* PROPS */
-  , ["href"])) : (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("v-if", true), _ctx.$page.props.user ? ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createBlock)(_component_Link, {
-    key: 2,
-    href: _ctx.route('dashboard'),
-    "class": "inline-flex text-white bg-indigo-500 border-0 py-2 px-6 focus:outline-none hover:bg-indigo-600 rounded text-lg"
+  , ["href"])) : (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("v-if", true)])]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_6, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_7, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_8, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("section", _hoisted_9, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_10, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_11, [_hoisted_12, _hoisted_13, _ctx.canRegister ? ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createBlock)(_component_Link, {
+    key: 0,
+    href: _ctx.route('register'),
+    "class": "bg-green-500 inline-flex text-white bg-gray-100 border-0 py-2 px-6 focus:outline-none hover:bg-gray-200 rounded text-lg"
   }, {
     "default": (0,vue__WEBPACK_IMPORTED_MODULE_0__.withCtx)(function () {
-      return [_hoisted_6];
+      return [_hoisted_14];
     }),
     _: 1
     /* STABLE */
 
   }, 8
   /* PROPS */
-  , ["href"])) : (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("v-if", true)])]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_7, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_8, [_hoisted_9, (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)(_component_Welcome)])])], 64
+  , ["href"])) : (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("v-if", true)])])])]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)(_component_Welcome)])]), _hoisted_15], 64
   /* STABLE_FRAGMENT */
   );
 }
