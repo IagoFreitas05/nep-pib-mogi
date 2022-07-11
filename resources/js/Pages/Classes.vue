@@ -121,46 +121,25 @@
                         </div>
                     </div>
                 </form>
-                <section>
-                    <div class="bg-white rounded shadow-sm mt-4 border border-gray-200 mb-4 p-4 flex flex-col">
-                        <div class="flex flex-col items-start content-start  ">
-                            <p class="text-xl font-bold text-gray-400 text-left">Iago Freitas Cardoso</p>
-                            <p class="text-left">Professor, gostaria de entender qual era o contexto da época em que paulo escrevia as cartas
-                                dele?</p>
+                <section v-if="forums">
+                    <div  v-for="item in forums">
+                        <div v-if="item.class_id === classes.find(element => element.class_link === justTheCode).id "
+                             class="bg-white rounded shadow-sm mt-4 border border-gray-200 mb-4 p-4 flex flex-col" >
+                            <div class="flex flex-col items-start content-start  ">
+                                <p class="text-xl font-bold text-gray-400 text-left">{{ item.username }}</p>
+                                <p class="text-left">{{
+                                        item.question
+                                    }}</p>
+                            </div>
+                            <div class="flex flex-col items-end content-end rounded bg-gray-100 p-3" v-if="item.answer">
+                                <p class="text-xl text-gray-400 font-bold text-right">resposta do professor:</p>
+                                <p class="text-right">{{
+                                        item.answer
+                                    }}</p>
+                            </div>
                         </div>
-                       <div class="flex flex-col items-end content-end rounded bg-gray-100 p-3">
-                           <p class="text-xl text-gray-400 font-bold text-right">resposta do professor:</p>
-                           <p class="text-right">O contexto era o império romano perseguindo a igreja, e oprimindo os seguidores de Cristo a
-                               todo custo, e mesmo assim, Paulo pregrava a mansidão e amor entre os irmãos</p>
-                       </div>
-                    </div>
 
-                    <div class="bg-white rounded shadow-sm mt-4 border border-gray-200 mb-4 p-4 flex flex-col">
-                        <div class="flex flex-col items-start content-start  ">
-                            <p class="text-xl font-bold text-gray-400 text-left">Iago Freitas Cardoso</p>
-                            <p class="text-left">Professor, gostaria de entender qual era o contexto da época em que paulo escrevia as cartas
-                                dele?</p>
-                        </div>
-                        <div class="flex flex-col items-end content-end rounded bg-gray-100 p-3">
-                            <p class="text-xl text-gray-400 font-bold text-right">resposta do professor:</p>
-                            <p class="text-right">O contexto era o império romano perseguindo a igreja, e oprimindo os seguidores de Cristo a
-                                todo custo, e mesmo assim, Paulo pregrava a mansidão e amor entre os irmãos</p>
-                        </div>
                     </div>
-
-                    <div class="bg-white rounded shadow-sm mt-4 border border-gray-200 mb-4 p-4 flex flex-col">
-                        <div class="flex flex-col items-start content-start  ">
-                            <p class="text-xl font-bold text-gray-400 text-left">Iago Freitas Cardoso</p>
-                            <p class="text-left">Professor, gostaria de entender qual era o contexto da época em que paulo escrevia as cartas
-                                dele?</p>
-                        </div>
-                        <div class="flex flex-col items-end content-end rounded bg-gray-100 p-3">
-                            <p class="text-xl text-gray-400 font-bold text-right">resposta do professor:</p>
-                            <p class="text-right">O contexto era o império romano perseguindo a igreja, e oprimindo os seguidores de Cristo a
-                                todo custo, e mesmo assim, Paulo pregrava a mansidão e amor entre os irmãos</p>
-                        </div>
-                    </div>
-
                 </section>
             </div>
         </div>

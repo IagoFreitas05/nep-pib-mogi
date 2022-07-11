@@ -52,7 +52,7 @@ Route::middleware(['auth:sanctum', 'verified'])
                 ->get(),
             'watchedClasses' => WatchedClass::where('user_id', '=', Auth::user()->id)->get(),
             'answerQuizzes' => QuizAnswer::where('user_id','=', Auth::user()->id)->get(),
-            'forums' => Forum::where('course_id','=', $id)
+            'forums' => Forum::where('course_id','=', $id)->get()
         ]);
     })
     ->name("classes");
