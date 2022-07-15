@@ -24139,7 +24139,7 @@ function render(_ctx, _cache, $props, $setup, $data, $options) {
     "leave-to-class": "opacity-0"
   }, {
     "default": (0,vue__WEBPACK_IMPORTED_MODULE_0__.withCtx)(function () {
-      return [(0,vue__WEBPACK_IMPORTED_MODULE_0__.withDirectives)((0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_1, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.renderSlot)(_ctx.$slots, "default")], 512
+      return [(0,vue__WEBPACK_IMPORTED_MODULE_0__.withDirectives)((0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_1, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)(" isso ai "), (0,vue__WEBPACK_IMPORTED_MODULE_0__.renderSlot)(_ctx.$slots, "default")], 512
       /* NEED_PATCH */
       ), [[vue__WEBPACK_IMPORTED_MODULE_0__.vShow, _ctx.on]])];
     }),
@@ -27884,10 +27884,7 @@ var _hoisted_7 = {
 var _hoisted_8 = {
   "class": "grid place-items-center"
 };
-var _hoisted_9 = {
-  key: 0,
-  "class": "bg-green-500 rounded mb-1 block ml-1 text-white p-2"
-};
+var _hoisted_9 = ["href"];
 var _hoisted_10 = ["href"];
 var _hoisted_11 = {
   key: 0,
@@ -27924,7 +27921,13 @@ function render(_ctx, _cache, $props, $setup, $data, $options) {
         /* TEXT */
         )])]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_8, [_ctx.subscriptions.find(function (el) {
           return el.course_id === course.id;
-        }) ? ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("button", _hoisted_9, " já inscrito! ")) : _ctx.$page.props.user.user_type === 'user' ? ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("a", {
+        }) ? ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("a", {
+          key: 0,
+          href: _ctx.route('classes', course.id),
+          "class": "bg-green-500 rounded mb-1 block ml-1 text-white p-2"
+        }, " já inscrito! ", 8
+        /* PROPS */
+        , _hoisted_9)) : _ctx.$page.props.user.user_type === 'user' ? ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("a", {
           key: 1,
           "class": "bg-purple-500 rounded mb-1 block ml-1 text-white p-2",
           href: _ctx.route('checkoutPage', course.id)

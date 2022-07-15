@@ -1188,9 +1188,6 @@ select {
   width: -moz-max-content;
   width: max-content;
 }
-.w-5\/6 {
-  width: 83.333333%;
-}
 .min-w-0 {
   min-width: 0px;
 }
@@ -2291,10 +2288,6 @@ select {
     grid-template-columns: repeat(2, minmax(0, 1fr));
   }
 
-  .sm\:flex-col {
-    flex-direction: column;
-  }
-
   .sm\:items-start {
     align-items: flex-start;
   }
@@ -2466,14 +2459,6 @@ select {
 
   .lg\:w-3\/6 {
     width: 50%;
-  }
-
-  .lg\:w-full {
-    width: 100%;
-  }
-
-  .lg\:max-w-lg {
-    max-width: 32rem;
   }
 
   .lg\:flex-grow {

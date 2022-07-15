@@ -16,11 +16,11 @@
                         <p><small>{{ course.duration }}</small></p>
                     </div>
                     <div class="grid place-items-center">
-                        <button v-if="subscriptions.find(el => el.course_id === course.id)" class="bg-green-500
+                        <a :href="route('classes', course.id)" v-if="subscriptions.find(el => el.course_id === course.id)" class="bg-green-500
             rounded mb-1 block ml-1
             text-white p-2">
                             já inscrito!
-                        </button>
+                        </a>
 
                         <a v-else-if="$page.props.user.user_type === 'user'" class="bg-purple-500
             rounded mb-1 block ml-1
